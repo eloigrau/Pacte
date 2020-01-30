@@ -3,6 +3,7 @@
 from datetime import datetime
 from calendar import LocaleHTMLCalendar, LocaleTextCalendar, month_name
 from django.db.models import Q
+from blog.models import Article
 
 class Constantes:
     width = 10
@@ -27,23 +28,14 @@ class Calendar(LocaleTextCalendar):
 
     # formats a day as a td
     # filter events by day
-    def formatday(self, request, day, weekday, events_arti, events_proj, events_atel):
+    def formatday(self, request, day, weekday, events_arti):
         events_per_day_arti = events_arti.filter(Q(start_time__day=day) | Q(start_time__day__lt=day, end_time__day__gte=day))
-        events_per_day_proj = events_proj.filter(Q(start_time__day=day) | Q(start_time__day__lt=day, end_time__day__gte=day))
-        events_per_day_atel = events_atel.filter(Q(date_atelier__day=day))
 
         d = ''
         for event in events_per_day_arti:
-            if event.estPublic or (not request.user.is_anonymous and request.user.is_permacat):
+            if event.estPublic or (not request.user.is_anonymous and request.user.is_membre_collectif):
                 titre = event.titre if len(event.titre)<40 else event.titre[:37] + "..."
                 d += "<div class='event'><a href='"+event.get_absolute_url() +"'><i class='fa fa-comments iconleft'></i> "+titre+'</a> </div>'
-        for event in events_per_day_proj:
-            if event.estPublic or (not request.user.is_anonymous and request.user.is_permacat):
-                titre = event.titre if len(event.titre)<40 else event.titre[:37] + "..."
-                d += "<div class='event'>  <a href='"+event.get_absolute_url() +"'><i class='fa fa-paper-plane iconleft' ></i> "+titre+'</a> </div>'
-        for event in events_per_day_atel:
-            titre = event.titre if len(event.titre)<40 else event.titre[:37] + "..."
-            d += "<div class='event'> <a href='"+event.get_absolute_url() +"'><i class='fa fa-wrench iconleft' ></i> "+titre+'</a> </div>'
 
         now = datetime.now()
         aujourdhui=0
@@ -59,8 +51,6 @@ class Calendar(LocaleTextCalendar):
 
         if day != 0:
             ajout=""
-            if weekday == 0:
-                ajout= "<div class='event'>  <a href='/forum/article/visioconference'> <i class='fa fa-comments' ></i> Visioconférence</a> </div>"
             if aujourdhui == 1:
                 return "<td "+style+" class='day'><span class='datecourante'>"+str(day)+'</span>'+ajout + str(d)+'</td>'
             else:
@@ -69,11 +59,11 @@ class Calendar(LocaleTextCalendar):
         return "<td class='other-month' style='background-color:white'></td>"
 
     # formats a week as a tr
-    def formatweek(self, request, theweek, events_arti, events_proj, events_per_day_atel):
+    def formatweek(self, request, theweek, events_arti,):
         week = ''
 
         for d, weekday in theweek:
-            week += self.formatday(request, d, weekday, events_arti, events_proj, events_per_day_atel)
+            week += self.formatday(request, d, weekday, events_arti,)
 
         return "<tr class='days'>" + week + ' </tr>'
 
@@ -82,9 +72,7 @@ class Calendar(LocaleTextCalendar):
     def formatmonth(self, request, withyear=True):
        # events = chain(Article.objects.filter(start_time__year=self.year, start_time__month=self.month), Projet.objects.filter(start_time__year=self.year, start_time__month=self.month))
 
-        events_arti = []#Article.objects.filter(start_time__year=self.year, start_time__month=self.month)
-        events_proj = []#Projet.objects.filter(start_time__year=self.year, start_time__month=self.month)
-        events_atel = []#Atelier.objects.filter(date_atelier__year=self.year, date_atelier__month=self.month)
+        events_arti = Article.objects.filter(start_time__year=self.year, start_time__month=self.month)
 
         cal = '<table  class=" table-condensed" id="calendar">\n'
         #cal += self.formatmonthname(self.year, self.month, withyear=withyear)+'\n'
@@ -97,6 +85,6 @@ class Calendar(LocaleTextCalendar):
 
 
         for week in self.monthdays2calendar(self.year, self.month):
-            cal += self.formatweek(request, week, events_arti, events_proj, events_atel)+'\n'
+            cal += self.formatweek(request, week, events_arti)+'\n'
         cal += '</table>\n'
         return cal

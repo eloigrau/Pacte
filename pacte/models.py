@@ -30,11 +30,14 @@ from django.core.mail import send_mass_mail
 DEGTORAD=3.141592654/180
 
 class Choix():
-    pass
+    statut_adhesion = (('', '-----------'),
+                   (0, _("Je souhaite devenir membre du collectif ACVI et utiliser le site")),
+                   (1, _("Je suis membre d'un autre collectif du pacte pour la transition")),
+                   (2, _("Je suis membre du collectif ACVI")))
+
 
 LATITUDE_DEFAUT = '42.6976'
 LONGITUDE_DEFAUT = '2.8954'
-
 
 class Profil(AbstractUser):
 
@@ -43,11 +46,13 @@ class Profil(AbstractUser):
 
     date_registration = models.DateTimeField(verbose_name="Date de création", editable=False)
 
-    inscrit_newsletter = models.BooleanField(verbose_name="J'accepte de recevoir des emails de Permacat", default=False)
+    inscrit_newsletter = models.BooleanField(verbose_name="J'accepte de recevoir des emails de PacteACVI", default=False)
     accepter_conditions = models.BooleanField(verbose_name="J'ai lu et j'accepte les conditions d'utilisation du site", default=False, null=False)
     accepter_annuaire = models.BooleanField(verbose_name="J'accepte d'apparaitre dans l'annuaire du site et la carte et rend mon profil visible par tous", default=True)
 
     date_notifications = models.DateTimeField(verbose_name="Date de validation des notifications",default=now)
+
+    statut_adhesion = models.IntegerField(choices=Choix.statut_adhesion, default="0")
 
     def __str__(self):
         return self.username
@@ -84,38 +89,20 @@ class Profil(AbstractUser):
     @property
     def statutMembre_str(self):
         if self.statut_adhesion == 0:
-            return "souhaite devenir membre de l'association"
+            return "souhaite devenir membre du collectif"
         elif self.statut_adhesion == 1:
-            return "ne souhaite pas devenir membre"
+            return "membre d'un autre collectif"
         elif self.statut_adhesion == 2:
-            return "membre actif"
+            return "membre du collectif ACVI"
+
 
     @property
-    def statutMembre_rtg(self):
-        return self.statut_adhesion_rtg
-
-    @property
-    def statutMembre_rtg_str(self):
-        if self.statut_adhesion_rtg == 0:
-            return "souhaite devenir membre de l'association"
-        elif self.statut_adhesion_rtg == 1:
-            return "ne souhaite pas devenir membre"
-        elif self.statut_adhesion_rtg == 2:
-            return "membre actif"
-
-    @property
-    def is_permacat(self):
+    def is_membre_collectif(self):
         if self.statut_adhesion == 2:
             return True
         else:
             return False
 
-    @property
-    def is_rtg(self):
-        if self.statut_adhesion_rtg == 2:
-            return True
-        else:
-            return False
 
     @property
     def inscrit_newsletter_str(self):
@@ -126,10 +113,6 @@ def create_user_profile(sender, instance, created, **kwargs):
     for suiv in ['produits', 'articles', 'projets']:
         suivi, created = Suivis.objects.get_or_create(nom_suivi=suiv)
         actions.follow(instance, suivi, actor_only=True)
-    if created and instance.is_superuser:
-        Panier.objects.create(user=instance)
-    elif created:
-        instance.is_active=False
 
 
 

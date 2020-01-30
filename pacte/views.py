@@ -83,7 +83,7 @@ def merci(request, template_name='merci.html'):
 
 @login_required
 def profil_courant(request, ):
-    return render(request, 'profil.html', {'user': request.use})
+    return render(request, 'profil.html', {'user': request.user})
 
 
 @login_required
@@ -117,21 +117,21 @@ def annuaire(request):
 
 @login_required
 def listeContacts(request):
-    if not request.user.is_permacat:
-        return render(request, "notPermacat.html")
+    if not request.user.is_membre_collectif:
+        return render(request, "notPacteACVI.html")
     listeMails = [
         {"type":'user_newsletter' ,"profils":Profil.objects.filter(inscrit_newsletter=True), "titre":"Liste des inscrits à la newsletter : "},
          {"type":'anonym_newsletter' ,"profils":InscriptionNewsletter.objects.all(), "titre":"Liste des inscrits anonymes à la newsletter : "},
       {"type":'user_adherent' , "profils":Profil.objects.filter(statut_adhesion=2), "titre":"Liste des adhérents : "},
-        {"type":'user_futur_adherent', "profils":Profil.objects.filter(statut_adhesion=0), "titre":"Liste des personnes qui veulent adhérer à Permacat :"}
+        {"type":'user_futur_adherent', "profils":Profil.objects.filter(statut_adhesion=0), "titre":"Liste des personnes qui veulent adhérer à PacteACVI :"}
     ]
     return render(request, 'listeContacts.html', {"listeMails":listeMails})
 
 
 @login_required
 def listeFollowers(request):
-    if not request.user.is_permacat:
-        return render(request, "notPermacat.html")
+    if not request.user.is_membre_collectif:
+        return render(request, "notPacteACVI.html")
     listeArticles = []
     # for art in Projet.objects.all():
     #     suiveurs = followers(art)
@@ -201,7 +201,7 @@ class profil_modifier_user(UpdateView):
     model = Profil
     form_class = ProducteurChangeForm
     template_name_suffix = '_modifier'
-    fields = ['username', 'first_name', 'last_name', 'email', 'site_web', 'description', 'competences', 'pseudo_june', 'accepter_annuaire', 'inscrit_newsletter']
+    fields = ['username', 'first_name', 'last_name', 'email', 'site_web', 'description', 'accepter_annuaire', 'inscrit_newsletter']
 
     def get_object(self):
         return Profil.objects.get(id=self.request.user.id)
@@ -321,7 +321,7 @@ def lireConversation(request, destinataire):
                     description="a envoyé un message privé à " + destinataire)
         profil_destinataire = Profil.objects.get(username=destinataire)
         if profil_destinataire in followers(conversation):
-            sujet = "Permacat - quelqu'un vous a envoyé une message privé"
+            sujet = "PacteACVI - quelqu'un vous a envoyé une message privé"
             message = request.user.username + " vous a envoyé un message privé. Vous pouvez y accéder en suivant ce lien : http://www.perma.cat" +  url
             send_mail(sujet, message, "asso@perma.cat", [profil_destinataire.email, ], fail_silently=False,)
         return redirect(request.path)
@@ -364,7 +364,7 @@ def chercherConversation(request):
 
 @login_required
 def getNotifications(request):
-    if request.user.is_permacat:
+    if request.user.is_membre_collectif:
         salons      = Action.objects.filter(Q(verb='envoi_salon') | Q(verb='envoi_salon_permacat'))[:30]
         articles    = Action.objects.filter(Q(verb='article_nouveau_permacat') | Q(verb='article_message_permacat')|
                                             Q(verb='article_nouveau') | Q(verb='article_message')| Q(verb='article_modifier')|
@@ -398,7 +398,7 @@ def getNotifications(request):
 
 @login_required
 def getNotificationsParDate(request):
-    if request.user.is_permacat:
+    if request.user.is_membre_collectif:
         actions      = Action.objects.filter( \
             Q(verb='envoi_salon') | Q(verb='envoi_salon_permacat')|Q(verb='article_nouveau_permacat') |
             Q(verb='article_message_permacat')|Q(verb='article_nouveau') | Q(verb='article_message')|
@@ -463,7 +463,7 @@ def getInfosJourPrecedent(request, nombreDeJours):
     timestamp_from = datetime.now().date() - timedelta(days=nombreDeJours)
     timestamp_to = datetime.now().date() - timedelta(days=nombreDeJours - 1)
 
-    if request.user.is_permacat:
+    if request.user.is_membre_collectif:
         articles    = Action.objects.filter(Q(verb='article_nouveau_permacat', timestamp__gte = timestamp_from,timestamp__lte = timestamp_to,) | Q(verb='article_nouveau',timestamp__gte = timestamp_from, timestamp__lte = timestamp_to,))
         projets     = Action.objects.filter(Q(verb='projet_nouveau_permacat', timestamp__gte = timestamp_from,timestamp__lte = timestamp_to,) |Q(verb='projet_nouveau', timestamp__gte = timestamp_from,timestamp__lte = timestamp_to,))
         offres      = Action.objects.filter(Q(verb='ajout_offre', timestamp__gte = timestamp_from,timestamp__lte = timestamp_to,) | Q(verb='ajout_offre_permacat', timestamp__gte = timestamp_from,timestamp__lte = timestamp_to,))
@@ -512,7 +512,7 @@ def agora(request, ):
         message.auteur = request.user 
         message.save()
         group, created = Group.objects.get_or_create(name='tous')
-        url = reverse('agora')
+        url = reverse('agora_general')
         action.send(request.user, verb='envoi_salon', action_object=message, target=group, url=url, description="a envoyé un message dans le salon public")
         return redirect(request.path) 
     return render(request, 'agora.html', {'form': form, 'messages_echanges': messages})
@@ -546,9 +546,9 @@ def modifier_message(request, id, type):
     if type == 'general':
         obj = MessageGeneral.objects.get(id=id)
     elif type == 'permacat':
-        if not request.user.is_permacat:
-            return render(request, "notPermacat")
-        obj = MessageGeneralPermacat.objects.get(id=id)
+        if not request.user.is_membre_collectif:
+            return render(request, "notPacteACVI")
+        obj = MessageGeneralPacteACVI.objects.get(id=id)
     elif type == 'rtg':
         if not request.user.is_rtg:
             return render(request, "notRTG.html")

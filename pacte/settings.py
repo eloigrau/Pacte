@@ -82,6 +82,7 @@ INSTALLED_APPS = (
     'model_utils',
     'pacte',
     'fiches',
+    'blog',
     'django_extensions',
     'django_filters',
     'rest_framework',

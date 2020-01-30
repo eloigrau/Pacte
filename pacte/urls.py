@@ -29,6 +29,7 @@ urlpatterns = [
     url(r'^summernote/', include('django_summernote.urls')),
     url(r'^captcha/', include('captcha.urls')),
     path(r'agenda/', include('cal.urls')),
+    url(r'^forum/', include('blog.urls', namespace='bourseLibre.blog')),
     url('^', include('django.contrib.auth.urls')),
     url(r'^$', views.bienvenue, name='bienvenue'),
     url(r'^bienvenue/$', views.bienvenue, name='bienvenue'),

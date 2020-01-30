@@ -14,7 +14,8 @@ Including another URLconf
     1. Add an import:  from blog__ import urls as blog_urls
     2. Add a URL to urlpatterns:  url(r'^blog__/', include(blog_urls))
 """
-from django.conf.urls import url
+from django.conf.urls import url, include
+from django.urls import path
 from . import views
 from django.contrib.auth.decorators import login_required
 

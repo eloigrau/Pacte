@@ -15,9 +15,9 @@
 <div class="row">
     <div class="col-sm-12 textcenter">
         <div class="btn-group btn-group-justified">
-            {% if request.user.is_permacat %}
+            {% if request.user.is_membre_collectif %}
             <a href="{% url 'annuaire_permacat' %}" >
-                <button type="button" class="btn btn-primary" >Liste des adhérents Permacat</button>
+                <button type="button" class="btn btn-primary" >Liste des adhérents PacteACVI</button>
                 </a>
             {% endif %}
             {% if request.user.is_rtg %}

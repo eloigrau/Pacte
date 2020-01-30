@@ -19,7 +19,6 @@ class ProfilCreationForm(UserCreationForm):
     def __init__(self, request, *args, **kargs):
         super(ProfilCreationForm, self).__init__(request, *args, **kargs)
         self.fields['description'].strip = False
-        self.fields['competences'].strip = False
 
     class Meta(UserCreationForm):
         model = Profil
@@ -48,7 +47,6 @@ class ProducteurChangeForm(UserChangeForm):
     def __init__(self, *args, **kargs):
         super(ProducteurChangeForm, self).__init__(*args, **kargs)
         self.fields['description'].strip = False
-        self.fields['competences'].strip = False
 
     class Meta:
         model = Profil
