@@ -53,13 +53,13 @@
             <td style="width:250px">Pseudo :</td>
             <td>{{ user.username }}</td>
         </tr>
-                    {%if user.adresse.commune %}
+                    {%if user.commune %}
             <tr>
                 <td style="width:250px">Commune :</td>
                 <td>{{ user.commune }}</td>
             </tr>
             {% endif %}
-            {%if user.adresse.code_postal %}
+            {%if user.code_postal %}
             <tr>
                 <td style="width:250px">Code postal :</td>
                 <td>{{ user.code_postal }}</td>
