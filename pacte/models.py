@@ -42,6 +42,8 @@ LONGITUDE_DEFAUT = '2.8954'
 class Profil(AbstractUser):
 
     site_web = models.URLField(null=True, blank=True)
+    code_postal = models.CharField(max_length=5, blank=True, null=True, default="66000")
+    commune = models.CharField(max_length=50, blank=True, null=True, default="Perpignan")
     description = models.TextField(null=True, blank=True)
 
     date_registration = models.DateTimeField(verbose_name="Date de création", editable=False)

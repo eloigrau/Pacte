@@ -20,14 +20,6 @@
                 <button type="button" class="btn btn-primary" >Liste des adhérents PacteACVI</button>
                 </a>
             {% endif %}
-            {% if request.user.is_rtg %}
-            <a href="{% url 'annuaire_rtg' %}" >
-                <button type="button" class="btn btn-primary" >Liste des adhérents RameneTaGraine</button>
-                </a>
-            {% endif %}
-            <a href="{% url 'carte' %}" >
-                <button type="button" class="btn btn-primary" >Carte des inscrits</button>
-            </a>
         </div>
     </div>
 </div>
@@ -56,8 +48,8 @@
             {%endcomment%}
             <td><a href="{% url 'profil' profil.id %}">{{ profil.username }}</a></td>
             <td><a href="{% url 'profil' profil.id %}">{{ profil.email }}</a></td>
-            <td><a href="{% url 'profil' profil.id %}">{{ profil.adresse.code_postal }}</a></td>
-            <td><a href="{% url 'profil' profil.id %}">{{ profil.adresse.commune }}</a></td>
+            <td><a href="{% url 'profil' profil.id %}">{{ profil.code_postal }}</a></td>
+            <td><a href="{% url 'profil' profil.id %}">{{ profil.commune }}</a></td>
         </tr>
         {% endfor %}
         </tbody>

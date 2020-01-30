@@ -1,6 +1,5 @@
 # -*- coding: utf-8 -*-
 from .models import  Message, MessageGeneral, Conversation, InscriptionNewsletter
-from fiches.models import Fiche, Atelier as atelier_fiche, CommentaireFiche
 
 
 from django.contrib import admin
@@ -50,8 +49,4 @@ admin.site.register(MessageGeneral)
 admin.site.register(InscriptionNewsletter)
 
 admin.site.register(Conversation)
-
-admin.site.register(Fiche)
-admin.site.register(CommentaireFiche)
-admin.site.register(atelier_fiche)
 

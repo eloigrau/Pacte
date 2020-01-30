@@ -53,6 +53,18 @@
             <td style="width:250px">Pseudo :</td>
             <td>{{ user.username }}</td>
         </tr>
+                    {%if user.adresse.commune %}
+            <tr>
+                <td style="width:250px">Commune :</td>
+                <td>{{ user.commune }}</td>
+            </tr>
+            {% endif %}
+            {%if user.adresse.code_postal %}
+            <tr>
+                <td style="width:250px">Code postal :</td>
+                <td>{{ user.code_postal }}</td>
+            </tr>
+            {% endif %}
         {%if user.accepter_annuaire  or request.user == user %}
               {% if user.get_full_name %}
                 <tr>

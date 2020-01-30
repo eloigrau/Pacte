@@ -43,7 +43,6 @@ urlpatterns = [
     url(r'^site/presentation/$', views.presentation_site, name='presentation_site'),
     url(r'^gestion/', admin.site.urls, name='admin',),
     url(r'^merci/$', views.merci, name='merci'),
-    url(r'^kit/', include('fiches.urls', namespace='pacte.fiches')),
     url(r'^chercher/produit/$', login_required(views.chercher), name='chercher'),
     url(r'^accounts/profil/(?P<user_id>[0-9]+)/$', login_required(views.profil), name='profil', ),
     url(r'^accounts/profil/(?P<user_username>[-\w.]+)/$', login_required(views.profil_nom), name='profil_nom', ),

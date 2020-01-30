@@ -81,7 +81,6 @@ INSTALLED_APPS = (
     'bootstrap','fontawesome','cookielaw',
     'model_utils',
     'pacte',
-    'fiches',
     'blog',
     'django_extensions',
     'django_filters',
