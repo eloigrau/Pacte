@@ -113,11 +113,11 @@
 
         {% if request.user|is_following:suivis %}
         <button type="button" class="btn btn-light btn-sm" data-toggle="tooltip" data-placement="bottom" title="Cliquez pour arreter de recevoir un mail à chaque nouvel article">
-             {% fontawesome_icon 'bell' %}
+             {% fontawesome_icon 'bell' %} suivi
         </button>
         {% else %}
         <button type="button" class="btn btn-secondary btn-sm" data-toggle="tooltip" data-placement="bottom" title="Cliquez pour recevoir un mail à chaque nouvel article">
-             {% fontawesome_icon 'bell-slash' %}
+             {% fontawesome_icon 'bell-slash' %} non suivi
         </button>
         {% endif %}
             </a>
