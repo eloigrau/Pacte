@@ -63,7 +63,7 @@ if not LOCALL:
     #X_FRAME_OPTIONS = 'DENY'
     SESSION_EXPIRE_AT_BROWSER_CLOSE=False
 
-ALLOWED_HOSTS = ['permacat.herokuapp.com', 'www.perma.cat']
+ALLOWED_HOSTS = ['pacteacvi.herokuapp.com',]
 
 # Application definition
 
@@ -231,7 +231,7 @@ IGNORABLE_404_URLS = (
 )
 
 # Email settings
-SERVER_EMAIL = 'xxxxxxxxxxxxxxxxx@gmail.com'
+SERVER_EMAIL = 'pacteacvi@gmail.com'
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_HOST = 'smtp.gmail.com'
 try:
@@ -242,18 +242,18 @@ EMAIL_HOST_USER = SERVER_EMAIL
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
 DEFAULT_FROM_EMAIL = EMAIL_HOST_USER
-GMAIL_SMTP_USER = 'xxxxxxxxxxxxxxxxx@gmail.com'
-EMAIL_SUBJECT_PREFIX = "[xxxxxxxxxxxxxxxxx]"
+GMAIL_SMTP_USER = 'pacteacvi@gmail.com'
+EMAIL_SUBJECT_PREFIX = "[pacteacvi]"
 try:
     GMAIL_SMTP_PASSWORD = os.environ['EMAIL_ADMIN_PWD']
 except:
     GMAIL_SMTP_PASSWORD = 'test'
 
 ADMINS = (
-    ('Asso_admin', 'xxxxxxxxxxxxxxxxx@gmail.com'),
+    ('Asso_admin', 'pacteacvi@gmail.com'),
 )
 MANAGERS = ADMINS
-BASE_URL = "https://xxxxxxxxxxxxxxxxx.com"
+BASE_URL = "https://pacteacvi.herokuapp.com"
 ########################
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.9/howto/static-files/
