@@ -39,7 +39,7 @@ class ProducteurChangeForm(UserChangeForm):
     """
     email = forms.EmailField(label="Email")
     username = forms.CharField(label="Pseudonyme")
-    description = forms.CharField(label="Description", help_text="Une description de vous même",widget=SummernoteWidget)
+    description = forms.CharField(required=False, label="Description", help_text="Une description de vous même",widget=SummernoteWidget)
     inscrit_newsletter = forms.BooleanField(required=False)
     accepter_annuaire = forms.BooleanField(required=False, label="J'accepte d'apparaitre dans l'annuaire du site et la carte et rend mon profil visible par tous")
     password=None
