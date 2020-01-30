@@ -82,7 +82,7 @@ class Article(models.Model):
 def on_save_articles(instance, created, **kwargs):
     if created:
         suivi, created = Suivis.objects.get_or_create(nom_suivi='articles')
-        titre = "Permacat - nouvel article"
+        titre = "PacteACVI - nouvel article"
         message = " Un nouvel article a été créé " + \
                   "\n Vous pouvez y accéder en suivant ce lien : https://permacat.herokuapp.com" + instance.get_absolute_url() + \
                   "\n\n------------------------------------------------------------------------------" \
@@ -113,7 +113,7 @@ class Commentaire(models.Model):
 
 @receiver(post_save,  sender=Article)
 def on_save_article(instance, **kwargs):
-    titre = "Permacat - Article actualisé"
+    titre = "PacteACVI - Article actualisé"
     message = "L'article '" +  instance.titre + "' a été modifié (ou quelqu'un l'a commenté)" +\
               "\n Vous pouvez y accéder en suivant ce lien : http://www.perma.cat" + instance.get_absolute_url() + \
               "\n\n------------------------------------------------------------------------------" \

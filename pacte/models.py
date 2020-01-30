@@ -100,10 +100,11 @@ class Profil(AbstractUser):
 
     @property
     def is_membre_collectif(self):
-        if self.statut_adhesion == 2:
-            return True
-        else:
-            return False
+        return True
+        # if self.statut_adhesion == 2:
+        #     return True
+        # else:
+        #     return False
 
 
     @property
