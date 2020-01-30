@@ -23,16 +23,6 @@
   {% endfor %}
     </ul>
   </div>
-  <div class="card carte-notif notif2  d-md-flex textcenter">
-    <div class="card-header textcenter" style="background-color:#6a8d73">
-      Projets
-    </div>
-    <ul class="list-group list-group-flush " >
-  {% for action in projets %}
-      {% include "notifications/notifications_template.html" with action=action %}
-  {% endfor %}
-    </ul>
-  </div>
   <div class="card carte-notif notif2  d-md-flex textcenter ">
     <div class="card-header textcenter justify-content-center" style="background-color:#8eaf9d">
       Salon{% if request.user.is_membre_collectif %}s{%endif %}
@@ -45,38 +35,7 @@
         </ul>
       </div>
   </div>
-  <div class="card carte-notif notif2  d-md-flex textcenter ">
-    <div class="card-header textcenter" style="background-color:#7b904b">
-      Marché
-    </div>
-    <ul class="list-group list-group-flush">
-  {% for action in offres%}
-      {% include "notifications/notifications_template.html" with action=action %}
-  {% endfor %}
-    </ul>
-  </div>
 
-  <div class="card carte-notif notif2  d-md-flex textcenter ">
-    <div class="card-header textcenter" style="background-color:#7b904b">
-      Fiches de Permaculture
-    </div>
-    <ul class="list-group list-group-flush">
-  {% for action in fiches%}
-      {% include "notifications/notifications_template.html" with action=action %}
-  {% endfor %}
-    </ul>
-  </div>
-
-  <div class="card carte-notif notif2  d-md-flex textcenter ">
-    <div class="card-header textcenter" style="background-color:#7b904b">
-      Ateliers collectifs
-    </div>
-    <ul class="list-group list-group-flush">
-  {% for action in ateliers%}
-      {% include "notifications/notifications_template.html" with action=action %}
-  {% endfor %}
-    </ul>
-  </div>
 
   <div class="card carte-notif notif2  d-md-flex textcenter">
     <div class="card-header textcenter" style="background-color:#cacaaa" >
