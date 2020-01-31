@@ -14,7 +14,7 @@
     <ul class="nav navbar-nav  d-flex justify-content-between  w-100">
       <li class="nav-item dropdown nav2">
            <a data-toggle="dropdown" class="nav-link dropdown-toggle navbar-menu  " href="dropdownForum" aria-haspopup="true" aria-expanded="false" >
-               {% fontawesome_icon 'comments' %} Forum </a>
+               {% fontawesome_icon 'book-reader' %} Forum </a>
 
             <ul class="dropdown-menu dropdown-menu1 textcenter nav2-dropdown" id="dropdownForum">
                 <li> <a class="dropdown-item" href="{% url 'blog:index' %}?"> {% fontawesome_icon 'book' %} Articles</a></li>
@@ -40,7 +40,7 @@
             </a>
             <ul class="dropdown-menu dropdown-menu1 textcenter nav2-dropdown" aria-labelledby="navbarAbout2" id="dropdoownSite">
 
-               <li> <a class="dropdown-item" href="https://www.pacte-transition.org/"> Site du Pacte Pour la Transition </a></li>
+               <li> <a class="dropdown-item" href="https://www.pacte-transition.org/" target="_blank"> Site du Pacte Pour la Transition </a></li>
                    <li class="divider" role="separator"></li>
                <li> <a class="dropdown-item" href="{% url 'annuaire' %}"> Annuaire </a></li>
                <li> <a class="dropdown-item" href="{% url 'faq' %}"> FAQ </a></li>
