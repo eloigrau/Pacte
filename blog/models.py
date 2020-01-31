@@ -89,7 +89,7 @@ def on_save_articles(instance, created, **kwargs):
                   "\n vous recevez cet email, car vous avez choisi de suivre les articles (en cliquant sur la cloche) sur le site http://www.Perma.Cat/forum/articles/"
         emails = [suiv.email for suiv in followers(suivi) if instance.auteur != suiv and (instance.estPublic or suiv.is_membre_collectif)]
         try:
-            send_mass_mail([(titre, message, "asso@perma.cat", emails), ])
+            send_mass_mail([(titre, message, "pacteacvi@gmail.com", emails), ])
         except:
             pass
 
@@ -115,13 +115,13 @@ class Commentaire(models.Model):
 def on_save_article(instance, **kwargs):
     titre = "PacteACVI - Article actualisé"
     message = "L'article '" +  instance.titre + "' a été modifié (ou quelqu'un l'a commenté)" +\
-              "\n Vous pouvez y accéder en suivant ce lien : http://www.perma.cat" + instance.get_absolute_url() + \
+              "\n Vous pouvez y accéder en suivant ce lien : http://pacteacvi.herokuapp.com" + instance.get_absolute_url() + \
               "\n\n------------------------------------------------------------------------------" \
               "\n vous recevez cet email, car vous avez choisi de suivre ce projet sur le site http://www.Perma.Cat/forum/articles/"
    # emails = [(titre, message, "asso@perma.cat", (suiv.email, )) for suiv in followers(instance)]
     emails = [suiv.email for suiv in followers(instance)  if instance.auteur != suiv  and (instance.estPublic or suiv.is_membre_collectif)]
     try:
-        send_mass_mail([(titre, message, "asso@perma.cat", emails), ])
+        send_mass_mail([(titre, message, "pacteacvi@gmail.com", emails), ])
     except:
         pass
 

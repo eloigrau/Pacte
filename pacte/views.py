@@ -181,7 +181,7 @@ def contact_admins(request):
             try:
                 mail_admins(sujet, message_txt, html_message=message_html)
                 if form.cleaned_data['renvoi']:
-                    send_mail(sujet, "Vous avez envoyé aux administrateurs du site www.perma.cat le message suivant : " + message_html, request.user.email, [request.user.email,], fail_silently=False, html_message=message_html)
+                    send_mail(sujet, "Vous avez envoyé aux administrateurs du site pacteacvi.herokuapp.com le message suivant : " + message_html, request.user.email, [request.user.email,], fail_silently=False, html_message=message_html)
 
                 return render(request, 'contact/message_envoye.html', {'sujet': sujet, 'msg': message_html,
                                                        'envoyeur': request.user.username + " (" + request.user.email + ")",
@@ -320,8 +320,8 @@ def lireConversation(request, destinataire):
         profil_destinataire = Profil.objects.get(username=destinataire)
         if profil_destinataire in followers(conversation):
             sujet = "PacteACVI - quelqu'un vous a envoyé une message privé"
-            message = request.user.username + " vous a envoyé un message privé. Vous pouvez y accéder en suivant ce lien : http://www.perma.cat" +  url
-            send_mail(sujet, message, "asso@perma.cat", [profil_destinataire.email, ], fail_silently=False,)
+            message = request.user.username + " vous a envoyé un message privé. Vous pouvez y accéder en suivant ce lien : http://pacteacvi.herokuapp.com" +  url
+            send_mail(sujet, message, "pacteacvi@gmail.com", [profil_destinataire.email, ], fail_silently=False,)
         return redirect(request.path)
 
     return render(request, 'lireConversation.html', {'conversation': conversation, 'form': form, 'messages_echanges': messages, 'destinataire':destinataire})
