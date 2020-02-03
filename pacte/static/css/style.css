@@ -1,6 +1,6 @@
 
 body {
-    background: #783D66;
+background-image:linear-gradient(160deg, #783D66, white);
     margin: auto;
     width: 99%;
     font-family: Georgia, serif;
@@ -337,8 +337,6 @@ section.p3 {
     text-align: center;
     }
 .bs-dark {
-
-  background-image:linear-gradient(90deg, #ffd0cc, #ffe6b3, #fcffcc, #ccffdd, #ccdbff);
    line-height: 2.4em;
    }
 .bs-dark .dropdown-menu1 {
