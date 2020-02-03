@@ -68,7 +68,7 @@ class SummernoteWidgetWithCustomToolbar(SummernoteWidget):
 
 class ArticleForm(forms.ModelForm):
    # contenu = TinyMCE(attrs={'cols': 80, 'rows': 20})
-    estPublic = forms.ChoiceField(choices=((1, "Article public"), (0, "Article PacteACVI")), label='', required=True, )
+     #estPublic = forms.ChoiceField(choices=((1, "Article public"), (0, "Article PacteACVI")), label='', required=True, )
 
     class Meta:
         model = Article
@@ -108,7 +108,7 @@ class ArticleForm(forms.ModelForm):
 
 
 class ArticleChangeForm(forms.ModelForm):
-    estPublic = forms.ChoiceField(choices=((1, "Article public"), (0, "Article réserve aux adhérents")), label='', required=True)
+    #estPublic = forms.ChoiceField(choices=((1, "Article public"), (0, "Article réserve aux adhérents")), label='', required=True)
 
     class Meta:
         model = Article
