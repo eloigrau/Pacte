@@ -64,8 +64,8 @@
                     <div class="row justify-content-sm-center">
                     <div class="col-sm-12 col-md-12 col-lg-12  textcenter">
 
-                        <div class="row ">
                            {%block message%}
+                        <div class="row ">
                             {% if messages %}
                             <ul class="messages">
                                 {% for message in messages %}
@@ -73,8 +73,8 @@
                                 {% endfor %}
                             </ul>
                             {% endif %}
-                            {% endblock %}
                         </div>
+                            {% endblock %}
                             {% block subtitle %}{% endblock %}
                         </div>
                     </div>

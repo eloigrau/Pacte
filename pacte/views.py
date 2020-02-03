@@ -151,7 +151,7 @@ def profil_contact(request, user_id):
         form = ContactForm(request.POST or None, )
         if form.is_valid():
             sujet = "[permacat] "+ request.user.username + "(" + request.user.email+ ") vous a écrit: "+ form.cleaned_data['sujet']
-            message_txt = ""
+            message_txt = form.cleaned_data['msg']
             message_html = form.cleaned_data['msg']
             recepteurs = [recepteur.email,]
             if form.cleaned_data['renvoi'] :
@@ -175,7 +175,7 @@ def contact_admins(request):
     if request.method == 'POST':
         form = ContactForm(request.POST or None, )
         if form.is_valid():
-            sujet = form.cleaned_data['sujet']
+            sujet =  request.user.username + "(" + request.user.email+ ") : " + form.cleaned_data['sujet']
             message_txt = request.user.username + "(" + request.user.email + ") a envoyé le message suivant : "
             message_html = form.cleaned_data['msg']
             try:
