@@ -18,6 +18,8 @@ class Constantes:
                 "September".center(width): "Septembre".center(width), "October".center(width): "Octobre".center(width),
                 "November".center(width): "Novembre".center(width), "December".center(width): "Décembre".center(width),
                 }
+
+
 class Calendar(LocaleTextCalendar):
     def __init__(self, year=None, month=None):
         self.year = year
@@ -25,6 +27,12 @@ class Calendar(LocaleTextCalendar):
         self.now = datetime.now
         super(Calendar, self).__init__()
 
+    def getJourFrançais(self, weekday):
+        jour = self.formatweekday(weekday, width=10)
+        try:
+            return Constantes.dicoJour[jour]
+        except:
+            return jour
 
     # formats a day as a td
     # filter events by day
@@ -52,9 +60,9 @@ class Calendar(LocaleTextCalendar):
         if day != 0:
             ajout=""
             if aujourdhui == 1:
-                return "<td "+style+" class='day'><span class=' badge badge-success joursemaine'>"+self.formatweekday(weekday, width=10) + " " + str(day)+ "</span><span class='datecourante'>"+str(day)+'</span>'+ajout + str(d)+'</td>'
+                return "<td "+style+" class='day'><span class=' badge badge-success joursemaine'>"+self.getJourFrançais(weekday) + " " + str(day)+ "</span><span class='datecourante'>"+str(day)+'</span>'+ajout + str(d)+'</td>'
             else:
-                return "<td "+style+" class='day'><span class=' badge badge-dark joursemaine'>"+self.formatweekday(weekday, width=10) + " " + str(day)+ "</span><span class='date'>"+str(day)+'</span>'+ajout +str(d)+ '</td>'
+                return "<td "+style+" class='day'><span class=' badge badge-dark joursemaine'>"+self.getJourFrançais(weekday)  + " " + str(day)+ "</span><span class='date'>"+str(day)+'</span>'+ajout +str(d)+ '</td>'
 
         return "<td class='other-month' style='background-color:white'></td>"
 
@@ -78,10 +86,7 @@ class Calendar(LocaleTextCalendar):
         #cal += self.formatmonthname(self.year, self.month, withyear=withyear)+'\n'
 
         for i in self.iterweekdays():
-            try:
-                cal += "<th  scope='col' class='weekdays'>"+ Constantes.dicoJour[self.formatweekday(i, width=10)]+ '</th>'
-            except:
-                cal += "<th  scope='col' class='weekdays'>"+ self.formatweekday(i, width=10)+ '</th>'
+            cal += "<th  scope='col' class='weekdays'>"+ self.getJourFrançais(i) + '</th>'
 
 
         for week in self.monthdays2calendar(self.year, self.month):
