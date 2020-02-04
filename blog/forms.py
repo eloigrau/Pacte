@@ -122,7 +122,7 @@ class ArticleChangeForm(forms.ModelForm):
     def __init__(self, *args, **kwargs):
         super(ArticleChangeForm, self).__init__(*args, **kwargs)
         self.fields['contenu'].strip = False
-        self.fields["estPublic"].choices=((1, "Article public"), (0, "Article réservé aux adhérents")) if kwargs['instance'].estPublic else ((0, "Article réserve aux adhérents"),(1, "Article public"), )
+      #uvez consulter les articles, en publier, et discuter avec les aut  self.fields["estPublic"].choices=((1, "Article public"), (0, "Article réservé aux adhérents")) if kwargs['instance'].estPublic else ((0, "Article réserve aux adhérents"),(1, "Article public"), )
 
 
 #     def save(self,):
