@@ -64,7 +64,11 @@ def handler400(request, *args, **kwargs):   #requete invalide
     return response
 
 def bienvenue(request):
-    return render(request, 'bienvenue.html', {})
+    nbNotif = 0
+    if request.user.is_authenticated:
+        nbNotif = getNbNewNotifications(request)
+
+    return render(request, 'bienvenue.html', { "nbNotif": nbNotif })
 
 
 def presentation_site(request):
@@ -259,14 +263,15 @@ def cgu(request):
 @login_required
 def liens(request):
     liens = [
+        'https://colibris-universite.org/mooc-permaculture/wakka.php?wiki=PagePrincipale',
+        'https://ecocharte.herokuapp.com',
+        'http://terre-avenirs-peyrestortes.org/',
+        'https://val-respire.wixsite.com/asso',
+        'https://www.colibris-lemouvement.org/',
         'http://sel66.free.fr',
         'https://www.monnaielibreoccitanie.org/',
         'http://lejeu.org/',
         'http://soudaqui.cat/wordpress/',
-        'http://terre-avenirs-peyrestortes.org/',
-        'https://val-respire.wixsite.com/asso',
-        'https://www.colibris-lemouvement.org/',
-        'https://colibris-universite.org/mooc-permaculture/wakka.php?wiki=PagePrincipale',
         'https://ponteillanature.wixsite.com/eco-nature',
         'https://cce-66.wixsite.com/mysite',
         'https://jardindenat.wixsite.com/website',
@@ -368,32 +373,18 @@ def getNotifications(request):
         articles    = Action.objects.filter(Q(verb='article_nouveau_permacat') | Q(verb='article_message_permacat')|
                                             Q(verb='article_nouveau') | Q(verb='article_message')| Q(verb='article_modifier')|
                                             Q(verb='article_modifier_permacat'))[:30]
-        projets     = Action.objects.filter(Q(verb='projet_nouveau_permacat') | Q(verb='projet_message_permacat')|
-                                            Q(verb='projet_nouveau') | Q(verb='projet_message')| Q(verb='projet_modifier')|
-                                            Q(verb='projet_modifier_permacat'))[:30]
-        offres      = Action.objects.filter(Q(verb='ajout_offre') | Q(verb='ajout_offre_permacat'))[:30]
     else:
         salons      = Action.objects.filter(Q(verb='envoi_salon') | Q(verb='envoi_salon_permacat'))[:30]
         articles    = Action.objects.filter(Q(verb='article_nouveau') | Q(verb='article_message')| Q(verb='article_modifier'))[:30]
-        projets     = Action.objects.filter(Q(verb='projet_nouveau') | Q(verb='projet_message')| Q(verb='projet_modifier'))[:30]
-        offres      = Action.objects.filter(Q(verb='ajout_offre'))[:30]
 
-    #fiches = Action.objects.filter(Q(verb='fiche_nouveau')|Q(verb='fiche_ajouter_atelier')|Q(verb='fiche_modifier')|Q(verb='fiche_atelier_modifier')|Q(verb='fiche_message'))[:30]
-    fiches = Action.objects.filter(verb__startswith='fiche')[:30]
-    ateliers = Action.objects.filter(Q(verb__startswith='atelier')|Q(verb=''))[:30]
 
     nbNotif = 6
-    fiches = [art for i, art in enumerate(fiches) if i == 0 or not (art.description == fiches[i-1].description and art.actor == fiches[i-1].actor ) ][:nbNotif]
-    ateliers = [art for i, art in enumerate(ateliers) if i == 0 or not (art.description == ateliers[i-1].description and art.actor == ateliers[i-1].actor ) ][:nbNotif]
-
     conversations = (any_stream(request.user).filter(Q(verb='envoi_salon_prive',)) | Action.objects.filter(Q(verb='envoi_salon_prive',  description="a envoyé un message privé à " + request.user.username) ))[:nbNotif]
     articles = [art for i, art in enumerate(articles) if i == 0 or not (art.description == articles[i-1].description  and art.actor == articles[i-1].actor)][:nbNotif]
-    projets = [art for i, art in enumerate(projets) if i == 0 or not (art.description == projets[i-1].description and art.actor == projets[i-1].actor ) ][:nbNotif]
     salons = [art for i, art in enumerate(salons) if i == 0 or not (art.description == salons[i-1].description and art.actor == salons[i-1].actor ) ][:nbNotif]
-    offres = [art for i, art in enumerate(offres) if i == 0 or not (art.description == offres[i-1].description and art.actor == offres[i-1].actor ) ][:nbNotif]
 
 
-    return salons, articles, projets, offres, conversations, fiches, ateliers
+    return salons, articles, conversations
 
 @login_required
 def getNotificationsParDate(request):
@@ -401,18 +392,13 @@ def getNotificationsParDate(request):
         actions      = Action.objects.filter( \
             Q(verb='envoi_salon') | Q(verb='envoi_salon_permacat')|Q(verb='article_nouveau_permacat') |
             Q(verb='article_message_permacat')|Q(verb='article_nouveau') | Q(verb='article_message')|
-            Q(verb='article_modifier')| Q(verb='article_modifier_permacat')|Q(verb='projet_nouveau_permacat') |
-            Q(verb='projet_message_permacat')|Q(verb='projet_nouveau') | Q(verb='projet_message')| Q(verb='projet_modifier')|
-            Q(verb='projet_modifier_permacat')|Q(verb__startswith='fiche')|Q(verb__startswith='atelier')|
+            Q(verb='article_modifier')| Q(verb='article_modifier_permacat')|Q(verb='projet_nouveau_permacat')|
             Q(verb='envoi_salon_prive', description="a envoyé un message privé à " + request.user.username)
         ).order_by('-timestamp')
     else:
         actions      = Action.objects.filter(Q(verb='envoi_salon') | Q(verb='envoi_salon_permacat')|
                                              Q(verb='article_nouveau') | Q(verb='article_message')|
-                                             Q(verb='article_modifier')|Q(verb='projet_nouveau') |
-                                             Q(verb='projet_message')| Q(verb='projet_modifier')|
-                                             Q(verb='ajout_offre')|Q(verb__startswith='fiche')|
-                                             Q(verb__startswith='atelier')|
+                                             Q(verb='article_modifier')|
                                                 Q(verb='envoi_salon_prive', description="a envoyé un message privé à " + request.user.username)
         ).order_by('-timestamp')
 
@@ -437,8 +423,8 @@ def get_notifications_news(request):
 
 @login_required
 def notifications(request):
-    salons, articles, projets, offres, conversations, fiches, ateliers = getNotifications(request)
-    return render(request, 'notifications/notifications.html', {'salons': salons, 'articles': articles,'projets': projets, 'offres':offres, 'conversations':conversations, 'fiches':fiches, 'ateliers':ateliers})
+    salons, articles, conversations= getNotifications(request)
+    return render(request, 'notifications/notifications.html', {'salons': salons, 'articles': articles, 'conversations':conversations})
 
 @login_required
 def notifications_news(request):
