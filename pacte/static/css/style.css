@@ -1200,10 +1200,6 @@ caption {
   align-self: start;
 }
 
-#calendar .joursemaine{
-    display:none;
-}
-
 
 #calendar .event {
   flex: 0 0 auto;

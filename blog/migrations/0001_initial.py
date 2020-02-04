@@ -28,7 +28,7 @@ class Migration(migrations.Migration):
                 ('date_dernierMessage', models.DateTimeField(auto_now=True, verbose_name='Date du dernier message')),
                 ('dernierMessage', models.CharField(blank=True, default=None, max_length=100, null=True)),
                 ('estArchive', models.BooleanField(default=False, verbose_name="Archiver l'article")),
-                ('start_time', models.DateTimeField(blank=True, help_text='jj/mm/année', null=True, verbose_name="Date de début (optionnel, affichage dans l'agenda)")),
+                ('start_time', models.DateTimeField(blank=True, help_text='jj/mm/année', null=True, verbose_name="Date (optionnel, pour affichage dans l'agenda)")),
                 ('end_time', models.DateTimeField(blank=True, help_text='jj/mm/année', null=True, verbose_name="Date de fin (optionnel, pour affichage dans l'agenda)")),
             ],
             options={
