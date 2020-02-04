@@ -44,6 +44,8 @@ class Profil(AbstractUser):
     site_web = models.URLField(null=True, blank=True)
     code_postal = models.CharField(max_length=5, blank=True, null=True, default="66000")
     commune = models.CharField(max_length=50, blank=True, null=True, default="Perpignan")
+    phone_regex = RegexValidator(regex=r'^\d{9,10}$', message="Le numero de telephone doit contenir 10 chiffres")
+    telephone = models.CharField(validators=[phone_regex,], max_length=10, blank=True)  # validators should be a list
     description = models.TextField(null=True, blank=True)
 
     date_registration = models.DateTimeField(verbose_name="Date de création", editable=False)
@@ -113,9 +115,13 @@ class Profil(AbstractUser):
 
 @receiver(post_save, sender=Profil)
 def create_user_profile(sender, instance, created, **kwargs):
-    for suiv in ['produits', 'articles', 'projets']:
-        suivi, created = Suivis.objects.get_or_create(nom_suivi=suiv)
-        actions.follow(instance, suivi, actor_only=True)
+    if created:
+        for suiv in ['articles', ]:
+            suivi, created = Suivis.objects.get_or_create(nom_suivi=suiv)
+            actions.follow(instance, suivi, actor_only=True)
+
+            action.send(instance, verb='inscription', url=instance.get_absolute_url(),
+                        description="s'est inscrit sur le site")
 
 
 

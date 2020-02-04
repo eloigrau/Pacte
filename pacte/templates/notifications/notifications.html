@@ -49,6 +49,18 @@
   </div>
 
 
+  <div class="card carte-notif notif2  d-md-flex textcenter">
+    <div class="card-header textcenter" style="background-color:#cacaaa" >
+     Inscriptions
+    </div>
+    <ul class="list-group list-group-flush " >
+  {% for action in inscriptions|slice:":20" %}
+      {% include "notifications/notifications_template.html" with action=action %}
+  {% endfor %}
+    </ul>
+  </div>
+
+
 <div class="card carte-notif notif2  d-md-flex textcenter">
   <div class="card-header textcenter" style="background-color:#b5ca8d" >
     Mes actions

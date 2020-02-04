@@ -382,9 +382,9 @@ def getNotifications(request):
     conversations = (any_stream(request.user).filter(Q(verb='envoi_salon_prive',)) | Action.objects.filter(Q(verb='envoi_salon_prive',  description="a envoyé un message privé à " + request.user.username) ))[:nbNotif]
     articles = [art for i, art in enumerate(articles) if i == 0 or not (art.description == articles[i-1].description  and art.actor == articles[i-1].actor)][:nbNotif]
     salons = [art for i, art in enumerate(salons) if i == 0 or not (art.description == salons[i-1].description and art.actor == salons[i-1].actor ) ][:nbNotif]
+    inscription = Action.objects.filter(Q(verb='inscription') )
 
-
-    return salons, articles, conversations
+    return salons, articles, conversations, inscription
 
 @login_required
 def getNotificationsParDate(request):
@@ -393,12 +393,12 @@ def getNotificationsParDate(request):
             Q(verb='envoi_salon') | Q(verb='envoi_salon_permacat')|Q(verb='article_nouveau_permacat') |
             Q(verb='article_message_permacat')|Q(verb='article_nouveau') | Q(verb='article_message')|
             Q(verb='article_modifier')| Q(verb='article_modifier_permacat')|Q(verb='projet_nouveau_permacat')|
-            Q(verb='envoi_salon_prive', description="a envoyé un message privé à " + request.user.username)
+            Q(verb='envoi_salon_prive', description="a envoyé un message privé à " + request.user.username)   |Q(verb='inscription')
         ).order_by('-timestamp')
     else:
         actions      = Action.objects.filter(Q(verb='envoi_salon') | Q(verb='envoi_salon_permacat')|
                                              Q(verb='article_nouveau') | Q(verb='article_message')|
-                                             Q(verb='article_modifier')|
+                                             Q(verb='article_modifier') |Q(verb='inscription') |
                                                 Q(verb='envoi_salon_prive', description="a envoyé un message privé à " + request.user.username)
         ).order_by('-timestamp')
 
@@ -423,8 +423,8 @@ def get_notifications_news(request):
 
 @login_required
 def notifications(request):
-    salons, articles, conversations= getNotifications(request)
-    return render(request, 'notifications/notifications.html', {'salons': salons, 'articles': articles, 'conversations':conversations})
+    salons, articles, conversations, inscriptions = getNotifications(request)
+    return render(request, 'notifications/notifications.html', {'salons': salons, 'articles': articles, 'inscriptions':inscriptions, 'conversations':conversations})
 
 @login_required
 def notifications_news(request):
