@@ -115,7 +115,7 @@ class ArticleChangeForm(forms.ModelForm):
         fields = ['categorie', 'titre', 'contenu', 'start_time', 'estModifiable', 'estArchive']
         widgets = {
             'contenu': SummernoteWidget(),
-              'start_time': forms.DateInput(attrs={'type':"date", }),
+              'start_time': forms.DateInput(attrs={'type':"datepicker", }),
         }
 
 

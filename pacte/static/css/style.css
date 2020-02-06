@@ -709,11 +709,11 @@ ul.errorlist{
 }
 
 .panell{
-    padding:2px;
+    padding:3px;
 }
 
 .article{
- padding:2px;
+ padding:10px 2px 10px 2px;
 }
 
 .soustitre{
