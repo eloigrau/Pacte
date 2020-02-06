@@ -72,10 +72,9 @@ class Article(models.Model):
 
     @property
     def get_couleur(self):
-        try:
+        if self.categorie in Choix.couleurs_annonces:
             return Choix.couleurs_annonces[self.categorie]
-        except:
-            return Choix.couleurs_annonces["Autre"]
+        return Choix.couleurs_annonces["4"]
 
 
 @receiver(post_save, sender=Article)
