@@ -10,7 +10,7 @@ from django.db.models.signals import post_save
 from actstream.models import followers
 
 class Choix():
-    type_annonce = ('0','Annonce'), ('1','Administratif'), ('2', 'Mesure du Pacte'), ('3', 'Echanges avec les candidats'), ('4','Réunion publique'), ('5','Covoiturage'), ('6','Diverss'),
+    type_annonce = ('0','Annonce'), ('1','Administratif'), ('2', 'Mesure du Pacte'), ('3', 'Echanges avec les candidats'), ('4','Réunion'), ('5','Covoiturage'), ('6','Diverss'),
     couleurs_annonces = {
        # 'Annonce':"#e0f7de", 'Administratif':"#dcc0de", 'Agenda':"#d4d1de", 'Entraide':"#cebacf",
        # 'Chantier':"#d1ecdc",'Jardinage':"#fcf6bd", 'Recette':"#d0f4de", 'Bricolage':"#fff2a0",
