@@ -10,7 +10,7 @@ from django.db.models.signals import post_save
 from actstream.models import followers
 
 class Choix():
-    type_annonce = ('0','Annonce'), ('1','Administratif'), ('2', 'Mesure du Pacte'), ('3', 'Echanges avec les candidats'), ('4','Réunion publique'), ('5','Covoiturage'), ('6','Autre'),
+    type_annonce = ('0','Annonce'), ('1','Administratif'), ('2', 'Mesure du Pacte'), ('3', 'Echanges avec les candidats'), ('4','Réunion publique'), ('5','Covoiturage'), ('6','Diverss'),
     couleurs_annonces = {
        # 'Annonce':"#e0f7de", 'Administratif':"#dcc0de", 'Agenda':"#d4d1de", 'Entraide':"#cebacf",
        # 'Chantier':"#d1ecdc",'Jardinage':"#fcf6bd", 'Recette':"#d0f4de", 'Bricolage':"#fff2a0",
@@ -33,7 +33,7 @@ class Choix():
         try:
             return Choix.couleurs_annonces[categorie]
         except:
-            return Choix.couleurs_annonces["Autre"]
+            return Choix.couleurs_annonces["6"]
 
 class Article(models.Model):
     categorie = models.CharField(max_length=30,         
@@ -74,7 +74,7 @@ class Article(models.Model):
     def get_couleur(self):
         if self.categorie in Choix.couleurs_annonces:
             return Choix.couleurs_annonces[self.categorie]
-        return Choix.couleurs_annonces["4"]
+        return Choix.couleurs_annonces["6"]
 
 
 @receiver(post_save, sender=Article)
