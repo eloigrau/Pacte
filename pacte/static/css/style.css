@@ -768,7 +768,7 @@ ul.errorlist{
   display: none;
 }
 .carte-notif{
-   width:20rem;
+   width:18rem;
 }
 
 }
@@ -792,11 +792,11 @@ ul.errorlist{
     background-color:#e6e6e6 ;
     }
 .carte-notif{
-   width:30rem;
+   width:15rem;
     margin: 20px;
 }
 .carte-notif-news{
-   min-width:30rem;
+   min-width:18rem;
     margin: 20px;
 }
 .badge_projet{
@@ -1238,6 +1238,9 @@ caption {
 	color: #666;
 }
 
+#calendar .joursemaine{
+    display:none;
+}
 .moiscal{
   font-size: 130%;
   font-weight: bold;
