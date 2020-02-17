@@ -124,3 +124,23 @@ def on_save_article(instance, **kwargs):
     except:
         pass
 
+
+
+class Evenement(models.Model):
+    article = models.ForeignKey(Article, on_delete=models.CASCADE, help_text="L'evenement doit etre associé à un article existant (sinon créez un article avec une date)" )
+    start_time = models.DateTimeField(verbose_name="Date", null=False,blank=False, help_text="jj/mm/année" , default=timezone.now)
+    end_time = models.DateTimeField(verbose_name="Date de fin (optionnel pour un evenement sur plusieurs jours)",  null=True,blank=True, help_text="jj/mm/année")
+
+    class Meta:
+        unique_together = ('article', 'start_time',)
+
+    def get_absolute_url(self):
+        return self.article.get_absolute_url()
+
+    @property
+    def titre(self):
+        return self.article.titre
+
+    @property
+    def estPublic(self):
+        return self.article.estPublic

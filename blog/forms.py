@@ -1,5 +1,5 @@
 from django import forms
-from .models import Article, Commentaire
+from .models import Article, Commentaire, Evenement
 from django.utils.text import slugify
 import itertools
 #from django.utils.formats import localize
@@ -155,3 +155,35 @@ class CommentaireArticleChangeForm(forms.ModelForm):
     class Meta:
      model = Commentaire
      exclude = ['article', 'auteur_comm']
+
+
+
+
+class EvenementForm(forms.ModelForm):
+    article = forms.ModelChoiceField(queryset=Article.objects.all() ) #forms.ChoiceField(choices=Article.objects.all())
+
+    class Meta:
+        model = Evenement
+        fields = ['start_time', 'article', 'end_time', ]
+        widgets = {
+            'start_time': forms.DateInput(attrs={'type': 'date'}),
+            'end_time': forms.DateInput(attrs={'type': 'date'}),
+        }
+
+
+class EvenementArticleForm(forms.ModelForm):
+    class Meta:
+        model = Evenement
+        fields = ['start_time', 'end_time', ]
+        widgets = {
+            'start_time': forms.DateInput(attrs={'type': 'date'}),
+            'end_time': forms.DateInput(attrs={'type': 'date'}),
+        }
+
+    def save(self, id_article):
+        instance = super(EvenementArticleForm, self).save(commit=False)
+        article = Article.objects.get(id=id_article)
+        instance.article = article
+        if not Evenement.objects.filter(start_time=instance.start_time, article=article):
+            instance.save()
+        return instance

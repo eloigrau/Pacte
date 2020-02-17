@@ -8,7 +8,7 @@ from django.contrib.auth.admin import UserAdmin
 from .forms import ProfilCreationForm, ProducteurChangeForm_admin
 from .models import Profil
 from django.utils.translation import gettext_lazy as _
-from blog.models import Article, Commentaire
+from blog.models import Article, Commentaire, Evenement
 
 
 class CustomUserAdmin(UserAdmin):
@@ -47,6 +47,7 @@ admin.site.register(Profil, CustomUserAdmin)
 
 admin.site.register(Article)
 admin.site.register(Commentaire),
+admin.site.register(Evenement)
 admin.site.register(Message)
 admin.site.register(MessageGeneral)
 admin.site.register(InscriptionNewsletter)

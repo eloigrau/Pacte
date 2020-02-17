@@ -38,5 +38,7 @@ urlpatterns = [
     url(r'^modifierCommentaireArticle/(?P<id>[0-9]+)$',
         login_required(views.ModifierCommentaireArticle.as_view(), login_url='/auth/login/'),
         name='modifierCommentaireArticle'),
+    url(r'ajouterEvenement/$', views.ajouterEvenement, name='ajouterEvenement'),
+    url(r'ajouterEvenementArticle/(?P<id>[0-9]+)$', views.ajouterEvenementArticle, name='ajouterEvenementArticle'),
 
 ]
