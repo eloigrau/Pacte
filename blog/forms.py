@@ -68,11 +68,11 @@ class SummernoteWidgetWithCustomToolbar(SummernoteWidget):
 
 class ArticleForm(forms.ModelForm):
    # contenu = TinyMCE(attrs={'cols': 80, 'rows': 20})
-     #estPublic = forms.ChoiceField(choices=((1, "Article public"), (0, "Article PacteACVI")), label='', required=True, )
+    estPublic = forms.ChoiceField(choices=((1, "Article public"), (0, "Article réservé aux membres du collectif")), label='', required=True, )
 
     class Meta:
         model = Article
-        fields = ['categorie', 'titre', 'contenu', 'start_time', 'estModifiable']
+        fields = ['categorie', 'titre', 'contenu', 'start_time', 'estModifiable', 'estPublic']
         widgets = {
             'contenu': SummernoteWidget(),
               'start_time': forms.DateInput(attrs={'type': 'date'}),

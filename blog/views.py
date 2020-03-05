@@ -74,7 +74,6 @@ class SupprimerArticle(DeleteView):
 
 
 
-@login_required
 def lireArticle(request, slug):
     article = get_object_or_404(Article, slug=slug)
     if not article.estPublic and not request.user.is_membre_collectif:

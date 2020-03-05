@@ -89,11 +89,9 @@
 <div class="row"  id="sec03">
 <div class="col-sm-6 textleft" >
 
-            {% comment %}
             <span class="badge {% if article.estPublic%}badge-warning{%else%} badge-success {%endif%}">
-                Article {%if article.estPublic%} public {%else%}  permacat  {%endif%}
+                Article {%if article.estPublic%} Public {%else%}  Collectif ACVI  {%endif%}
             </span>
-            {% endcomment %}
             {% if article.estArchive%}
             <span class="badge badge-secondary">
                 archivé

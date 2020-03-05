@@ -10,7 +10,7 @@ from django.db.models.signals import post_save
 from actstream.models import followers
 
 class Choix():
-    type_annonce = ('0','Annonce'), ('1','Administratif'), ('2', 'Mesure / action'), ('3', 'Echanges avec les candidats'), ('4','Réunion'), ('5','Covoiturage'), ('6','Divers'),
+    type_annonce = ('0','Annonce'), ('1','Administratif'), ('2', 'Mesure / action'), ('3', 'Echanges avec les candidats'), ('4','Réunion'), ('5','Idée'), ('6','Listes signataires'), ('7','Divers'),
     couleurs_annonces = {
        # 'Annonce':"#e0f7de", 'Administratif':"#dcc0de", 'Agenda':"#d4d1de", 'Entraide':"#cebacf",
        # 'Chantier':"#d1ecdc",'Jardinage':"#fcf6bd", 'Recette':"#d0f4de", 'Bricolage':"#fff2a0",
@@ -45,7 +45,7 @@ class Article(models.Model):
     contenu = models.TextField(null=True)
     date_creation = models.DateTimeField(verbose_name="Date de parution", default=timezone.now)
     date_modification = models.DateTimeField(verbose_name="Date de modification", default=timezone.now)
-    estPublic = models.BooleanField(default=False, verbose_name='Public ou réservé aux membres permacat')
+    estPublic = models.BooleanField(default=False, verbose_name='Public ou réservé aux membres du collectif ACVI')
     estModifiable = models.BooleanField(default=False, verbose_name="Modifiable par n'importe qui")
 
     date_dernierMessage = models.DateTimeField(verbose_name="Date du dernier message", auto_now=True)

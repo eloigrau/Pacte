@@ -22,7 +22,7 @@ app_name = 'blog'
 
 urlpatterns = [
     url(r'^accueil/$', views.accueil, name="forum"),
-    url(r'^articles/$', login_required(views.ListeArticles.as_view(), login_url='/auth/login/'), name="index"),
+    url(r'^articles/$', views.ListeArticles.as_view(), name="index"),
     # url(r'^newPost/', views.ajouterArticle, name='ajouterArticle'),
     # url(r'^article/(?P<slug>.+)$', views.lire, name='lire'),
 
