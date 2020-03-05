@@ -60,7 +60,7 @@ class ProducteurChangeForm_admin(UserChangeForm):
     """
     email = forms.EmailField(label="Email")
     username = forms.CharField(label="Pseudonyme")
-    description = forms.CharField(label="Description", initial="Une description de vous même", widget=forms.Textarea)
+    description = forms.CharField(label="Description", initial="Une description de vous même", widget=forms.Textarea, required=False)
     inscrit_newsletter = forms.BooleanField(required=False)
     accepter_annuaire = forms.BooleanField(required=False)
 
@@ -68,7 +68,7 @@ class ProducteurChangeForm_admin(UserChangeForm):
 
     class Meta:
         model = Profil
-        fields = ['username', 'email', 'description', 'code_postal', 'commune',  'telephone', 'inscrit_newsletter', 'accepter_annuaire',]
+        fields = ['username', 'email', 'description', 'code_postal', 'commune',  'telephone', 'inscrit_newsletter', 'accepter_annuaire', 'statut_adhesion']
 
     def __init__(self, *args, **kwargs):
         super(ProducteurChangeForm_admin, self).__init__(*args, **kwargs)
