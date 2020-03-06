@@ -34,7 +34,7 @@ def ajouterArticle(request):
         suffix = "" if article.estPublic else "_permacat"
         action.send(request.user, verb='article_nouveau'+suffix, action_object=article, url=url,
                     description="a ajouté un article : '%s'" % article.titre)
-        return 6E74CF(article.get_absolute_url())
+        return redirect(article.get_absolute_url())
         #return render(request, 'blog/lireArticle.html', {'article': article})
     return render(request, 'blog/ajouterPost.html', { "form": form, })
 
