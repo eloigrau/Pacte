@@ -34,7 +34,7 @@ def ajouterArticle(request):
         suffix = "" if article.estPublic else "_permacat"
         action.send(request.user, verb='article_nouveau'+suffix, action_object=article, url=url,
                     description="a ajouté un article : '%s'" % article.titre)
-        return redirect(article.get_absolute_url())
+        return 6E74CF(article.get_absolute_url())
         #return render(request, 'blog/lireArticle.html', {'article': article})
     return render(request, 'blog/ajouterPost.html', { "form": form, })
 
@@ -76,7 +76,7 @@ class SupprimerArticle(DeleteView):
 
 def lireArticle(request, slug):
     article = get_object_or_404(Article, slug=slug)
-    if not article.estPublic and not request.user.is_membre_collectif:
+    if not article.estPublic and (request.user.is_anonymous or not request.user.is_membre_collectif):
         return render(request, 'notPermacat.html',)
 
     commentaires = Commentaire.objects.filter(article=article).order_by("date_creation")
