@@ -21,6 +21,11 @@ background-image:linear-gradient(160deg, #783D66, white);
 .btn-group{
     white-space: normal;
 }
+.hh4{
+  font-size: 1.8rem;
+  font-weight:bold;
+font-family : Montserrat, serif;
+}
 .rowcentre {
     display: flex;
     align-items: center;
