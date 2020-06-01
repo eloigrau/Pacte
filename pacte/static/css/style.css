@@ -3,9 +3,28 @@ body {
 background-image:linear-gradient(160deg, #783D66, white);
     margin: auto;
     width: 99%;
-    font-family: Georgia, serif;
+    font-family: 'Work Sans', sans-serif;
+
+}
+body {
+ font-family: 'Chivo', sans-serif;
+ font-weight: 400;
 }
 
+h1, h2, h3, h4, h5, h6 {
+ font-family: 'Playfair Display', serif;
+ font-weight: 700;
+ font-style: italic;
+}
+
+.hh4{
+}
+/*
+h1, h2, h3, h4, h5, h6 {
+ font-family: 'Montserrat', sans-serif;
+ font-weight: 900;
+}
+*/
 .clearfix:after {
   clear: both;
   content: " ";
@@ -21,11 +40,7 @@ background-image:linear-gradient(160deg, #783D66, white);
 .btn-group{
     white-space: normal;
 }
-.hh4{
-  font-size: 1.8rem;
-  font-weight:bold;
-font-family : Montserrat, serif;
-}
+
 .rowcentre {
     display: flex;
     align-items: center;
