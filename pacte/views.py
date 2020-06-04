@@ -154,7 +154,7 @@ def profil_contact(request, user_id):
     if request.method == 'POST':
         form = ContactForm(request.POST or None, )
         if form.is_valid():
-            sujet = "[permacat] "+ request.user.username + "(" + request.user.email+ ") vous a écrit: "+ form.cleaned_data['sujet']
+            sujet = "[pacteacvi] "+ request.user.username + "(" + request.user.email+ ") vous a écrit: "+ form.cleaned_data['sujet']
             message_txt = form.cleaned_data['msg']
             message_html = form.cleaned_data['msg']
             recepteurs = [recepteur.email,]

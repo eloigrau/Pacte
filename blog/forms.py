@@ -108,7 +108,7 @@ class ArticleForm(forms.ModelForm):
 
 
 class ArticleChangeForm(forms.ModelForm):
-    estPublic = forms.ChoiceField(choices=((1, "Article public"), (0, "Article réserve aux membres du collectif")), label='', required=True)
+    estPublic = forms.ChoiceField(choices=((1, "Article public"), (0, "Article réservé aux membres du collectif")), label='', required=True)
 
     class Meta:
         model = Article
