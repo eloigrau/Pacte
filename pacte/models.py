@@ -119,8 +119,8 @@ def create_user_profile(sender, instance, created, **kwargs):
             suivi, created = Suivis.objects.get_or_create(nom_suivi=suiv)
             actions.follow(instance, suivi, actor_only=True)
 
-            action.send(instance, verb='inscription', url=instance.get_absolute_url(),
-                        description="s'est inscrit sur le site")
+        action.send(instance, verb='inscription', url=instance.get_absolute_url(),
+                    description="s'est inscrit sur le site")
 
 
 
