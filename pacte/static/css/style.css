@@ -591,9 +591,23 @@ section.p3 {
 /*background-color: grey;*/
 border-color: #333;
 box-shadow: 0 10px 10px 0px grey;
- padding:25px;
     border-radius: 0.3em;
     border:1.5px grey solid;
+    padding: 25px;
+
+}
+article-carte{
+border-color: #333;
+box-shadow: 0 10px 10px 0px grey;
+    border-radius: 0.3em;
+    border:1.5px grey solid;
+padding: 5px 80px;
+}
+.article-card-header {
+    padding: 0;
+    margin-bottom: 0;
+    background-color: rgba(0,0,0,.03);
+    border-bottom: 1px solid rgba(0,0,0,.125);
 }
 
 .article_recherche{

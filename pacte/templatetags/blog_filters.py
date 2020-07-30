@@ -24,8 +24,14 @@ def url(value):
 
 @register.filter(is_safe=True)
 def ordreTri(value):
-    newvalue = value.replace('_', ' ').replace('-', '')
-    return newvalue
+    if value == '-date_creation':
+        return "Date de création"
+    elif value == '-date_modification':
+        return "Date de la dernière modification"
+    elif value == 'titre':
+        return "Titre"
+    else :
+        return value
 
 @register.filter(is_safe=True)
 def sansOrdreTri(value):

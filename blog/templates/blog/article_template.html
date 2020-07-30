@@ -1,10 +1,12 @@
 
 {% load activity_tags %}
 {% load fontawesome %}
-<div class="card article textcenter" style="background-color:{{article.get_couleur}}">
+<div class="card article_carte textcenter" style="background-color:{{article.get_couleur}}">
   <a href="{% url 'blog:lireArticle' slug=article.slug %}">
 
+      {% if not request.GET.categorie  %}
       <div class="article-card-header smallcaps_h ">{{ article.get_categorie_display }}</div>
+      {%endif%}
   <div class="card-body">
     <h4>{{ article.titre }}        </h4>
 

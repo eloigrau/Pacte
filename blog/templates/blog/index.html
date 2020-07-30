@@ -59,7 +59,11 @@
                       <a class="nav-link dropdown-toggle" href="#" id="menuOrdreTri" data-toggle="dropdown">
 
                 <button type="button"  class="btn btn-light">
+                    {% if request.GET.ordreTri %}
+                    Triés par : {{ request.GET.ordreTri|ordreTri}}
+                    {%else%}
                    Trier par...
+                    {%endif%}
            </button>
                       </a>
                 <div class="dropdown-menu"  aria-labelledby="menuOrdreTri"  id="idOrdreTri">
