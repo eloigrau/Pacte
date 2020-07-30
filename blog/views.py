@@ -139,7 +139,7 @@ class ListeArticles(ListView):
         if "ordreTri" in params:
             qs = qs.order_by(params['ordreTri'])
         else:
-            qs = qs.order_by('-date_dernierMessage', '-date_creation', 'categorie', 'territoire', 'auteur')
+            qs = qs.order_by('-date_modification', '-date_creation', 'categorie', 'territoire')
 
         return qs
 
