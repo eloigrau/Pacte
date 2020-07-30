@@ -94,7 +94,7 @@ class Article(models.Model):
 
     @property
     def get_territoire_lieu(self):
-        if self.territoire != '0':
+        if self.territoire != '0' and self.territoire != '--':
             if self.territoire == '1' or self.territoire == '3' :
                 return "à la " + str(self.get_territoire_display())
             elif self.territoire == '2' :
