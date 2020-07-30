@@ -18,11 +18,7 @@ class Choix():
 
     type_annonce = ('0','Annonce'), ('1','Administratif'), ('2', 'Mesure / action'), ('3', 'Echanges avec les candidats'), ('4','Réunion'), ('5','Idée'), \
                 ('6','Listes signataires'), ('7','Divers'), ('8','Suivi'),
-    couleurs_annonces = {
-       # 'Annonce':"#e0f7de", 'Administratif':"#dcc0de", 'Agenda':"#d4d1de", 'Entraide':"#cebacf",
-       # 'Chantier':"#d1ecdc",'Jardinage':"#fcf6bd", 'Recette':"#d0f4de", 'Bricolage':"#fff2a0",
-       # 'Culture':"#ffc4c8", 'Bon_plan':"#bccacf", 'Point':"#87bfae", 'Autre':"#bcb4b4"
-
+    couleurs_annonces_old = {
         '0':"#d1ecdc",
         '1':"#D4CF7D",
         '2':"#E0E3AB",
@@ -35,12 +31,30 @@ class Choix():
         '7':"#349D9B",
         '10':"#d0f4de",
     }
+    couleurs_annonces = {
+    '0': "#d1ecdc",
+    '1': "#D4CF7D",
+    '2': "#E0E3AB",
+    '3': "#AFE4C1",
+    '4': "#fff2a0",
+    '5': "#B2AFE4",
+    '6': "#cebacf",
+    '7': "#caf9b7",
+    '8': "#ced2d3",
+    '9': "#349D9B",
+    '10': "#bccacf",
+    '11': "#87bfae",
+    '12': "#d0f4de",
+    '13': "#fffdcc",
+    '14': "#daffb3",
+    '15': '#ddd0a8',
+    }
 
     def get_couleur(categorie):
         try:
             return Choix.couleurs_annonces[categorie]
         except:
-            return Choix.couleurs_annonces["6"]
+            return Choix.couleurs_annonces["10"]
 
 class Article(models.Model):
     categorie = models.CharField(max_length=30,         
@@ -84,7 +98,7 @@ class Article(models.Model):
     def get_couleur(self):
         if self.categorie in Choix.couleurs_annonces:
             return Choix.couleurs_annonces[self.categorie]
-        return Choix.couleurs_annonces["6"]
+        return Choix.couleurs_annonces["10"]
 
     @property
     def get_territoire(self):
