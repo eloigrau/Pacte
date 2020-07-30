@@ -13,7 +13,7 @@ class Migration(migrations.Migration):
         migrations.AddField(
             model_name='article',
             name='territoire',
-            field=models.CharField(choices=[('0', 'Argelès-sur-Mer,'), ('1', 'Bages'), ('2', 'Banyuls-sur-Mer'), ('3', 'Cerbère'), ('4', 'Collioure'), ('5', 'Elne'), ('6', 'Laroque-des-Albères'), ('7', 'Montesquieu-des-Albères'), ('8', 'Ortaffa'), ('9', 'Palau-del-Vidre'), ('10', 'Ortaffa'), ('11', 'Port-Vendres'), ('12', 'Port-Vendres'), ('13', 'Saint-André'), ('14', 'Saint-Genis-des-Fontaines'), ('15', 'Sorède'), ('16', 'Villelongue-dels-Monts'), ('17', 'Communauté de Communes'), ('18', 'Département'), ('18', 'Pays')], default='-----', max_length=2, verbose_name='Territoire'),
+            field=models.CharField(choices=[('0', 'Argelès-sur-Mer,'), ('1', 'Bages'), ('2', 'Banyuls-sur-Mer'), ('3', 'Cerbère'), ('4', 'Collioure'), ('5', 'Elne'), ('6', 'Laroque-des-Albères'), ('7', 'Montesquieu-des-Albères'), ('8', 'Ortaffa'), ('9', 'Palau-del-Vidre'), ('10', 'Ortaffa'), ('11', 'Port-Vendres'), ('12', 'Port-Vendres'), ('13', 'Saint-André'), ('14', 'Saint-Genis-des-Fontaines'), ('15', 'Sorède'), ('16', 'Villelongue-dels-Monts'), ('17', 'Communauté de Communes'), ('18', 'Département'), ('19', 'Pays')], default='--', max_length=2, verbose_name='Territoire'),
         ),
         migrations.AlterField(
             model_name='article',

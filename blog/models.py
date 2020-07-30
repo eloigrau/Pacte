@@ -46,7 +46,7 @@ class Article(models.Model):
     categorie = models.CharField(max_length=30,         
         choices=(Choix.type_annonce),
         default='Annonce', verbose_name="categorie")
-    territoire = models.CharField(max_length=30,
+    territoire = models.CharField(max_length=2,
         choices=(Choix.type_territoire),
         default='--', verbose_name="Territoire")
     titre = models.CharField(max_length=100,)
