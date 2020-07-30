@@ -120,7 +120,7 @@ def create_user_profile(sender, instance, created, **kwargs):
             actions.follow(instance, suivi, actor_only=True)
 
         action.send(instance, verb='inscription', url=instance.get_absolute_url(),
-                    description="s'est inscrit sur le site")
+                    description="s'est inscrit.e sur le site")
 
 
 

@@ -128,6 +128,8 @@ class ListeArticles(ListView):
             qs = qs.filter(auteur__username=params['auteur'])
         if "categorie" in params:
             qs = qs.filter(categorie=params['categorie'])
+        if "territoire" in params:
+            qs = qs.filter(territoire=params['territoire'])
         if "permacat" in params  and self.request.user.is_membre_collectif:
             if params['permacat'] == "True":
                 qs = qs.filter(estPublic=False)
@@ -137,7 +139,7 @@ class ListeArticles(ListView):
         if "ordreTri" in params:
             qs = qs.order_by(params['ordreTri'])
         else:
-            qs = qs.order_by('-date_dernierMessage', '-date_creation', 'categorie', 'auteur')
+            qs = qs.order_by('-date_dernierMessage', '-date_creation', 'categorie', 'territoire', 'auteur')
 
         return qs
 
@@ -149,6 +151,10 @@ class ListeArticles(ListView):
         context['auteur_list'] = Article.objects.order_by('auteur').values_list('auteur__username', flat=True).distinct()
         cat= Article.objects.order_by('categorie').values_list('categorie', flat=True).distinct()
         context['categorie_list'] = [(x[0], x[1], Choix.get_couleur(x[0])) for x in Choix.type_annonce if x[0] in cat]
+
+        terr = Article.objects.order_by('territoire').values_list('territoire', flat=True).distinct()
+        context['territoire_list'] = [(x[0], x[1]) for x in Choix.type_territoire if x[0] in terr and x[0] != "0"]
+
         context['typeFiltre'] = "aucun"
         context['suivis'], created = Suivis.objects.get_or_create(nom_suivi="articles")
 
@@ -162,6 +168,12 @@ class ListeArticles(ListView):
                 context['categorie_courante'] = [x[1] for x in Choix.type_annonce if x[0] == self.request.GET['categorie']][0]
             except:
                 context['categorie_courante'] = ""
+        if 'territoire' in self.request.GET:
+            context['typeFiltre'] = "territoire"
+            try:
+                context['territoire_courant'] = [x[1] for x in Choix.type_territoire if x[0] == self.request.GET['territoire']][0]
+            except:
+                context['territoire_courant'] = ""
         if 'permacat' in self.request.GET:
             context['typeFiltre'] = "permacat"
         if 'archives' in self.request.GET:

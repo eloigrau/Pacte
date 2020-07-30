@@ -10,6 +10,12 @@ from django.db.models.signals import post_save
 from actstream.models import followers
 
 class Choix():
+    type_territoire = ('0', '-----------'), ('1','Communauté de Communes ACVI'), ('2','Département'),  ('3','Région'), ('4','Argelès de la marenda'), ('5','Bages'), \
+                      ('6', 'Banyuls de la Marenda'), ('7', 'Cervera de la Marenda'), ('8','Cotlliure'), ('9','Elna'), \
+                ('10',"La Roca d'Albera"), ('11',"Montesquiu d'Albera"), ('12','Ortafà'),('13','Palau-del-Vidre'),\
+                      ('15','Port-Vendres'),('16','Sant-Andreu'), ('17','Sant Genís de Fontanes'),\
+                      ('18','Sureda'), ('19','Vilallonga dels Monts')
+
     type_annonce = ('0','Annonce'), ('1','Administratif'), ('2', 'Mesure / action'), ('3', 'Echanges avec les candidats'), ('4','Réunion'), ('5','Idée'), \
                 ('6','Listes signataires'), ('7','Divers'), ('8','Suivi'),
     couleurs_annonces = {
@@ -23,11 +29,11 @@ class Choix():
         '3':"#AFE4C1",
         '4':"#fff2a0",
         '5':"#B2AFE4",
-        '6':"#d0f4de",
-        '7':"#b3b6e6",
+        '6':"#bccacf",
+        '9':"#b3b6e6",
         '8':"#3EA7BB",
-        '9':"#349D9B",
-        '10':"#bccacf",
+        '7':"#349D9B",
+        '10':"#d0f4de",
     }
 
     def get_couleur(categorie):
@@ -40,6 +46,9 @@ class Article(models.Model):
     categorie = models.CharField(max_length=30,         
         choices=(Choix.type_annonce),
         default='Annonce', verbose_name="categorie")
+    territoire = models.CharField(max_length=2,
+        choices=(Choix.type_territoire),
+        default='--', verbose_name="Territoire")
     titre = models.CharField(max_length=100,)
     auteur = models.ForeignKey(Profil, on_delete=models.CASCADE)
     slug = models.SlugField(max_length=100)
@@ -76,6 +85,23 @@ class Article(models.Model):
         if self.categorie in Choix.couleurs_annonces:
             return Choix.couleurs_annonces[self.categorie]
         return Choix.couleurs_annonces["6"]
+
+    @property
+    def get_territoire(self):
+        if self.territoire != '0':
+            return self.get_territoire_display #[x[1] for x in Choix.type_territoire if x[0] == self.territoire][0]
+        return ""
+
+    @property
+    def get_territoire_lieu(self):
+        if self.territoire != '0':
+            if self.territoire == '1' or self.territoire == '3' :
+                return "à la " + str(self.get_territoire_display())
+            elif self.territoire == '2' :
+                return "au " + str(self.get_territoire_display())
+            else :
+                return "à " + str(self.get_territoire_display())
+        return ""
 
 
 @receiver(post_save, sender=Article)

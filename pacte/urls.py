@@ -65,7 +65,7 @@ urlpatterns = [
     url(r'^cooperateurs/carte/$', login_required(views.carte), name='carte', ),
 
     url(r'^conversations/(?P<destinataire>[\w.@+-]+)$', login_required(views.lireConversation), name='agora_conversation'),
-    url(r'^conversations/(?P<destinataire1>[\w.@+-]+)/(?P<destinataire2>\w.@+-]+)$', login_required(
+    url(r'^conversations/(?P<destinataire1>[\w.@+-]+)/(?P<destinataire2>[\w.@+-]+)$', login_required(
         views.lireConversation_2noms), name='lireConversation_2noms'),
     url(r'^conversations/$', login_required(views.ListeConversations.as_view()), name='conversations'),
     url(r'^conversations/chercher/$', login_required(views.chercherConversation), name='chercher_conversation'),
