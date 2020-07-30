@@ -37,15 +37,11 @@ class MyModelAdmin(admin.ModelAdmin):
         return u", ".join(o.name for o in obj.tags.all())
 
 class ArticleAdmin(admin.ModelAdmin):
-    list_display = ('titre', 'estPublic', 'estArchive')
-class ProjetAdmin(admin.ModelAdmin):
-    list_display = ('titre', 'estPublic', 'estArchive')
-class ProduitAdmin(admin.ModelAdmin):
-    list_display = ('nom_produit', 'categorie', 'estUneOffre', 'estPublique', 'unite_prix')
+    list_display = ('titre', 'estPublic', 'estArchive', 'territoire')
 
 admin.site.register(Profil, CustomUserAdmin)
 
-admin.site.register(Article)
+admin.site.register(Article, ArticleAdmin)
 admin.site.register(Commentaire),
 admin.site.register(Evenement)
 admin.site.register(Message)
