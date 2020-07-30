@@ -37,7 +37,7 @@
             <a class=" dropdown-item " style="background:{{cat_coul}};" href="?categorie={{categorie_id}}"><span>{{cat_nom}}</span></a>
             {% endfor %}
     <div class="dropdown-divider"></div>
-                                                                <a class=" dropdown-item " style="background:grey;" href="?archives=True"><span>Archives</span></a>
+            <a class=" dropdown-item " style="background:grey;" href="?archives=True"><span>Archives</span></a>
 
 							</div>
 						</li>
@@ -53,9 +53,21 @@
                                 <div class="dropdown-divider"></div>
             {% for categorie_id, cat_nom in territoire_list %}
             <a class=" dropdown-item " href="?territoire={{categorie_id}}"><span>{{cat_nom}}</span></a>
-            {% endfor %}
-    <div class="dropdown-divider">
+                                {% endfor %}</div>
 						</li>
+                        <li class="nav-item dropdown">
+                      <a class="nav-link dropdown-toggle" href="#" id="menuOrdreTri" data-toggle="dropdown">
+
+                <button type="button"  class="btn btn-light">
+                   Trier par...
+           </button>
+                      </a>
+                <div class="dropdown-menu"  aria-labelledby="menuOrdreTri"  id="idOrdreTri">
+                    {% for titre, ordre in ordreTriPossibles.items %}
+                     <a class="dropdown-item"  href="?{{ request.GET.urlencode }}&ordreTri={{ordre}}">{{titre}}</a>
+                    {% endfor %}
+                </div>
+            </li>
 					</ul>
 
                         <ul class="navbar-nav ml-md-auto">

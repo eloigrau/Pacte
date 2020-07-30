@@ -72,7 +72,7 @@ class ArticleForm(forms.ModelForm):
 
     class Meta:
         model = Article
-        fields = ['categorie', 'titre', 'contenu', 'territoire', 'start_time', 'estModifiable', 'estPublic']
+        fields = ['categorie', 'territoire', 'titre',  'contenu',  'start_time', 'estModifiable', 'estPublic']
         widgets = {
             'contenu': SummernoteWidget(),
               'start_time': forms.DateInput(attrs={'type': 'date'}),
@@ -112,7 +112,7 @@ class ArticleChangeForm(forms.ModelForm):
 
     class Meta:
         model = Article
-        fields = ['categorie', 'titre', 'contenu', 'territoire', 'start_time', 'estModifiable', 'estArchive', 'estPublic']
+        fields = ['categorie', 'territoire', 'titre', 'contenu', 'start_time', 'estModifiable', 'estArchive', 'estPublic']
         widgets = {
             'contenu': SummernoteWidget(),
               'start_time': forms.DateInput(attrs={'type':"datepicker", }),
