@@ -10,7 +10,7 @@ from django.db.models.signals import post_save
 from actstream.models import followers
 
 class Choix():
-    type_territoire = ('0', '-----------'), ('1','Communauté de Communes ACVI'), ('2','Département'),  ('3','Région'), ('4','Argelès de la Marenda'), ('5','Bages'), \
+    type_territoire = ('0', '-----------'), ('1','Communauté de Communes ACVI'), ('2','Département'),  ('3','Région'), ('4','Argelers de la Marenda'), ('5','Bages'), \
                       ('6', 'Banyuls de la Marenda'), ('7', 'Cervera de la Marenda'), ('8','Cotlliure'), ('9','Elna'), \
                 ('10',"La Roca d'Albera"), ('11',"Montesquiu d'Albera"), ('12','Ortafà'),('13','Palau del Vidre'),\
                       ('15','Port Vendres'),('16','Sant Andreu'), ('17','Sant Genís de Fontanes'),\
