@@ -10,10 +10,10 @@ from django.db.models.signals import post_save
 from actstream.models import followers
 
 class Choix():
-    type_territoire = ('0', '-----------'), ('1','Communauté de Communes ACVI'), ('2','Département'),  ('3','Région'), ('4','Argelès de la marenda'), ('5','Bages'), \
+    type_territoire = ('0', '-----------'), ('1','Communauté de Communes ACVI'), ('2','Département'),  ('3','Région'), ('4','Argelès de la Marenda'), ('5','Bages'), \
                       ('6', 'Banyuls de la Marenda'), ('7', 'Cervera de la Marenda'), ('8','Cotlliure'), ('9','Elna'), \
-                ('10',"La Roca d'Albera"), ('11',"Montesquiu d'Albera"), ('12','Ortafà'),('13','Palau-del-Vidre'),\
-                      ('15','Port-Vendres'),('16','Sant-Andreu'), ('17','Sant Genís de Fontanes'),\
+                ('10',"La Roca d'Albera"), ('11',"Montesquiu d'Albera"), ('12','Ortafà'),('13','Palau del Vidre'),\
+                      ('15','Port Vendres'),('16','Sant Andreu'), ('17','Sant Genís de Fontanes'),\
                       ('18','Sureda'), ('19','Vilallonga dels Monts')
 
     type_annonce = ('0','Annonce'), ('1','Administratif'), ('2', 'Mesure / action'), ('3', 'Echanges avec les candidats'), ('4','Réunion'), ('5','Idée'), \
@@ -48,7 +48,7 @@ class Article(models.Model):
         default='Annonce', verbose_name="categorie")
     territoire = models.CharField(max_length=2,
         choices=(Choix.type_territoire),
-        default='0', verbose_name="Territoire")
+        default='', verbose_name="Territoire")
     titre = models.CharField(max_length=100,)
     auteur = models.ForeignKey(Profil, on_delete=models.CASCADE)
     slug = models.SlugField(max_length=100)
