@@ -109,8 +109,7 @@ def on_save_articles(instance, created, **kwargs):
     if created:
         suivi, created = Suivis.objects.get_or_create(nom_suivi='articles')
         titre = "PacteACVI - nouvel article"
-        message = " Un nouvel article a été créé " + \
-                  "\n Vous pouvez y accéder en suivant ce lien : https://pacteacvi.herokuapp.com" + instance.get_absolute_url() + \
+        message = " Un nouvel article a été créé : https://pacteacvi.herokuapp.com" + instance.get_absolute_url() + \
                   "\n\n------------------------------------------------------------------------------" \
                   "\n vous recevez cet email, car vous avez choisi de suivre les articles (en cliquant sur la cloche) sur le site https://pacteacvi.herokuapp.com/forum/articles/"
         emails = [suiv.email for suiv in followers(suivi) if instance.auteur != suiv and (instance.estPublic or suiv.is_membre_collectif)]
@@ -140,8 +139,7 @@ class Commentaire(models.Model):
 @receiver(post_save,  sender=Article)
 def on_save_article(instance, **kwargs):
     titre = "PacteACVI - Article actualisé"
-    message = "L'article '" +  instance.titre + "' a été modifié (ou quelqu'un l'a commenté)" +\
-              "\n Vous pouvez y accéder en suivant ce lien : http://pacteacvi.herokuapp.com" + instance.get_absolute_url() + \
+    message = "L'article '" +  instance.titre + "' a été modifié (ou quelqu'un l'a commenté): http://pacteacvi.herokuapp.com" + instance.get_absolute_url() + \
               "\n\n------------------------------------------------------------------------------" \
               "\n vous recevez cet email, car vous avez choisi de suivre ce projet sur le site https://pacteacvi.herokuapp.com/forum/articles/"
    # emails = [(titre, message, "asso@perma.cat", (suiv.email, )) for suiv in followers(instance)]

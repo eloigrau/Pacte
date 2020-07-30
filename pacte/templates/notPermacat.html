@@ -3,7 +3,7 @@
 {% block content %}
 <h5 class="textcenter">Désolé, vous n'êtes pas autorisé(e) à voir ce contenu car vous n'êtes pas
     {% if request.user.is_authenticated %} membre du collectif ACVI. <a href="{% url 'senregistrer' %}">Rejoignez-nous !</a>
-    {% else %} connecté. <a href="{% url 'login' %}">Connectez-vous</a>
+    {% else %} connecté : <a href="{% url 'login' %}">Connectez-vous (vous devez aussi faire partie du collectif pour accéder à ce contenu)</a>
       {% endif %}
 </h5>
 {% endblock %}

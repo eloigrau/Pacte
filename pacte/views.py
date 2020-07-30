@@ -334,7 +334,7 @@ def lireConversation(request, destinataire):
         profil_destinataire = Profil.objects.get(username=destinataire)
         if profil_destinataire in followers(conversation):
             sujet = "PacteACVI - quelqu'un vous a envoyé une message privé"
-            message = request.user.username + " vous a envoyé un message privé. Vous pouvez y accéder en suivant ce lien : http://pacteacvi.herokuapp.com" +  url
+            message = request.user.username + " vous a envoyé un message privé ://pacteacvi.herokuapp.com" +  url
             send_mail(sujet, message, "pacteacvi@gmail.com", [profil_destinataire.email, ], fail_silently=False,)
         return redirect(request.path)
 
