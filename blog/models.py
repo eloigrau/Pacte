@@ -48,7 +48,7 @@ class Article(models.Model):
         default='Annonce', verbose_name="categorie")
     territoire = models.CharField(max_length=2,
         choices=(Choix.type_territoire),
-        default='--', verbose_name="Territoire")
+        default='0', verbose_name="Territoire")
     titre = models.CharField(max_length=100,)
     auteur = models.ForeignKey(Profil, on_delete=models.CASCADE)
     slug = models.SlugField(max_length=100)
