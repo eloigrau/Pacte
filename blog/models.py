@@ -17,7 +17,7 @@ class Choix():
                       ('18','Sureda'), ('19','Vilallonga dels Monts')
 
     type_annonce = ('0','Annonce'), ('1','Administratif'), ('2', 'Mesure / action'), ('3', 'Echanges avec les candidats'), ('4','Réunion du collectif'), ('5','Idées'), \
-                ('6','Listes signataires'), ('7','Divers'), ('8','Suivi'), ('8','Conseils municipaux'),
+                ('6','Listes signataires'), ('7','Divers'), ('8','Suivi'), ('9','Conseils municipaux'),
     couleurs_annonces_old = {
         '0':"#d1ecdc",
         '1':"#D4CF7D",
@@ -26,8 +26,8 @@ class Choix():
         '4':"#fff2a0",
         '5':"#B2AFE4",
         '6':"#bccacf",
-        '9':"#b3b6e6",
-        '8':"#3EA7BB",
+        '8':"#b3b6e6",
+        '9':"#3EA7BB",
         '7':"#349D9B",
         '10':"#d0f4de",
     }
