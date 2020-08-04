@@ -16,8 +16,8 @@ class Choix():
                       ('15','Port Vendres'),('16','Sant Andreu'), ('17','Sant Genís de Fontanes'),\
                       ('18','Sureda'), ('19','Vilallonga dels Monts')
 
-    type_annonce = ('0','Annonce'), ('1','Administratif'), ('2', 'Mesure / action'), ('3', 'Echanges avec les candidats'), ('4','Réunion'), ('5','Idée'), \
-                ('6','Listes signataires'), ('7','Divers'), ('8','Suivi'),
+    type_annonce = ('0','Annonce'), ('1','Administratif'), ('2', 'Mesure / action'), ('3', 'Echanges avec les candidats'), ('4','Réunion du collectif'), ('5','Idées'), \
+                ('6','Listes signataires'), ('7','Divers'), ('8','Suivi'), ('8','Conseils municipaux'),
     couleurs_annonces_old = {
         '0':"#d1ecdc",
         '1':"#D4CF7D",
