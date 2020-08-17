@@ -800,7 +800,8 @@ ul.errorlist{
   display: none;
 }
 .carte-notif{
-   width:95%;
+   min-width: 60%;
+    max-width: 99%;
 }
 
 }
@@ -824,11 +825,13 @@ ul.errorlist{
     background-color:#e6e6e6 ;
     }
 .carte-notif{
-   min-width:35%;
+   min-width: 45%;
+    max-width: 95%;
     margin: 20px;
 }
 .carte-notif-news{
    min-width:60%;
+    max-width: 95%;
     margin: 20px;
 }
 .badge_projet{
