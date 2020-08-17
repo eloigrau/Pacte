@@ -72,7 +72,7 @@ def raccourcirTempsStr(date):
 
 @login_required
 def notifications_news_regroup(request):
-    salons, articles, conversations, inscriptions = getNotifications(request, )
+    salons, articles, conversations, inscriptions = getNotifications(request, nbNotif=500)
 
     dicoTexte = {}
     dicoTexte['dicoarticles'] = {}
