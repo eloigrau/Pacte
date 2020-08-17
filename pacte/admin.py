@@ -44,7 +44,6 @@ admin.site.register(Profil, CustomUserAdmin)
 admin.site.register(Article, ArticleAdmin)
 admin.site.register(Commentaire),
 admin.site.register(Evenement)
-admin.site.register(Message)
 admin.site.register(MessageGeneral)
 admin.site.register(InscriptionNewsletter)
 
