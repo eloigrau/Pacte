@@ -15,7 +15,7 @@ Including another URLconf
 """
 from django.urls import path
 from django.conf.urls import include, url
-from pacte import views
+from pacte import views, views_notifications
 from django.views.generic import TemplateView
 from .views import handler400 as h400, handler403  as h403, handler404  as h404, handler500  as h500
 
@@ -35,11 +35,12 @@ urlpatterns = [
     url(r'^bienvenue/$', views.bienvenue, name='bienvenue'),
     url(r'^faq/$', views.faq, name='faq'),
     url(r'^gallerie/$', views.gallerie, name='gallerie'),
-    url(r'^notifications/$', views.notifications, name='notifications'),
-    url(r'^notifications/news/$', views.notifications_news, name='notifications_news'),
-    url(r'^notificationsParDate/$', views.notificationsParDate, name='notificationsParDate'),
-    url(r'^notificationsLues/$', views.notificationsLues, name='notificationsLues'),
-    url(r'^dernieresInfos/$', views.dernieresInfos, name='dernieresInfos'),
+    url(r'^notifications/$', views_notifications.notifications, name='notifications'),
+    url(r'^notifications/news/$', views_notifications.notifications_news_regroup, name='notifications_news'),
+    url(r'^notificationsParDate/$', views_notifications.notificationsParDate, name='notificationsParDate'),
+    url(r'^notificationsLues/$', views_notifications.notificationsLues, name='notificationsLues'),
+    url(r'^notifications/changerDateNotif/$', views_notifications.changerDateNotif, name='changerDateNotif'),
+    url(r'^dernieresInfos/$', views_notifications.dernieresInfos, name='dernieresInfos'),
     url(r'^site/presentation/$', views.presentation_site, name='presentation_site'),
     url(r'^gestion/', admin.site.urls, name='admin',),
     url(r'^merci/$', views.merci, name='merci'),

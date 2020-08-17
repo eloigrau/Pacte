@@ -10,6 +10,7 @@ from .forms import ContactForm, ProfilCreationForm, MessageForm, MessageGeneralF
     ProducteurChangeForm, ChercherConversationForm, InscriptionNewsletterForm, \
     MessageChangeForm
 from .models import Profil, Conversation, Message, MessageGeneral, getOrCreateConversation, Suivis, InscriptionNewsletter
+from .views_notifications import getNbNewNotifications
 from django.contrib.auth.decorators import login_required
 from django.views.generic import ListView, UpdateView, DeleteView
 from django.urls import reverse_lazy, reverse
@@ -374,127 +375,6 @@ def chercherConversation(request):
     else:
         return render(request, 'chercher_conversation.html', {'form': form})
 
-@login_required
-def getNotifications(request):
-    if request.user.is_membre_collectif:
-        salons      = Action.objects.filter(Q(verb='envoi_salon') | Q(verb='envoi_salon_permacat'))[:30]
-        articles    = Action.objects.filter(Q(verb='article_nouveau_permacat') | Q(verb='article_message_permacat')|
-                                            Q(verb='article_nouveau') | Q(verb='article_message')| Q(verb='article_modifier')|
-                                            Q(verb='article_modifier_permacat'))[:30]
-    else:
-        salons      = Action.objects.filter(Q(verb='envoi_salon') | Q(verb='envoi_salon_permacat'))[:30]
-        articles    = Action.objects.filter(Q(verb='article_nouveau') | Q(verb='article_message')| Q(verb='article_modifier'))[:30]
-
-
-    nbNotif = 6
-    conversations = (any_stream(request.user).filter(Q(verb='envoi_salon_prive',)) | Action.objects.filter(Q(verb='envoi_salon_prive',  description="a envoyé un message privé à " + request.user.username) ))[:nbNotif]
-    articles = [art for i, art in enumerate(articles) if i == 0 or not (art.description == articles[i-1].description  and art.actor == articles[i-1].actor)][:nbNotif]
-    salons = [art for i, art in enumerate(salons) if i == 0 or not (art.description == salons[i-1].description and art.actor == salons[i-1].actor ) ][:nbNotif]
-    inscription = Action.objects.filter(Q(verb='inscription') )
-
-    return salons, articles, conversations, inscription
-
-@login_required
-def getNotificationsParDate(request):
-    if request.user.is_membre_collectif:
-        actions      = Action.objects.filter( \
-            Q(verb='envoi_salon') | Q(verb='envoi_salon_permacat')|Q(verb='article_nouveau_permacat') |
-            Q(verb='article_message_permacat')|Q(verb='article_nouveau') | Q(verb='article_message')|
-            Q(verb='article_modifier')| Q(verb='article_modifier_permacat')|Q(verb='projet_nouveau_permacat')|
-            Q(verb='envoi_salon_prive', description="a envoyé un message privé à " + request.user.username)   |Q(verb='inscription')
-        ).order_by('-timestamp')
-    else:
-        actions      = Action.objects.filter(Q(verb='envoi_salon') | Q(verb='envoi_salon_permacat')|
-                                             Q(verb='article_nouveau') | Q(verb='article_message')|
-                                             Q(verb='article_modifier') |Q(verb='inscription') |
-                                                Q(verb='envoi_salon_prive', description="a envoyé un message privé à " + request.user.username)
-        ).order_by('-timestamp')
-
-    actions = [art for i, art in enumerate(actions[:100]) if i == 0 or not (art.description == actions[i-1].description and art.actor == actions[i-1].actor ) ][:50]
-
-    return actions
-
-@login_required
-def getNbNewNotifications(request):
-    actions = getNotificationsParDate(request)
-    actions = [action for action in actions if  request.user.date_notifications < action.timestamp]
-
-    return len(actions)
-
-
-@login_required
-def get_notifications_news(request):
-    actions = getNotificationsParDate(request)
-    actions = [action for action in actions if  request.user.date_notifications < action.timestamp]
-    return actions
-
-
-@login_required
-def notifications(request):
-    salons, articles, conversations, inscriptions = getNotifications(request)
-    return render(request, 'notifications/notifications.html', {'salons': salons, 'articles': articles, 'inscriptions':inscriptions, 'conversations':conversations})
-
-@login_required
-def notifications_news(request):
-    actions = get_notifications_news(request)
-    return render(request, 'notifications/notifications_last.html', {'actions':actions})
-
-
-@login_required
-def notificationsParDate(request):
-    actions = getNotificationsParDate(request)
-    return render(request, 'notifications/notificationsParDate.html', {'actions': actions, })
-
-@login_required
-def notificationsLues(request):
-    request.user.date_notifications = now()
-    request.user.save()
-    return redirect('notifications_news')
-
-def getInfosJourPrecedent(request, nombreDeJours):
-    from datetime import datetime, timedelta
-    timestamp_from = datetime.now().date() - timedelta(days=nombreDeJours)
-    timestamp_to = datetime.now().date() - timedelta(days=nombreDeJours - 1)
-
-    if request.user.is_membre_collectif:
-        articles    = Action.objects.filter(Q(verb='article_nouveau_permacat', timestamp__gte = timestamp_from,timestamp__lte = timestamp_to,) | Q(verb='article_nouveau',timestamp__gte = timestamp_from, timestamp__lte = timestamp_to,))
-        projets     = Action.objects.filter(Q(verb='projet_nouveau_permacat', timestamp__gte = timestamp_from,timestamp__lte = timestamp_to,) |Q(verb='projet_nouveau', timestamp__gte = timestamp_from,timestamp__lte = timestamp_to,))
-        offres      = Action.objects.filter(Q(verb='ajout_offre', timestamp__gte = timestamp_from,timestamp__lte = timestamp_to,) | Q(verb='ajout_offre_permacat', timestamp__gte = timestamp_from,timestamp__lte = timestamp_to,))
-    else:
-        articles    = Action.objects.filter(Q(verb='article_nouveau', timestamp__gte = timestamp_from, timestamp__lte = timestamp_to,) | Q(verb='article_modifier', timestamp__gte = timestamp_from,timestamp__lte = timestamp_to,))
-        projets     = Action.objects.filter(Q(verb='projet_nouveau', timestamp__gte = timestamp_from,timestamp__lte = timestamp_to,))
-        offres      = Action.objects.filter(Q(verb='ajout_offre', timestamp__gte = timestamp_from,timestamp__lte = timestamp_to,))
-    fiches = Action.objects.filter(verb__startswith='fiche')
-    ateliers = Action.objects.filter(Q(verb__startswith='atelier')|Q(verb=''))
-    conversations = (any_stream(request.user).filter(Q(verb='envoi_salon_prive', )) | Action.objects.filter(
-        Q(verb='envoi_salon_prive', description="a envoyé un message privé à " + request.user.username)))[:nbNotif]
-
-    articles = [art for i, art in enumerate(articles) if i == 0 or not (art.description == articles[i-1].description  and art.actor == articles[i-1].actor)]
-    projets = [art for i, art in enumerate(projets) if i == 0 or not (art.description == projets[i-1].description and art.actor == projets[i-1].actor) ]
-    offres = [art for i, art in enumerate(offres) if i == 0 or not (art.description == offres[i-1].description and art.actor == offres[i-1].actor) ]
-    fiches = [art for i, art in enumerate(fiches) if i == 0 or not (art.description == fiches[i-1].description and art.actor == fiches[i-1].actor ) ]
-    ateliers = [art for i, art in enumerate(ateliers) if i == 0 or not (art.description == ateliers[i-1].description and art.actor == ateliers[i-1].actor ) ]
-    conversations = [art for i, art in enumerate(conversations) if i == 0 or not (art.description == conversations[i-1].description and art.actor == conversations[i-1].actor ) ]
-
-    return articles, projets, offres, fiches, ateliers, conversations
-
-def getTexteJourPrecedent(nombreDeJour):
-    if nombreDeJour == 0:
-        return "Aujourd'hui"
-    elif nombreDeJour == 1:
-        return "Hier"
-    elif nombreDeJour == 2:
-        return "Avant-hier"
-    else:
-        return "Il y a " + str(nombreDeJour) + " jours"
-
-@login_required
-def dernieresInfos(request):
-    info_parjour = []
-    for i in range(15):
-        info_parjour.append({"jour":getTexteJourPrecedent(i), "infos":getInfosJourPrecedent(request, i)})
-    return render(request, 'notifications/notifications_news.html', {'info_parjour': info_parjour,})
-
 
 @login_required
 def agora(request, ):
@@ -538,14 +418,10 @@ def inscription_newsletter(request):
 def modifier_message(request, id, type):
     if type == 'general':
         obj = MessageGeneral.objects.get(id=id)
-    elif type == 'permacat':
-        if not request.user.is_membre_collectif:
-            return render(request, "notPacteACVI")
-        obj = MessageGeneralPacteACVI.objects.get(id=id)
-    elif type == 'rtg':
-        if not request.user.is_rtg:
-            return render(request, "notRTG.html")
-        obj = MessageGeneralRTG.objects.get(id=id)
+    # elif type == 'pacteacvi':
+    #     if not request.user.is_membre_collectif:
+    #         return render(request, "notPacteACVI")
+    #     obj = MessageGeneralPacteACVI.objects.get(id=id)
 
 
     elif type == 'conversation':

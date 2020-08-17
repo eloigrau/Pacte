@@ -3,6 +3,7 @@ from django.contrib.auth.forms import UserCreationForm, UserChangeForm
 from .models import Profil, Message, MessageGeneral, Choix, InscriptionNewsletter
 from captcha.fields import CaptchaField
 from django_summernote.widgets import SummernoteWidget
+from django.utils import timezone
 
 
 class ProfilCreationForm(UserCreationForm):
@@ -137,3 +138,7 @@ class InscriptionNewsletterForm(forms.ModelForm):
     class Meta:
         model = InscriptionNewsletter
         fields = ['email']
+
+class nouvelleDateForm(forms.Form):
+    years = [x for x in range(timezone.now().year - 3, timezone.now().year + 1)]
+    date = forms.DateTimeField(initial=timezone.now(), widget=forms.SelectDateWidget(years=years))

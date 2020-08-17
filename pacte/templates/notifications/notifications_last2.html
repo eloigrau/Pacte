@@ -1,0 +1,57 @@
+{% extends 'base.html' %}
+{% load activity_tags %}
+{% block subtitle %}
+<nav class="navbar navbar-light bg-light justify-content-center" style="display: inline-block;">
+        <button class="btn btn-sm btn-outline-secondary" type="button"><a href="{% url 'notificationsParDate'  %}"> Notifications par date</a></button>
+    <button class="btn btn-outline-success" type="button"><a href="{% url 'notifications_news'  %}">Dernières Notifications</a></button>
+      <button class="btn btn-sm btn-outline-secondary" type="button"><a href="{% url 'notifications'  %}"> Notifications par type</a></button>
+</nav>
+{% endblock %}
+{% block content %}
+
+<p class = "textcenter justify-content-center">
+        <a href="{% url 'changerDateNotif' %}">
+                <button class="btn btn-outline-secondary" type="submit" data-toggle="tooltip" data-placement="bottom" title="Changer la date"> depuis le {{request.user.date_notifications|date:"d/m/Y"}} à {{request.user.date_notifications|date:"G:i"}}</button>
+        </a>
+</p>
+
+{%if htmlArticles or dico.listautres %}
+<p class = "textcenter ">
+    <a href="{% url 'notificationsLues'  %}" class="btn btn-outline-primary">
+         Marquer comme vu
+    </a>
+</p>
+{% else %}
+<p class = "textcenter ">Pas de nouvelle activité </p>
+{% endif %}
+<div class="row justify-content-center">
+<div class="">
+{%if htmlArticles  %}
+    <div class="card carte-notif-news  d-md-flex">
+        <ul class="list-group list-group-flush">
+            <li class="list-group-item textcenter"  style="background-color:#ffc34d">Articles</li>
+            {{htmlArticles|safe }}
+        </ul>
+    </div>
+{% endif %}
+
+{%if  dico.listautres %}
+    <div class="card carte-notif-news d-md-flex textcenter">
+        <ul class="list-group list-group-flush">
+{%if  htmlArticles %}
+            <li class="list-group-item"  style="background-color:#cce6ff">Autres</li>
+{% endif %}
+      {% for action in dico.listautres %}
+                {% include "notifications/notifications_template4.html" with action=action %}
+      {% endfor %}
+{% endif %}
+
+
+        </ul>
+
+    </div>
+
+</div>
+</div>
+
+{% endblock %}

@@ -800,7 +800,7 @@ ul.errorlist{
   display: none;
 }
 .carte-notif{
-   width:18rem;
+   width:95%;
 }
 
 }
@@ -824,11 +824,11 @@ ul.errorlist{
     background-color:#e6e6e6 ;
     }
 .carte-notif{
-   width:15rem;
+   min-width:35%;
     margin: 20px;
 }
 .carte-notif-news{
-   min-width:18rem;
+   min-width:60%;
     margin: 20px;
 }
 .badge_projet{
