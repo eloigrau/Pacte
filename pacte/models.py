@@ -25,7 +25,6 @@ from datetime import date
 from django.dispatch import receiver
 from django.db.models.signals import post_save
 
-from django.core.mail import send_mass_mail
 
 DEGTORAD=3.141592654/180
 

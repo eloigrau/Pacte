@@ -97,6 +97,7 @@ INSTALLED_APPS = (
     'mptt',
     'sekizai',
     'sorl.thumbnail',
+    'hitcount'
 
 )
 

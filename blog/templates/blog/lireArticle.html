@@ -2,31 +2,10 @@
 {% load activity_tags %}
 {% load blog_filters %}
 {% load fontawesome %}
+{% load hitcount_tags %}
 
 
 {% block subtitle %}
-{% comment %}
-
-    <div class="row">
-
-        <div class="mobile-toggle">
-            <span></span>
-            <span></span>
-            <span></span>
-        </div>
-
-        <nav class="nav2">
-            <ul>
-                <li><a href="#sec01">Section 01</a></li>
-                <li><a href="#sec02">Section 02</a></li>
-                <li><a href="#sec03">Section 03</a></li>
-                <li><a href=".sec04">Section 04</a></li>
-            </ul>
-        </nav>
-
-    </div> <!-- / row -->
-
-{% endcomment %}
 <div class="row">
     <div class="col-md-2 " id="sec02">
         <p>
@@ -37,7 +16,8 @@
     </div>
     <div class="col-md-8">
         <p class="infos  textepetit">Dans: <a href="{% url 'blog:index'  %}?categorie={{article.categorie}}"  style="background-color:{{article.get_couleur}}">{{ article.get_categorie_display }}</a>, rédigé par <a href="{% url 'profil' article.auteur.id %}"> {{ article.auteur.username }}</a>, le {{ article.date_creation|date:"DATE_FORMAT" }};
-
+            {% get_hit_count for article as nbvues %}
+            {{ nbvues }} vue{{nbvues|pluralize:"s"}}
         <a href="{% url 'blog:suivre_article' article.slug %}">
             {% if request.user|is_following:article %}
             <button type="button" class="btn btn-light btn-sm" data-toggle="tooltip" data-placement="bottom" title=" Cliquez pour arreter de recevoir des notifications concernant cet article par mail">

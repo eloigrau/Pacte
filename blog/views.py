@@ -8,6 +8,8 @@ from django.contrib.auth.decorators import login_required
 from django.views.generic import ListView, UpdateView, DeleteView
 from actstream import actions, action
 from actstream.models import followers, following
+from hitcount.models import HitCount
+from hitcount.views import HitCountMixin
 
 from django.utils.timezone import now
 
@@ -83,6 +85,8 @@ def lireArticle(request, slug):
     dates = Evenement.objects.filter(article=article).order_by("start_time")
 
 
+    hit_count = HitCount.objects.get_for_object(article)
+    hit_count_response = HitCountMixin.hit_count(request, hit_count)
     form = CommentaireArticleForm(request.POST or None)
     if form.is_valid():
         comment = form.save(commit=False)
