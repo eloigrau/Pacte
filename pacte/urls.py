@@ -73,8 +73,10 @@ urlpatterns = [
     url(r'^suivre_conversation/$', views.suivre_conversations, name='suivre_conversations'),
     url(r'^agora/$', login_required(views.agora), name='agora_general'),
     url(r'^activity/', include('actstream.urls')),
-    url(r'^inscription_newsletter/$', views.inscription_newsletter, name='inscription_newsletter', ),
+    url(r'^inscription_infolettre/$', views.inscription_infolettre, name='inscription_infolettre', ),
     url(r'^modifierMessage/(?P<id>[0-9]+)(?P<type>[-\w.]+)$', views.modifier_message, name='modifierMessage'),
+
+    url(r'^infolettre/$', views.infolettre, name='infolettre'),
 ]
 
 

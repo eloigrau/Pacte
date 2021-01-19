@@ -49,7 +49,7 @@ class Profil(AbstractUser):
 
     date_registration = models.DateTimeField(verbose_name="Date de création", editable=False)
 
-    inscrit_newsletter = models.BooleanField(verbose_name="J'accepte de recevoir des emails de PacteACVI", default=False)
+    inscrit_infolettre = models.BooleanField(verbose_name="J'accepte de recevoir des emails de PacteACVI", default=False)
     accepter_conditions = models.BooleanField(verbose_name="J'ai lu et j'accepte les conditions d'utilisation du site", default=False, null=False)
     accepter_annuaire = models.BooleanField(verbose_name="J'accepte d'apparaitre dans l'annuaire du site et la carte et rend mon profil visible par tous", default=True)
 
@@ -108,8 +108,8 @@ class Profil(AbstractUser):
 
 
     @property
-    def inscrit_newsletter_str(self):
-       return "oui" if self.inscrit_newsletter else "non"
+    def inscrit_infolettre_str(self):
+       return "oui" if self.inscrit_infolettre else "non"
 
 @receiver(post_save, sender=Profil)
 def create_user_profile(sender, instance, created, **kwargs):
@@ -242,7 +242,7 @@ class Suivis(models.Model):
         return str(self.nom_suivi)
 
 
-class InscriptionNewsletter(models.Model):
+class InscriptionInfolettre(models.Model):
     email = models.EmailField()
     date_inscription = models.DateTimeField(verbose_name="Date d'inscription", editable=False, auto_now_add=True)
 
@@ -256,4 +256,4 @@ class InscriptionNewsletter(models.Model):
         ''' On save, update timestamps '''
         if not self.id:
             self.date_inscription = now()
-        return super(InscriptionNewsletter, self).save(*args, **kwargs)
+        return super(InscriptionInfolettre, self).save(*args, **kwargs)

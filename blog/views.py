@@ -46,7 +46,7 @@ class ModifierArticle(UpdateView):
     model = Article
     form_class = ArticleChangeForm
     template_name_suffix = '_modifier'
-#    fields = ['user','site_web','description', 'competences', 'adresse', 'avatar', 'inscrit_newsletter']
+#    fields = ['user','site_web','description', 'competences', 'adresse', 'avatar', 'inscrit_infolettre']
 
     def get_object(self):
         return Article.objects.get(slug=self.kwargs['slug'])
@@ -69,7 +69,7 @@ class SupprimerArticle(DeleteView):
     model = Article
     success_url = reverse_lazy('blog:index')
     template_name_suffix = '_supprimer'
-#    fields = ['user','site_web','description', 'competences', 'adresse', 'avatar', 'inscrit_newsletter']
+#    fields = ['user','site_web','description', 'competences', 'adresse', 'avatar', 'inscrit_infolettre']
 
     def get_object(self):
         return Article.objects.get(slug=self.kwargs['slug'])

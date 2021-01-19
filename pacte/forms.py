@@ -1,6 +1,6 @@
 from django import forms
 from django.contrib.auth.forms import UserCreationForm, UserChangeForm
-from .models import Profil, Message, MessageGeneral, Choix, InscriptionNewsletter
+from .models import Profil, Message, MessageGeneral, Choix, InscriptionInfolettre
 from captcha.fields import CaptchaField
 from django_summernote.widgets import SummernoteWidget
 from django.utils import timezone
@@ -23,7 +23,7 @@ class ProfilCreationForm(UserCreationForm):
 
     class Meta(UserCreationForm):
         model = Profil
-        fields = ['username', 'password1',  'password2', 'first_name', 'last_name', 'email', 'site_web', 'description', 'code_postal', 'commune', 'inscrit_newsletter', 'accepter_annuaire',  'accepter_conditions']
+        fields = ['username', 'password1',  'password2', 'first_name', 'last_name', 'email', 'site_web', 'description', 'code_postal', 'commune', 'inscrit_infolettre', 'accepter_annuaire',  'accepter_conditions']
         exclude = ['slug', ]
 
 
@@ -41,7 +41,7 @@ class ProducteurChangeForm(UserChangeForm):
     email = forms.EmailField(label="Email")
     username = forms.CharField(label="Pseudonyme")
     description = forms.CharField(required=False, label="Description", help_text="Une description de vous même",widget=SummernoteWidget)
-    inscrit_newsletter = forms.BooleanField(required=False)
+    inscrit_infolettre = forms.BooleanField(required=False)
     accepter_annuaire = forms.BooleanField(required=False, label="J'accepte d'apparaitre dans l'annuaire du site et la carte et rend mon profil visible par tous")
     password=None
 
@@ -51,7 +51,7 @@ class ProducteurChangeForm(UserChangeForm):
 
     class Meta:
         model = Profil
-        fields = ['username', 'first_name', 'last_name', 'email', 'site_web', 'description', 'telephone', 'code_postal', 'commune', 'accepter_annuaire', 'inscrit_newsletter']
+        fields = ['username', 'first_name', 'last_name', 'email', 'site_web', 'description', 'telephone', 'code_postal', 'commune', 'accepter_annuaire', 'inscrit_infolettre']
 
 
 class ProducteurChangeForm_admin(UserChangeForm):
@@ -62,14 +62,14 @@ class ProducteurChangeForm_admin(UserChangeForm):
     email = forms.EmailField(label="Email")
     username = forms.CharField(label="Pseudonyme")
     description = forms.CharField(label="Description", initial="Une description de vous même", widget=forms.Textarea, required=False)
-    inscrit_newsletter = forms.BooleanField(required=False)
+    inscrit_infolettre = forms.BooleanField(required=False)
     accepter_annuaire = forms.BooleanField(required=False)
 
     password = None
 
     class Meta:
         model = Profil
-        fields = ['username', 'email', 'description', 'code_postal', 'commune',  'telephone', 'inscrit_newsletter', 'accepter_annuaire', 'statut_adhesion']
+        fields = ['username', 'email', 'description', 'code_postal', 'commune',  'telephone', 'inscrit_infolettre', 'accepter_annuaire', 'statut_adhesion']
 
     def __init__(self, *args, **kwargs):
         super(ProducteurChangeForm_admin, self).__init__(*args, **kwargs)
@@ -133,10 +133,10 @@ class MessageChangeForm(forms.ModelForm):
         }
 
 
-class InscriptionNewsletterForm(forms.ModelForm):
+class InscriptionInfolettreForm(forms.ModelForm):
 
     class Meta:
-        model = InscriptionNewsletter
+        model = InscriptionInfolettre
         fields = ['email']
 
 class nouvelleDateForm(forms.Form):

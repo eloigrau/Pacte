@@ -7,9 +7,9 @@ Created on 25 mai 2017
 from django.shortcuts import HttpResponseRedirect, render, redirect#, render, get_object_or_404, redirect, render_to_response,
 
 from .forms import ContactForm, ProfilCreationForm, MessageForm, MessageGeneralForm, \
-    ProducteurChangeForm, ChercherConversationForm, InscriptionNewsletterForm, \
+    ProducteurChangeForm, ChercherConversationForm, InscriptionInfolettreForm, \
     MessageChangeForm
-from .models import Profil, Conversation, Message, MessageGeneral, getOrCreateConversation, Suivis, InscriptionNewsletter
+from .models import Profil, Conversation, Message, MessageGeneral, getOrCreateConversation, Suivis, InscriptionInfolettre
 from .views_notifications import getNbNewNotifications
 from django.contrib.auth.decorators import login_required
 from django.views.generic import ListView, UpdateView, DeleteView
@@ -123,8 +123,8 @@ def listeContacts(request):
     if not request.user.is_membre_collectif:
         return render(request, "notPacteACVI.html")
     listeMails = [
-        {"type":'user_newsletter' ,"profils":Profil.objects.filter(inscrit_newsletter=True), "titre":"Liste des inscrits à la newsletter : "},
-         {"type":'anonym_newsletter' ,"profils":InscriptionNewsletter.objects.all(), "titre":"Liste des inscrits anonymes à la newsletter : "},
+        {"type":'user_infolettre' ,"profils":Profil.objects.filter(inscrit_infolettre=True), "titre":"Liste des inscrits à la infolettre : "},
+         {"type":'anonym_infolettre' ,"profils":InscriptionInfolettre.objects.all(), "titre":"Liste des inscrits anonymes à la infolettre : "},
       {"type":'user_adherent' , "profils":Profil.objects.filter(statut_adhesion=2), "titre":"Liste des adhérents : "},
         {"type":'user_futur_adherent', "profils":Profil.objects.filter(statut_adhesion=0), "titre":"Liste des personnes qui veulent adhérer à PacteACVI :"}
     ]
@@ -212,7 +212,7 @@ class profil_modifier_user(UpdateView):
     model = Profil
     form_class = ProducteurChangeForm
     template_name_suffix = '_modifier'
-    fields = ['username', 'first_name', 'last_name', 'email', 'site_web', 'description', 'accepter_annuaire', 'inscrit_newsletter']
+    fields = ['username', 'first_name', 'last_name', 'email', 'site_web', 'description', 'accepter_annuaire', 'inscrit_infolettre']
 
     def get_object(self):
         return Profil.objects.get(id=self.request.user.id)
@@ -222,7 +222,7 @@ class profil_modifier(UpdateView):
     model = Profil
     form_class = ProducteurChangeForm
     template_name_suffix = '_modifier'
-    #fields = ['username','email','first_name','last_name', 'site_web','description', 'competences', 'inscrit_newsletter']
+    #fields = ['username','email','first_name','last_name', 'site_web','description', 'competences', 'inscrit_infolettre']
 
     def get_object(self):
         return Profil.objects.get(id=self.request.user.id)
@@ -404,14 +404,17 @@ def suivre_conversations(request, actor_only=True):
     return redirect('conversations')
 
 
-def inscription_newsletter(request):
-    form = InscriptionNewsletterForm(request.POST or None)
+def inscription_infolettre(request):
+    form = InscriptionInfolettreForm(request.POST or None)
     if form.is_valid():
         inscription = form.save(commit=False)
         inscription.save()
-        return render(request, 'merci.html', {'msg' :"Vous êtes inscrits à la newsletter"})
-    return render(request, 'registration/inscription_newsletter.html', {'form':form})
+        return render(request, 'merci.html', {'msg' :"Vous êtes inscrits à la infolettre"})
+    return render(request, 'registration/inscription_infolettre.html', {'form':form})
 
+
+def infolettre(request):
+    return render(request, 'infolettre.html', {})
 
 
 @login_required

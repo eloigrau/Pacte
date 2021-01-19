@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-from .models import  Message, MessageGeneral, Conversation, InscriptionNewsletter
+from .models import  Message, MessageGeneral, Conversation, InscriptionInfolettre
 
 
 from django.contrib import admin
@@ -15,12 +15,12 @@ class CustomUserAdmin(UserAdmin):
     add_form = ProfilCreationForm
     form = ProducteurChangeForm_admin
     model = Profil
-    list_display = ['email', 'username',  'date_notifications', 'last_login', 'inscrit_newsletter', 'statut_adhesion']
+    list_display = ['email', 'username',  'date_notifications', 'last_login', 'inscrit_infolettre', 'statut_adhesion']
 
     readonly_fields = ('date_registration','last_login')
 
     fieldsets = (
-        (None, {'fields': ('username','description','inscrit_newsletter', 'statut_adhesion', 'date_notifications')}),
+        (None, {'fields': ('username','description','inscrit_infolettre', 'statut_adhesion', 'date_notifications')}),
         (_('Personal info'), {'fields': ('first_name', 'last_name', 'email')}),
         (_('Permissions'), {'fields': ('is_active', 'is_staff', 'is_superuser',
                                        'groups', 'user_permissions')}),
@@ -45,7 +45,7 @@ admin.site.register(Article, ArticleAdmin)
 admin.site.register(Commentaire),
 admin.site.register(Evenement)
 admin.site.register(MessageGeneral)
-admin.site.register(InscriptionNewsletter)
+admin.site.register(InscriptionInfolettre)
 
 admin.site.register(Conversation)
 
