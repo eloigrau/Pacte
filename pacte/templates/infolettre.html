@@ -1,55 +1,724 @@
 {% extends 'base.html' %}
 {% load fontawesome %}
 {% load blog_filters %}
-{%block title%}- Infolettre{%endblock%}
+{%block title%}Pacte ACVI - Infolettre{%endblock%}
 {% block subtitle %}
 <div class="row">
     <div class="col-md-12">
         <div class="row justify-content-center">
                 <h3>L'infolettre du Pacte ACVI</h3>
-            {%comment%}
-            <div class="col-md-12 offset-md-4">
-                <h2> {{asso}}</h2>
-            </div>
-            <div class="col-md-4 ">
-                <button type="button" class="btn btn-light btn-sm" data-toggle="modal" data-target="#help">
-                 {% fontawesome_icon 'question-circle' %}
-                </button>
-                <!-- Modal -->
-                <div class="modal fade" id="help" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                  <div class="modal-dialog textaide" role="document">
-                    <div class="modal-content">
-                      <div class="modal-header">
-                          <div class="row justify-content-center">
-                           <h5 > Qu'est ce qu'un salon de discussion ?</h5>
-                          </div>
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                          <span aria-hidden="true">&times;</span>
-                        </button>
-                      </div>
-                        <div class="modal-body textleft">
-                          <p>Le salon de discussion est un espace commun où chacun peut s'exprimer librement sur le sujet qu'il souhaite, un peu comme un groupe "whatsapp"...</p>
-                        <p>Chaque collectif a son propre salon de discussion (réservé aux memebres), et il y a aussi un salon de discussion "public", ouvert à tous</p>
-                        </div>
-                    </div>
-                  </div>
-                </div>
-            </div>
-            {%endcomment%}
+
 
         </div>
         <hr>
     </div>
 </div>
 
-   <a href="{% url 'inscription_infolettre' %}" class="btn btn-light btn-radius"><i class="fa fa-envelope-o"></i> Cliquez ici pour recevoir l'infolettre par mail</a>
+   <a href="{% url 'inscription_infolettre' %}" class="btn btn-light btn-radius"><i class="fa fa-envelope-o"></i> Cliquez ici pour recevoir les prochaines infolettres par mail</a>
 
 {% endblock %}
 {% block content %}
 
 <div class="row textcenter">
 <div class="col-sm-12 textcenter">
-   <p> Première infolettre à paraitre prochainement !</p>
+<style type=text/css>
+.ReadMsgBody { width: 100%; }
+.ExternalClass { width: 100%; }
+html { padding: 0px; margin: 0px; }
+body { height: 100%; padding: 0px 0px 20px; margin: 0px; width: 100% !important; }
+table { text-align: left; }
+[name="bloc"] { margin-bottom: 0px; border: 0px solid rgb(0, 0, 0); margin-top: 1px; }
+[name="bloc"] td { padding: 2px; }
+[name="column"] { border: 0px solid rgb(0, 0, 0); vertical-align: top; }
+[name="objetText"] td { font-size: 12px; font-family: Verdana, Geneva, sans-serif; color: rgb(0, 0, 0); padding: 3px; text-align: center; line-height: 1.5; }
+[name="objetImage"] td { max-width: 0px; padding: 3px; text-align: center; }
+* { scrollbar-width: thin; scrollbar-color: rgb(119, 119, 119) rgb(238, 238, 238); }
+::-webkit-scrollbar-thumb { background: rgb(170, 170, 170) none repeat scroll 0% 0%; }
+::-webkit-scrollbar { width: 4px; background: rgb(238, 238, 238) none repeat scroll 0% 0%; }
+* { scrollbar-width: thin; scrollbar-color: rgb(119, 119, 119) rgb(238, 238, 238); }
+::-webkit-scrollbar-thumb { background: rgb(170, 170, 170) none repeat scroll 0% 0%; }
+::-webkit-scrollbar { width: 4px; background: rgb(238, 238, 238) none repeat scroll 0% 0%; }
+* { scrollbar-width: thin; scrollbar-color: rgb(119, 119, 119) rgb(238, 238, 238); }
+::-webkit-scrollbar-thumb { background: rgb(170, 170, 170) none repeat scroll 0% 0%; }
+::-webkit-scrollbar { width: 4px; background: rgb(238, 238, 238) none repeat scroll 0% 0%; }
+* { scrollbar-width: thin; scrollbar-color: rgb(119, 119, 119) rgb(238, 238, 238); }
+::-webkit-scrollbar-thumb { background: rgb(170, 170, 170) none repeat scroll 0% 0%; }
+::-webkit-scrollbar { width: 4px; background: rgb(238, 238, 238) none repeat scroll 0% 0%; }
+* { scrollbar-width: thin; scrollbar-color: rgb(119, 119, 119) rgb(238, 238, 238); }
+::-webkit-scrollbar-thumb { background: rgb(170, 170, 170) none repeat scroll 0% 0%; }
+::-webkit-scrollbar { width: 4px; background: rgb(238, 238, 238) none repeat scroll 0% 0%; }
+* { scrollbar-width: thin; scrollbar-color: rgb(119, 119, 119) rgb(238, 238, 238); }
+::-webkit-scrollbar-thumb { background: rgb(170, 170, 170) none repeat scroll 0% 0%; }
+::-webkit-scrollbar { width: 4px; background: rgb(238, 238, 238) none repeat scroll 0% 0%; }
+* { scrollbar-width: thin; scrollbar-color: rgb(119, 119, 119) rgb(238, 238, 238); }
+::-webkit-scrollbar-thumb { background: rgb(170, 170, 170) none repeat scroll 0% 0%; }
+::-webkit-scrollbar { width: 4px; background: rgb(238, 238, 238) none repeat scroll 0% 0%; }
+* { scrollbar-width: thin; scrollbar-color: rgb(119, 119, 119) rgb(238, 238, 238); }
+::-webkit-scrollbar-thumb { background: rgb(170, 170, 170) none repeat scroll 0% 0%; }
+::-webkit-scrollbar { width: 4px; background: rgb(238, 238, 238) none repeat scroll 0% 0%; }
+* { scrollbar-width: thin; scrollbar-color: rgb(119, 119, 119) rgb(238, 238, 238); }
+::-webkit-scrollbar-thumb { background: rgb(170, 170, 170) none repeat scroll 0% 0%; }
+::-webkit-scrollbar { width: 4px; background: rgb(238, 238, 238) none repeat scroll 0% 0%; }
+* { scrollbar-width: thin; scrollbar-color: rgb(119, 119, 119) rgb(238, 238, 238); }
+::-webkit-scrollbar-thumb { background: rgb(170, 170, 170) none repeat scroll 0% 0%; }
+::-webkit-scrollbar { width: 4px; background: rgb(238, 238, 238) none repeat scroll 0% 0%; }
+* { scrollbar-width: thin; scrollbar-color: rgb(119, 119, 119) rgb(238, 238, 238); }
+::-webkit-scrollbar-thumb { background: rgb(170, 170, 170) none repeat scroll 0% 0%; }
+::-webkit-scrollbar { width: 4px; background: rgb(238, 238, 238) none repeat scroll 0% 0%; }
+* { scrollbar-width: thin; scrollbar-color: rgb(119, 119, 119) rgb(238, 238, 238); }
+::-webkit-scrollbar-thumb { background: rgb(170, 170, 170) none repeat scroll 0% 0%; }
+::-webkit-scrollbar { width: 4px; background: rgb(238, 238, 238) none repeat scroll 0% 0%; }
+* { scrollbar-width: thin; scrollbar-color: rgb(119, 119, 119) rgb(238, 238, 238); }
+::-webkit-scrollbar-thumb { background: rgb(170, 170, 170) none repeat scroll 0% 0%; }
+::-webkit-scrollbar { width: 4px; background: rgb(238, 238, 238) none repeat scroll 0% 0%; }
+* { scrollbar-width: thin; scrollbar-color: rgb(119, 119, 119) rgb(238, 238, 238); }
+::-webkit-scrollbar-thumb { background: rgb(170, 170, 170) none repeat scroll 0% 0%; }
+::-webkit-scrollbar { width: 4px; background: rgb(238, 238, 238) none repeat scroll 0% 0%; }
+* { scrollbar-width: thin; scrollbar-color: rgb(119, 119, 119) rgb(238, 238, 238); }
+::-webkit-scrollbar-thumb { background: rgb(170, 170, 170) none repeat scroll 0% 0%; }
+::-webkit-scrollbar { width: 4px; background: rgb(238, 238, 238) none repeat scroll 0% 0%; }
+* { scrollbar-width: thin; scrollbar-color: rgb(119, 119, 119) rgb(238, 238, 238); }
+::-webkit-scrollbar-thumb { background: rgb(170, 170, 170) none repeat scroll 0% 0%; }
+::-webkit-scrollbar { width: 4px; background: rgb(238, 238, 238) none repeat scroll 0% 0%; }
+* { scrollbar-width: thin; scrollbar-color: rgb(119, 119, 119) rgb(238, 238, 238); }
+::-webkit-scrollbar-thumb { background: rgb(170, 170, 170) none repeat scroll 0% 0%; }
+::-webkit-scrollbar { width: 4px; background: rgb(238, 238, 238) none repeat scroll 0% 0%; }
+* { scrollbar-width: thin; scrollbar-color: rgb(119, 119, 119) rgb(238, 238, 238); }
+::-webkit-scrollbar-thumb { background: rgb(170, 170, 170) none repeat scroll 0% 0%; }
+::-webkit-scrollbar { width: 4px; background: rgb(238, 238, 238) none repeat scroll 0% 0%; }
+* { scrollbar-width: thin; scrollbar-color: rgb(119, 119, 119) rgb(238, 238, 238); }
+::-webkit-scrollbar-thumb { background: rgb(170, 170, 170) none repeat scroll 0% 0%; }
+::-webkit-scrollbar { width: 4px; background: rgb(238, 238, 238) none repeat scroll 0% 0%; }
+* { scrollbar-width: thin; scrollbar-color: rgb(119, 119, 119) rgb(238, 238, 238); }
+::-webkit-scrollbar-thumb { background: rgb(170, 170, 170) none repeat scroll 0% 0%; }
+::-webkit-scrollbar { width: 4px; background: rgb(238, 238, 238) none repeat scroll 0% 0%; }
+* { scrollbar-width: thin; scrollbar-color: rgb(119, 119, 119) rgb(238, 238, 238); }
+::-webkit-scrollbar-thumb { background: rgb(170, 170, 170) none repeat scroll 0% 0%; }
+::-webkit-scrollbar { width: 4px; background: rgb(238, 238, 238) none repeat scroll 0% 0%; }
+* { scrollbar-width: thin; scrollbar-color: rgb(119, 119, 119) rgb(238, 238, 238); }
+::-webkit-scrollbar-thumb { background: rgb(170, 170, 170) none repeat scroll 0% 0%; }
+::-webkit-scrollbar { width: 4px; background: rgb(238, 238, 238) none repeat scroll 0% 0%; }
+* { scrollbar-width: thin; scrollbar-color: rgb(119, 119, 119) rgb(238, 238, 238); }
+::-webkit-scrollbar-thumb { background: rgb(170, 170, 170) none repeat scroll 0% 0%; }
+::-webkit-scrollbar { width: 4px; background: rgb(238, 238, 238) none repeat scroll 0% 0%; }
+* { scrollbar-width: thin; scrollbar-color: rgb(119, 119, 119) rgb(238, 238, 238); }
+::-webkit-scrollbar-thumb { background: rgb(170, 170, 170) none repeat scroll 0% 0%; }
+::-webkit-scrollbar { width: 4px; background: rgb(238, 238, 238) none repeat scroll 0% 0%; }
+* { scrollbar-width: thin; scrollbar-color: rgb(119, 119, 119) rgb(238, 238, 238); }
+::-webkit-scrollbar-thumb { background: rgb(170, 170, 170) none repeat scroll 0% 0%; }
+::-webkit-scrollbar { width: 4px; background: rgb(238, 238, 238) none repeat scroll 0% 0%; }
+* { scrollbar-width: thin; scrollbar-color: rgb(119, 119, 119) rgb(238, 238, 238); }
+::-webkit-scrollbar-thumb { background: rgb(170, 170, 170) none repeat scroll 0% 0%; }
+::-webkit-scrollbar { width: 4px; background: rgb(238, 238, 238) none repeat scroll 0% 0%; }
+* { scrollbar-width: thin; scrollbar-color: rgb(119, 119, 119) rgb(238, 238, 238); }
+::-webkit-scrollbar-thumb { background: rgb(170, 170, 170) none repeat scroll 0% 0%; }
+::-webkit-scrollbar { width: 4px; background: rgb(238, 238, 238) none repeat scroll 0% 0%; }
+* { scrollbar-width: thin; scrollbar-color: rgb(119, 119, 119) rgb(238, 238, 238); }
+::-webkit-scrollbar-thumb { background: rgb(170, 170, 170) none repeat scroll 0% 0%; }
+::-webkit-scrollbar { width: 4px; background: rgb(238, 238, 238) none repeat scroll 0% 0%; }
+* { scrollbar-width: thin; scrollbar-color: rgb(119, 119, 119) rgb(238, 238, 238); }
+::-webkit-scrollbar-thumb { background: rgb(170, 170, 170) none repeat scroll 0% 0%; }
+::-webkit-scrollbar { width: 4px; background: rgb(238, 238, 238) none repeat scroll 0% 0%; }
+* { scrollbar-width: thin; scrollbar-color: rgb(119, 119, 119) rgb(238, 238, 238); }
+::-webkit-scrollbar-thumb { background: rgb(170, 170, 170) none repeat scroll 0% 0%; }
+::-webkit-scrollbar { width: 4px; background: rgb(238, 238, 238) none repeat scroll 0% 0%; }
+* { scrollbar-width: thin; scrollbar-color: rgb(119, 119, 119) rgb(238, 238, 238); }
+::-webkit-scrollbar-thumb { background: rgb(170, 170, 170) none repeat scroll 0% 0%; }
+::-webkit-scrollbar { width: 4px; background: rgb(238, 238, 238) none repeat scroll 0% 0%; }
+* { scrollbar-width: thin; scrollbar-color: rgb(119, 119, 119) rgb(238, 238, 238); }
+::-webkit-scrollbar-thumb { background: rgb(170, 170, 170) none repeat scroll 0% 0%; }
+::-webkit-scrollbar { width: 4px; background: rgb(238, 238, 238) none repeat scroll 0% 0%; }
+* { scrollbar-width: thin; scrollbar-color: rgb(119, 119, 119) rgb(238, 238, 238); }
+::-webkit-scrollbar-thumb { background: rgb(170, 170, 170) none repeat scroll 0% 0%; }
+::-webkit-scrollbar { width: 4px; background: rgb(238, 238, 238) none repeat scroll 0% 0%; }
+* { scrollbar-width: thin; scrollbar-color: rgb(119, 119, 119) rgb(238, 238, 238); }
+::-webkit-scrollbar-thumb { background: rgb(170, 170, 170) none repeat scroll 0% 0%; }
+::-webkit-scrollbar { width: 4px; background: rgb(238, 238, 238) none repeat scroll 0% 0%; }
+* { scrollbar-width: thin; scrollbar-color: rgb(119, 119, 119) rgb(238, 238, 238); }
+::-webkit-scrollbar-thumb { background: rgb(170, 170, 170) none repeat scroll 0% 0%; }
+::-webkit-scrollbar { width: 4px; background: rgb(238, 238, 238) none repeat scroll 0% 0%; }
+* { scrollbar-width: thin; scrollbar-color: rgb(119, 119, 119) rgb(238, 238, 238); }
+::-webkit-scrollbar-thumb { background: rgb(170, 170, 170) none repeat scroll 0% 0%; }
+::-webkit-scrollbar { width: 4px; background: rgb(238, 238, 238) none repeat scroll 0% 0%; }
+* { scrollbar-width: thin; scrollbar-color: rgb(119, 119, 119) rgb(238, 238, 238); }
+::-webkit-scrollbar-thumb { background: rgb(170, 170, 170) none repeat scroll 0% 0%; }
+::-webkit-scrollbar { width: 4px; background: rgb(238, 238, 238) none repeat scroll 0% 0%; }
+* { scrollbar-width: thin; scrollbar-color: rgb(119, 119, 119) rgb(238, 238, 238); }
+::-webkit-scrollbar-thumb { background: rgb(170, 170, 170) none repeat scroll 0% 0%; }
+::-webkit-scrollbar { width: 4px; background: rgb(238, 238, 238) none repeat scroll 0% 0%; }
+* { scrollbar-width: thin; scrollbar-color: rgb(119, 119, 119) rgb(238, 238, 238); }
+::-webkit-scrollbar-thumb { background: rgb(170, 170, 170) none repeat scroll 0% 0%; }
+::-webkit-scrollbar { width: 4px; background: rgb(238, 238, 238) none repeat scroll 0% 0%; }
+* { scrollbar-width: thin; scrollbar-color: rgb(119, 119, 119) rgb(238, 238, 238); }
+::-webkit-scrollbar-thumb { background: rgb(170, 170, 170) none repeat scroll 0% 0%; }
+::-webkit-scrollbar { width: 4px; background: rgb(238, 238, 238) none repeat scroll 0% 0%; }
+* { scrollbar-width: thin; scrollbar-color: rgb(119, 119, 119) rgb(238, 238, 238); }
+::-webkit-scrollbar-thumb { background: rgb(170, 170, 170) none repeat scroll 0% 0%; }
+::-webkit-scrollbar { width: 4px; background: rgb(238, 238, 238) none repeat scroll 0% 0%; }
+* { scrollbar-width: thin; scrollbar-color: rgb(119, 119, 119) rgb(238, 238, 238); }
+::-webkit-scrollbar-thumb { background: rgb(170, 170, 170) none repeat scroll 0% 0%; }
+::-webkit-scrollbar { width: 4px; background: rgb(238, 238, 238) none repeat scroll 0% 0%; }
+* { scrollbar-width: thin; scrollbar-color: rgb(119, 119, 119) rgb(238, 238, 238); }
+::-webkit-scrollbar-thumb { background: rgb(170, 170, 170) none repeat scroll 0% 0%; }
+::-webkit-scrollbar { width: 4px; background: rgb(238, 238, 238) none repeat scroll 0% 0%; }
+* { scrollbar-width: thin; scrollbar-color: rgb(119, 119, 119) rgb(238, 238, 238); }
+::-webkit-scrollbar-thumb { background: rgb(170, 170, 170) none repeat scroll 0% 0%; }
+::-webkit-scrollbar { width: 4px; background: rgb(238, 238, 238) none repeat scroll 0% 0%; }
+* { scrollbar-width: thin; scrollbar-color: rgb(119, 119, 119) rgb(238, 238, 238); }
+::-webkit-scrollbar-thumb { background: rgb(170, 170, 170) none repeat scroll 0% 0%; }
+::-webkit-scrollbar { width: 4px; background: rgb(238, 238, 238) none repeat scroll 0% 0%; }
+* { scrollbar-width: thin; scrollbar-color: rgb(119, 119, 119) rgb(238, 238, 238); }
+::-webkit-scrollbar-thumb { background: rgb(170, 170, 170) none repeat scroll 0% 0%; }
+::-webkit-scrollbar { width: 4px; background: rgb(238, 238, 238) none repeat scroll 0% 0%; }
+* { scrollbar-width: thin; scrollbar-color: rgb(119, 119, 119) rgb(238, 238, 238); }
+::-webkit-scrollbar-thumb { background: rgb(170, 170, 170) none repeat scroll 0% 0%; }
+::-webkit-scrollbar { width: 4px; background: rgb(238, 238, 238) none repeat scroll 0% 0%; }
+* { scrollbar-width: thin; scrollbar-color: rgb(119, 119, 119) rgb(238, 238, 238); }
+::-webkit-scrollbar-thumb { background: rgb(170, 170, 170) none repeat scroll 0% 0%; }
+::-webkit-scrollbar { width: 4px; background: rgb(238, 238, 238) none repeat scroll 0% 0%; }
+* { scrollbar-width: thin; scrollbar-color: rgb(119, 119, 119) rgb(238, 238, 238); }
+::-webkit-scrollbar-thumb { background: rgb(170, 170, 170) none repeat scroll 0% 0%; }
+::-webkit-scrollbar { width: 4px; background: rgb(238, 238, 238) none repeat scroll 0% 0%; }
+* { scrollbar-width: thin; scrollbar-color: rgb(119, 119, 119) rgb(238, 238, 238); }
+::-webkit-scrollbar-thumb { background: rgb(170, 170, 170) none repeat scroll 0% 0%; }
+::-webkit-scrollbar { width: 4px; background: rgb(238, 238, 238) none repeat scroll 0% 0%; }
+* { scrollbar-width: thin; scrollbar-color: rgb(119, 119, 119) rgb(238, 238, 238); }
+::-webkit-scrollbar-thumb { background: rgb(170, 170, 170) none repeat scroll 0% 0%; }
+::-webkit-scrollbar { width: 4px; background: rgb(238, 238, 238) none repeat scroll 0% 0%; }
+* { scrollbar-width: thin; scrollbar-color: rgb(119, 119, 119) rgb(238, 238, 238); }
+::-webkit-scrollbar-thumb { background: rgb(170, 170, 170) none repeat scroll 0% 0%; }
+::-webkit-scrollbar { width: 4px; background: rgb(238, 238, 238) none repeat scroll 0% 0%; }
+* { scrollbar-width: thin; scrollbar-color: rgb(119, 119, 119) rgb(238, 238, 238); }
+::-webkit-scrollbar-thumb { background: rgb(170, 170, 170) none repeat scroll 0% 0%; }
+::-webkit-scrollbar { width: 4px; background: rgb(238, 238, 238) none repeat scroll 0% 0%; }
+* { scrollbar-width: thin; scrollbar-color: rgb(119, 119, 119) rgb(238, 238, 238); }
+::-webkit-scrollbar-thumb { background: rgb(170, 170, 170) none repeat scroll 0% 0%; }
+::-webkit-scrollbar { width: 4px; background: rgb(238, 238, 238) none repeat scroll 0% 0%; }
+* { scrollbar-width: thin; scrollbar-color: rgb(119, 119, 119) rgb(238, 238, 238); }
+::-webkit-scrollbar-thumb { background: rgb(170, 170, 170) none repeat scroll 0% 0%; }
+::-webkit-scrollbar { width: 4px; background: rgb(238, 238, 238) none repeat scroll 0% 0%; }
+* { scrollbar-width: thin; scrollbar-color: rgb(119, 119, 119) rgb(238, 238, 238); }
+::-webkit-scrollbar-thumb { background: rgb(170, 170, 170) none repeat scroll 0% 0%; }
+::-webkit-scrollbar { width: 4px; background: rgb(238, 238, 238) none repeat scroll 0% 0%; }
+* { scrollbar-width: thin; scrollbar-color: rgb(119, 119, 119) rgb(238, 238, 238); }
+::-webkit-scrollbar-thumb { background: rgb(170, 170, 170) none repeat scroll 0% 0%; }
+::-webkit-scrollbar { width: 4px; background: rgb(238, 238, 238) none repeat scroll 0% 0%; }
+* { scrollbar-width: thin; scrollbar-color: rgb(119, 119, 119) rgb(238, 238, 238); }
+::-webkit-scrollbar-thumb { background: rgb(170, 170, 170) none repeat scroll 0% 0%; }
+::-webkit-scrollbar { width: 4px; background: rgb(238, 238, 238) none repeat scroll 0% 0%; }
+* { scrollbar-width: thin; scrollbar-color: rgb(119, 119, 119) rgb(238, 238, 238); }
+::-webkit-scrollbar-thumb { background: rgb(170, 170, 170) none repeat scroll 0% 0%; }
+::-webkit-scrollbar { width: 4px; background: rgb(238, 238, 238) none repeat scroll 0% 0%; }
+* { scrollbar-width: thin; scrollbar-color: rgb(119, 119, 119) rgb(238, 238, 238); }
+::-webkit-scrollbar-thumb { background: rgb(170, 170, 170) none repeat scroll 0% 0%; }
+::-webkit-scrollbar { width: 4px; background: rgb(238, 238, 238) none repeat scroll 0% 0%; }
+* { scrollbar-width: thin; scrollbar-color: rgb(119, 119, 119) rgb(238, 238, 238); }
+::-webkit-scrollbar-thumb { background: rgb(170, 170, 170) none repeat scroll 0% 0%; }
+::-webkit-scrollbar { width: 4px; background: rgb(238, 238, 238) none repeat scroll 0% 0%; }
+* { scrollbar-width: thin; scrollbar-color: rgb(119, 119, 119) rgb(238, 238, 238); }
+::-webkit-scrollbar-thumb { background: rgb(170, 170, 170) none repeat scroll 0% 0%; }
+::-webkit-scrollbar { width: 4px; background: rgb(238, 238, 238) none repeat scroll 0% 0%; }
+* { scrollbar-width: thin; scrollbar-color: rgb(119, 119, 119) rgb(238, 238, 238); }
+::-webkit-scrollbar-thumb { background: rgb(170, 170, 170) none repeat scroll 0% 0%; }
+::-webkit-scrollbar { width: 4px; background: rgb(238, 238, 238) none repeat scroll 0% 0%; }
+* { scrollbar-width: thin; scrollbar-color: rgb(119, 119, 119) rgb(238, 238, 238); }
+::-webkit-scrollbar-thumb { background: rgb(170, 170, 170) none repeat scroll 0% 0%; }
+::-webkit-scrollbar { width: 4px; background: rgb(238, 238, 238) none repeat scroll 0% 0%; }
+* { scrollbar-width: thin; scrollbar-color: rgb(119, 119, 119) rgb(238, 238, 238); }
+::-webkit-scrollbar-thumb { background: rgb(170, 170, 170) none repeat scroll 0% 0%; }
+::-webkit-scrollbar { width: 4px; background: rgb(238, 238, 238) none repeat scroll 0% 0%; }
+* { scrollbar-width: thin; scrollbar-color: rgb(119, 119, 119) rgb(238, 238, 238); }
+::-webkit-scrollbar-thumb { background: rgb(170, 170, 170) none repeat scroll 0% 0%; }
+::-webkit-scrollbar { width: 4px; background: rgb(238, 238, 238) none repeat scroll 0% 0%; }
+* { scrollbar-width: thin; scrollbar-color: rgb(119, 119, 119) rgb(238, 238, 238); }
+::-webkit-scrollbar-thumb { background: rgb(170, 170, 170) none repeat scroll 0% 0%; }
+::-webkit-scrollbar { width: 4px; background: rgb(238, 238, 238) none repeat scroll 0% 0%; }
+* { scrollbar-width: thin; scrollbar-color: rgb(119, 119, 119) rgb(238, 238, 238); }
+::-webkit-scrollbar-thumb { background: rgb(170, 170, 170) none repeat scroll 0% 0%; }
+::-webkit-scrollbar { width: 4px; background: rgb(238, 238, 238) none repeat scroll 0% 0%; }
+* { scrollbar-width: thin; scrollbar-color: rgb(119, 119, 119) rgb(238, 238, 238); }
+::-webkit-scrollbar-thumb { background: rgb(170, 170, 170) none repeat scroll 0% 0%; }
+::-webkit-scrollbar { width: 4px; background: rgb(238, 238, 238) none repeat scroll 0% 0%; }
+* { scrollbar-width: thin; scrollbar-color: rgb(119, 119, 119) rgb(238, 238, 238); }
+::-webkit-scrollbar-thumb { background: rgb(170, 170, 170) none repeat scroll 0% 0%; }
+::-webkit-scrollbar { width: 4px; background: rgb(238, 238, 238) none repeat scroll 0% 0%; }
+* { scrollbar-width: thin; scrollbar-color: rgb(119, 119, 119) rgb(238, 238, 238); }
+::-webkit-scrollbar-thumb { background: rgb(170, 170, 170) none repeat scroll 0% 0%; }
+::-webkit-scrollbar { width: 4px; background: rgb(238, 238, 238) none repeat scroll 0% 0%; }
+* { scrollbar-width: thin; scrollbar-color: rgb(119, 119, 119) rgb(238, 238, 238); }
+::-webkit-scrollbar-thumb { background: rgb(170, 170, 170) none repeat scroll 0% 0%; }
+::-webkit-scrollbar { width: 4px; background: rgb(238, 238, 238) none repeat scroll 0% 0%; }
+* { scrollbar-width: thin; scrollbar-color: rgb(119, 119, 119) rgb(238, 238, 238); }
+::-webkit-scrollbar-thumb { background: rgb(170, 170, 170) none repeat scroll 0% 0%; }
+::-webkit-scrollbar { width: 4px; background: rgb(238, 238, 238) none repeat scroll 0% 0%; }
+* { scrollbar-width: thin; scrollbar-color: rgb(119, 119, 119) rgb(238, 238, 238); }
+::-webkit-scrollbar-thumb { background: rgb(170, 170, 170) none repeat scroll 0% 0%; }
+::-webkit-scrollbar { width: 4px; background: rgb(238, 238, 238) none repeat scroll 0% 0%; }
+* { scrollbar-width: thin; scrollbar-color: rgb(119, 119, 119) rgb(238, 238, 238); }
+::-webkit-scrollbar-thumb { background: rgb(170, 170, 170) none repeat scroll 0% 0%; }
+::-webkit-scrollbar { width: 4px; background: rgb(238, 238, 238) none repeat scroll 0% 0%; }
+* { scrollbar-width: thin; scrollbar-color: rgb(119, 119, 119) rgb(238, 238, 238); }
+::-webkit-scrollbar-thumb { background: rgb(170, 170, 170) none repeat scroll 0% 0%; }
+::-webkit-scrollbar { width: 4px; background: rgb(238, 238, 238) none repeat scroll 0% 0%; }
+* { scrollbar-width: thin; scrollbar-color: rgb(119, 119, 119) rgb(238, 238, 238); }
+::-webkit-scrollbar-thumb { background: rgb(170, 170, 170) none repeat scroll 0% 0%; }
+::-webkit-scrollbar { width: 4px; background: rgb(238, 238, 238) none repeat scroll 0% 0%; }
+* { scrollbar-width: thin; scrollbar-color: rgb(119, 119, 119) rgb(238, 238, 238); }
+::-webkit-scrollbar-thumb { background: rgb(170, 170, 170) none repeat scroll 0% 0%; }
+::-webkit-scrollbar { width: 4px; background: rgb(238, 238, 238) none repeat scroll 0% 0%; }
+* { scrollbar-width: thin; scrollbar-color: rgb(119, 119, 119) rgb(238, 238, 238); }
+::-webkit-scrollbar-thumb { background: rgb(170, 170, 170) none repeat scroll 0% 0%; }
+::-webkit-scrollbar { width: 4px; background: rgb(238, 238, 238) none repeat scroll 0% 0%; }
+* { scrollbar-width: thin; scrollbar-color: rgb(119, 119, 119) rgb(238, 238, 238); }
+::-webkit-scrollbar-thumb { background: rgb(170, 170, 170) none repeat scroll 0% 0%; }
+::-webkit-scrollbar { width: 4px; background: rgb(238, 238, 238) none repeat scroll 0% 0%; }
+* { scrollbar-width: thin; scrollbar-color: rgb(119, 119, 119) rgb(238, 238, 238); }
+::-webkit-scrollbar-thumb { background: rgb(170, 170, 170) none repeat scroll 0% 0%; }
+::-webkit-scrollbar { width: 4px; background: rgb(238, 238, 238) none repeat scroll 0% 0%; }
+* { scrollbar-width: thin; scrollbar-color: rgb(119, 119, 119) rgb(238, 238, 238); }
+::-webkit-scrollbar-thumb { background: rgb(170, 170, 170) none repeat scroll 0% 0%; }
+::-webkit-scrollbar { width: 4px; background: rgb(238, 238, 238) none repeat scroll 0% 0%; }
+* { scrollbar-width: thin; scrollbar-color: rgb(119, 119, 119) rgb(238, 238, 238); }
+::-webkit-scrollbar-thumb { background: rgb(170, 170, 170) none repeat scroll 0% 0%; }
+::-webkit-scrollbar { width: 4px; background: rgb(238, 238, 238) none repeat scroll 0% 0%; }
+* { scrollbar-width: thin; scrollbar-color: rgb(119, 119, 119) rgb(238, 238, 238); }
+::-webkit-scrollbar-thumb { background: rgb(170, 170, 170) none repeat scroll 0% 0%; }
+::-webkit-scrollbar { width: 4px; background: rgb(238, 238, 238) none repeat scroll 0% 0%; }
+* { scrollbar-width: thin; scrollbar-color: rgb(119, 119, 119) rgb(238, 238, 238); }
+::-webkit-scrollbar-thumb { background: rgb(170, 170, 170) none repeat scroll 0% 0%; }
+::-webkit-scrollbar { width: 4px; background: rgb(238, 238, 238) none repeat scroll 0% 0%; }
+* { scrollbar-width: thin; scrollbar-color: rgb(119, 119, 119) rgb(238, 238, 238); }
+::-webkit-scrollbar-thumb { background: rgb(170, 170, 170) none repeat scroll 0% 0%; }
+::-webkit-scrollbar { width: 4px; background: rgb(238, 238, 238) none repeat scroll 0% 0%; }
+* { scrollbar-width: thin; scrollbar-color: rgb(119, 119, 119) rgb(238, 238, 238); }
+::-webkit-scrollbar-thumb { background: rgb(170, 170, 170) none repeat scroll 0% 0%; }
+::-webkit-scrollbar { width: 4px; background: rgb(238, 238, 238) none repeat scroll 0% 0%; }
+* { scrollbar-width: thin; scrollbar-color: rgb(119, 119, 119) rgb(238, 238, 238); }
+::-webkit-scrollbar-thumb { background: rgb(170, 170, 170) none repeat scroll 0% 0%; }
+::-webkit-scrollbar { width: 4px; background: rgb(238, 238, 238) none repeat scroll 0% 0%; }
+* { scrollbar-width: thin; scrollbar-color: rgb(119, 119, 119) rgb(238, 238, 238); }
+::-webkit-scrollbar-thumb { background: rgb(170, 170, 170) none repeat scroll 0% 0%; }
+::-webkit-scrollbar { width: 4px; background: rgb(238, 238, 238) none repeat scroll 0% 0%; }
+* { scrollbar-width: thin; scrollbar-color: rgb(119, 119, 119) rgb(238, 238, 238); }
+::-webkit-scrollbar-thumb { background: rgb(170, 170, 170) none repeat scroll 0% 0%; }
+::-webkit-scrollbar { width: 4px; background: rgb(238, 238, 238) none repeat scroll 0% 0%; }
+* { scrollbar-width: thin; scrollbar-color: rgb(119, 119, 119) rgb(238, 238, 238); }
+::-webkit-scrollbar-thumb { background: rgb(170, 170, 170) none repeat scroll 0% 0%; }
+::-webkit-scrollbar { width: 4px; background: rgb(238, 238, 238) none repeat scroll 0% 0%; }
+* { scrollbar-width: thin; scrollbar-color: rgb(119, 119, 119) rgb(238, 238, 238); }
+::-webkit-scrollbar-thumb { background: rgb(170, 170, 170) none repeat scroll 0% 0%; }
+::-webkit-scrollbar { width: 4px; background: rgb(238, 238, 238) none repeat scroll 0% 0%; }
+* { scrollbar-width: thin; scrollbar-color: rgb(119, 119, 119) rgb(238, 238, 238); }
+::-webkit-scrollbar-thumb { background: rgb(170, 170, 170) none repeat scroll 0% 0%; }
+::-webkit-scrollbar { width: 4px; background: rgb(238, 238, 238) none repeat scroll 0% 0%; }
+* { scrollbar-width: thin; scrollbar-color: rgb(119, 119, 119) rgb(238, 238, 238); }
+::-webkit-scrollbar-thumb { background: rgb(170, 170, 170) none repeat scroll 0% 0%; }
+::-webkit-scrollbar { width: 4px; background: rgb(238, 238, 238) none repeat scroll 0% 0%; }
+* { scrollbar-width: thin; scrollbar-color: rgb(119, 119, 119) rgb(238, 238, 238); }
+::-webkit-scrollbar-thumb { background: rgb(170, 170, 170) none repeat scroll 0% 0%; }
+::-webkit-scrollbar { width: 4px; background: rgb(238, 238, 238) none repeat scroll 0% 0%; }
+* { scrollbar-width: thin; scrollbar-color: rgb(119, 119, 119) rgb(238, 238, 238); }
+::-webkit-scrollbar-thumb { background: rgb(170, 170, 170) none repeat scroll 0% 0%; }
+::-webkit-scrollbar { width: 4px; background: rgb(238, 238, 238) none repeat scroll 0% 0%; }
+* { scrollbar-width: thin; scrollbar-color: rgb(119, 119, 119) rgb(238, 238, 238); }
+::-webkit-scrollbar-thumb { background: rgb(170, 170, 170) none repeat scroll 0% 0%; }
+::-webkit-scrollbar { width: 4px; background: rgb(238, 238, 238) none repeat scroll 0% 0%; }
+* { scrollbar-width: thin; scrollbar-color: rgb(119, 119, 119) rgb(238, 238, 238); }
+::-webkit-scrollbar-thumb { background: rgb(170, 170, 170) none repeat scroll 0% 0%; }
+::-webkit-scrollbar { width: 4px; background: rgb(238, 238, 238) none repeat scroll 0% 0%; }
+* { scrollbar-width: thin; scrollbar-color: rgb(119, 119, 119) rgb(238, 238, 238); }
+::-webkit-scrollbar-thumb { background: rgb(170, 170, 170) none repeat scroll 0% 0%; }
+::-webkit-scrollbar { width: 4px; background: rgb(238, 238, 238) none repeat scroll 0% 0%; }
+* { scrollbar-width: thin; scrollbar-color: rgb(119, 119, 119) rgb(238, 238, 238); }
+::-webkit-scrollbar-thumb { background: rgb(170, 170, 170) none repeat scroll 0% 0%; }
+::-webkit-scrollbar { width: 4px; background: rgb(238, 238, 238) none repeat scroll 0% 0%; }
+* { scrollbar-width: thin; scrollbar-color: rgb(119, 119, 119) rgb(238, 238, 238); }
+::-webkit-scrollbar-thumb { background: rgb(170, 170, 170) none repeat scroll 0% 0%; }
+::-webkit-scrollbar { width: 4px; background: rgb(238, 238, 238) none repeat scroll 0% 0%; }
+* { scrollbar-width: thin; scrollbar-color: rgb(119, 119, 119) rgb(238, 238, 238); }
+::-webkit-scrollbar-thumb { background: rgb(170, 170, 170) none repeat scroll 0% 0%; }
+::-webkit-scrollbar { width: 4px; background: rgb(238, 238, 238) none repeat scroll 0% 0%; }
+* { scrollbar-width: thin; scrollbar-color: rgb(119, 119, 119) rgb(238, 238, 238); }
+::-webkit-scrollbar-thumb { background: rgb(170, 170, 170) none repeat scroll 0% 0%; }
+::-webkit-scrollbar { width: 4px; background: rgb(238, 238, 238) none repeat scroll 0% 0%; }
+* { scrollbar-width: thin; scrollbar-color: rgb(119, 119, 119) rgb(238, 238, 238); }
+::-webkit-scrollbar-thumb { background: rgb(170, 170, 170) none repeat scroll 0% 0%; }
+::-webkit-scrollbar { width: 4px; background: rgb(238, 238, 238) none repeat scroll 0% 0%; }
+* { scrollbar-width: thin; scrollbar-color: rgb(119, 119, 119) rgb(238, 238, 238); }
+::-webkit-scrollbar-thumb { background: rgb(170, 170, 170) none repeat scroll 0% 0%; }
+::-webkit-scrollbar { width: 4px; background: rgb(238, 238, 238) none repeat scroll 0% 0%; }
+* { scrollbar-width: thin; scrollbar-color: rgb(119, 119, 119) rgb(238, 238, 238); }
+::-webkit-scrollbar-thumb { background: rgb(170, 170, 170) none repeat scroll 0% 0%; }
+::-webkit-scrollbar { width: 4px; background: rgb(238, 238, 238) none repeat scroll 0% 0%; }
+* { scrollbar-width: thin; scrollbar-color: rgb(119, 119, 119) rgb(238, 238, 238); }
+::-webkit-scrollbar-thumb { background: rgb(170, 170, 170) none repeat scroll 0% 0%; }
+::-webkit-scrollbar { width: 4px; background: rgb(238, 238, 238) none repeat scroll 0% 0%; }
+* { scrollbar-width: thin; scrollbar-color: rgb(119, 119, 119) rgb(238, 238, 238); }
+::-webkit-scrollbar-thumb { background: rgb(170, 170, 170) none repeat scroll 0% 0%; }
+::-webkit-scrollbar { width: 4px; background: rgb(238, 238, 238) none repeat scroll 0% 0%; }
+* { scrollbar-width: thin; scrollbar-color: rgb(119, 119, 119) rgb(238, 238, 238); }
+::-webkit-scrollbar-thumb { background: rgb(170, 170, 170) none repeat scroll 0% 0%; }
+::-webkit-scrollbar { width: 4px; background: rgb(238, 238, 238) none repeat scroll 0% 0%; }
+* { scrollbar-width: thin; scrollbar-color: rgb(119, 119, 119) rgb(238, 238, 238); }
+::-webkit-scrollbar-thumb { background: rgb(170, 170, 170) none repeat scroll 0% 0%; }
+::-webkit-scrollbar { width: 4px; background: rgb(238, 238, 238) none repeat scroll 0% 0%; }
+* { scrollbar-width: thin; scrollbar-color: rgb(119, 119, 119) rgb(238, 238, 238); }
+::-webkit-scrollbar-thumb { background: rgb(170, 170, 170) none repeat scroll 0% 0%; }
+::-webkit-scrollbar { width: 4px; background: rgb(238, 238, 238) none repeat scroll 0% 0%; }
+* { scrollbar-width: thin; scrollbar-color: rgb(119, 119, 119) rgb(238, 238, 238); }
+::-webkit-scrollbar-thumb { background: rgb(170, 170, 170) none repeat scroll 0% 0%; }
+::-webkit-scrollbar { width: 4px; background: rgb(238, 238, 238) none repeat scroll 0% 0%; }
+* { scrollbar-width: thin; scrollbar-color: rgb(119, 119, 119) rgb(238, 238, 238); }
+::-webkit-scrollbar-thumb { background: rgb(170, 170, 170) none repeat scroll 0% 0%; }
+::-webkit-scrollbar { width: 4px; background: rgb(238, 238, 238) none repeat scroll 0% 0%; }
+* { scrollbar-width: thin; scrollbar-color: rgb(119, 119, 119) rgb(238, 238, 238); }
+::-webkit-scrollbar-thumb { background: rgb(170, 170, 170) none repeat scroll 0% 0%; }
+::-webkit-scrollbar { width: 4px; background: rgb(238, 238, 238) none repeat scroll 0% 0%; }
+* { scrollbar-width: thin; scrollbar-color: rgb(119, 119, 119) rgb(238, 238, 238); }
+::-webkit-scrollbar-thumb { background: rgb(170, 170, 170) none repeat scroll 0% 0%; }
+::-webkit-scrollbar { width: 4px; background: rgb(238, 238, 238) none repeat scroll 0% 0%; }
+* { scrollbar-width: thin; scrollbar-color: rgb(119, 119, 119) rgb(238, 238, 238); }
+::-webkit-scrollbar-thumb { background: rgb(170, 170, 170) none repeat scroll 0% 0%; }
+::-webkit-scrollbar { width: 4px; background: rgb(238, 238, 238) none repeat scroll 0% 0%; }
+* { scrollbar-width: thin; scrollbar-color: rgb(119, 119, 119) rgb(238, 238, 238); }
+::-webkit-scrollbar-thumb { background: rgb(170, 170, 170) none repeat scroll 0% 0%; }
+::-webkit-scrollbar { width: 4px; background: rgb(238, 238, 238) none repeat scroll 0% 0%; }
+* { scrollbar-width: thin; scrollbar-color: rgb(119, 119, 119) rgb(238, 238, 238); }
+::-webkit-scrollbar-thumb { background: rgb(170, 170, 170) none repeat scroll 0% 0%; }
+::-webkit-scrollbar { width: 4px; background: rgb(238, 238, 238) none repeat scroll 0% 0%; }
+* { scrollbar-width: thin; scrollbar-color: rgb(119, 119, 119) rgb(238, 238, 238); }
+::-webkit-scrollbar-thumb { background: rgb(170, 170, 170) none repeat scroll 0% 0%; }
+::-webkit-scrollbar { width: 4px; background: rgb(238, 238, 238) none repeat scroll 0% 0%; }
+* { scrollbar-width: thin; scrollbar-color: rgb(119, 119, 119) rgb(238, 238, 238); }
+::-webkit-scrollbar-thumb { background: rgb(170, 170, 170) none repeat scroll 0% 0%; }
+::-webkit-scrollbar { width: 4px; background: rgb(238, 238, 238) none repeat scroll 0% 0%; }
+* { scrollbar-width: thin; scrollbar-color: rgb(119, 119, 119) rgb(238, 238, 238); }
+::-webkit-scrollbar-thumb { background: rgb(170, 170, 170) none repeat scroll 0% 0%; }
+::-webkit-scrollbar { width: 4px; background: rgb(238, 238, 238) none repeat scroll 0% 0%; }
+* { scrollbar-width: thin; scrollbar-color: rgb(119, 119, 119) rgb(238, 238, 238); }
+::-webkit-scrollbar-thumb { background: rgb(170, 170, 170) none repeat scroll 0% 0%; }
+::-webkit-scrollbar { width: 4px; background: rgb(238, 238, 238) none repeat scroll 0% 0%; }
+* { scrollbar-width: thin; scrollbar-color: rgb(119, 119, 119) rgb(238, 238, 238); }
+::-webkit-scrollbar-thumb { background: rgb(170, 170, 170) none repeat scroll 0% 0%; }
+::-webkit-scrollbar { width: 4px; background: rgb(238, 238, 238) none repeat scroll 0% 0%; }
+* { scrollbar-width: thin; scrollbar-color: rgb(119, 119, 119) rgb(238, 238, 238); }
+::-webkit-scrollbar-thumb { background: rgb(170, 170, 170) none repeat scroll 0% 0%; }
+::-webkit-scrollbar { width: 4px; background: rgb(238, 238, 238) none repeat scroll 0% 0%; }
+* { scrollbar-width: thin; scrollbar-color: rgb(119, 119, 119) rgb(238, 238, 238); }
+::-webkit-scrollbar-thumb { background: rgb(170, 170, 170) none repeat scroll 0% 0%; }
+::-webkit-scrollbar { width: 4px; background: rgb(238, 238, 238) none repeat scroll 0% 0%; }
+* { scrollbar-width: thin; scrollbar-color: rgb(119, 119, 119) rgb(238, 238, 238); }
+::-webkit-scrollbar-thumb { background: rgb(170, 170, 170) none repeat scroll 0% 0%; }
+::-webkit-scrollbar { width: 4px; background: rgb(238, 238, 238) none repeat scroll 0% 0%; }
+* { scrollbar-width: thin; scrollbar-color: rgb(119, 119, 119) rgb(238, 238, 238); }
+::-webkit-scrollbar-thumb { background: rgb(170, 170, 170) none repeat scroll 0% 0%; }
+::-webkit-scrollbar { width: 4px; background: rgb(238, 238, 238) none repeat scroll 0% 0%; }
+* { scrollbar-width: thin; scrollbar-color: rgb(119, 119, 119) rgb(238, 238, 238); }
+::-webkit-scrollbar-thumb { background: rgb(170, 170, 170) none repeat scroll 0% 0%; }
+::-webkit-scrollbar { width: 4px; background: rgb(238, 238, 238) none repeat scroll 0% 0%; }
+* { scrollbar-width: thin; scrollbar-color: rgb(119, 119, 119) rgb(238, 238, 238); }
+::-webkit-scrollbar-thumb { background: rgb(170, 170, 170) none repeat scroll 0% 0%; }
+::-webkit-scrollbar { width: 4px; background: rgb(238, 238, 238) none repeat scroll 0% 0%; }
+* { scrollbar-width: thin; scrollbar-color: rgb(119, 119, 119) rgb(238, 238, 238); }
+::-webkit-scrollbar-thumb { background: rgb(170, 170, 170) none repeat scroll 0% 0%; }
+::-webkit-scrollbar { width: 4px; background: rgb(238, 238, 238) none repeat scroll 0% 0%; }
+* { scrollbar-width: thin; scrollbar-color: rgb(119, 119, 119) rgb(238, 238, 238); }
+::-webkit-scrollbar-thumb { background: rgb(170, 170, 170) none repeat scroll 0% 0%; }
+::-webkit-scrollbar { width: 4px; background: rgb(238, 238, 238) none repeat scroll 0% 0%; }
+* { scrollbar-width: thin; scrollbar-color: rgb(119, 119, 119) rgb(238, 238, 238); }
+::-webkit-scrollbar-thumb { background: rgb(170, 170, 170) none repeat scroll 0% 0%; }
+::-webkit-scrollbar { width: 4px; background: rgb(238, 238, 238) none repeat scroll 0% 0%; }
+* { scrollbar-width: thin; scrollbar-color: rgb(119, 119, 119) rgb(238, 238, 238); }
+::-webkit-scrollbar-thumb { background: rgb(170, 170, 170) none repeat scroll 0% 0%; }
+::-webkit-scrollbar { width: 4px; background: rgb(238, 238, 238) none repeat scroll 0% 0%; }
+* { scrollbar-width: thin; scrollbar-color: rgb(119, 119, 119) rgb(238, 238, 238); }
+::-webkit-scrollbar-thumb { background: rgb(170, 170, 170) none repeat scroll 0% 0%; }
+::-webkit-scrollbar { width: 4px; background: rgb(238, 238, 238) none repeat scroll 0% 0%; }
+* { scrollbar-width: thin; scrollbar-color: rgb(119, 119, 119) rgb(238, 238, 238); }
+::-webkit-scrollbar-thumb { background: rgb(170, 170, 170) none repeat scroll 0% 0%; }
+::-webkit-scrollbar { width: 4px; background: rgb(238, 238, 238) none repeat scroll 0% 0%; }
+* { scrollbar-width: thin; scrollbar-color: rgb(119, 119, 119) rgb(238, 238, 238); }
+::-webkit-scrollbar-thumb { background: rgb(170, 170, 170) none repeat scroll 0% 0%; }
+::-webkit-scrollbar { width: 4px; background: rgb(238, 238, 238) none repeat scroll 0% 0%; }
+* { scrollbar-width: thin; scrollbar-color: rgb(119, 119, 119) rgb(238, 238, 238); }
+::-webkit-scrollbar-thumb { background: rgb(170, 170, 170) none repeat scroll 0% 0%; }
+::-webkit-scrollbar { width: 4px; background: rgb(238, 238, 238) none repeat scroll 0% 0%; }
+* { scrollbar-width: thin; scrollbar-color: rgb(119, 119, 119) rgb(238, 238, 238); }
+::-webkit-scrollbar-thumb { background: rgb(170, 170, 170) none repeat scroll 0% 0%; }
+::-webkit-scrollbar { width: 4px; background: rgb(238, 238, 238) none repeat scroll 0% 0%; }
+* { scrollbar-width: thin; scrollbar-color: rgb(119, 119, 119) rgb(238, 238, 238); }
+::-webkit-scrollbar-thumb { background: rgb(170, 170, 170) none repeat scroll 0% 0%; }
+::-webkit-scrollbar { width: 4px; background: rgb(238, 238, 238) none repeat scroll 0% 0%; }
+* { scrollbar-width: thin; scrollbar-color: rgb(119, 119, 119) rgb(238, 238, 238); }
+::-webkit-scrollbar-thumb { background: rgb(170, 170, 170) none repeat scroll 0% 0%; }
+::-webkit-scrollbar { width: 4px; background: rgb(238, 238, 238) none repeat scroll 0% 0%; }
+* { scrollbar-width: thin; scrollbar-color: rgb(119, 119, 119) rgb(238, 238, 238); }
+::-webkit-scrollbar-thumb { background: rgb(170, 170, 170) none repeat scroll 0% 0%; }
+::-webkit-scrollbar { width: 4px; background: rgb(238, 238, 238) none repeat scroll 0% 0%; }
+* { scrollbar-width: thin; scrollbar-color: rgb(119, 119, 119) rgb(238, 238, 238); }
+::-webkit-scrollbar-thumb { background: rgb(170, 170, 170) none repeat scroll 0% 0%; }
+::-webkit-scrollbar { width: 4px; background: rgb(238, 238, 238) none repeat scroll 0% 0%; }
+* { scrollbar-width: thin; scrollbar-color: rgb(119, 119, 119) rgb(238, 238, 238); }
+::-webkit-scrollbar-thumb { background: rgb(170, 170, 170) none repeat scroll 0% 0%; }
+::-webkit-scrollbar { width: 4px; background: rgb(238, 238, 238) none repeat scroll 0% 0%; }
+* { scrollbar-width: thin; scrollbar-color: rgb(119, 119, 119) rgb(238, 238, 238); }
+::-webkit-scrollbar-thumb { background: rgb(170, 170, 170) none repeat scroll 0% 0%; }
+::-webkit-scrollbar { width: 4px; background: rgb(238, 238, 238) none repeat scroll 0% 0%; }
+* { scrollbar-width: thin; scrollbar-color: rgb(119, 119, 119) rgb(238, 238, 238); }
+::-webkit-scrollbar-thumb { background: rgb(170, 170, 170) none repeat scroll 0% 0%; }
+::-webkit-scrollbar { width: 4px; background: rgb(238, 238, 238) none repeat scroll 0% 0%; }
+* { scrollbar-width: thin; scrollbar-color: rgb(119, 119, 119) rgb(238, 238, 238); }
+::-webkit-scrollbar-thumb { background: rgb(170, 170, 170) none repeat scroll 0% 0%; }
+::-webkit-scrollbar { width: 4px; background: rgb(238, 238, 238) none repeat scroll 0% 0%; }
+* { scrollbar-width: thin; scrollbar-color: rgb(119, 119, 119) rgb(238, 238, 238); }
+::-webkit-scrollbar-thumb { background: rgb(170, 170, 170) none repeat scroll 0% 0%; }
+::-webkit-scrollbar { width: 4px; background: rgb(238, 238, 238) none repeat scroll 0% 0%; }
+* { scrollbar-width: thin; scrollbar-color: rgb(119, 119, 119) rgb(238, 238, 238); }
+::-webkit-scrollbar-thumb { background: rgb(170, 170, 170) none repeat scroll 0% 0%; }
+::-webkit-scrollbar { width: 4px; background: rgb(238, 238, 238) none repeat scroll 0% 0%; }
+* { scrollbar-width: thin; scrollbar-color: rgb(119, 119, 119) rgb(238, 238, 238); }
+::-webkit-scrollbar-thumb { background: rgb(170, 170, 170) none repeat scroll 0% 0%; }
+::-webkit-scrollbar { width: 4px; background: rgb(238, 238, 238) none repeat scroll 0% 0%; }
+* { scrollbar-width: thin; scrollbar-color: rgb(119, 119, 119) rgb(238, 238, 238); }
+::-webkit-scrollbar-thumb { background: rgb(170, 170, 170) none repeat scroll 0% 0%; }
+::-webkit-scrollbar { width: 4px; background: rgb(238, 238, 238) none repeat scroll 0% 0%; }
+* { scrollbar-width: thin; scrollbar-color: rgb(119, 119, 119) rgb(238, 238, 238); }
+::-webkit-scrollbar-thumb { background: rgb(170, 170, 170) none repeat scroll 0% 0%; }
+::-webkit-scrollbar { width: 4px; background: rgb(238, 238, 238) none repeat scroll 0% 0%; }
+* { scrollbar-width: thin; scrollbar-color: rgb(119, 119, 119) rgb(238, 238, 238); }
+::-webkit-scrollbar-thumb { background: rgb(170, 170, 170) none repeat scroll 0% 0%; }
+::-webkit-scrollbar { width: 4px; background: rgb(238, 238, 238) none repeat scroll 0% 0%; }
+* { scrollbar-width: thin; scrollbar-color: rgb(119, 119, 119) rgb(238, 238, 238); }
+::-webkit-scrollbar-thumb { background: rgb(170, 170, 170) none repeat scroll 0% 0%; }
+::-webkit-scrollbar { width: 4px; background: rgb(238, 238, 238) none repeat scroll 0% 0%; }
+* { scrollbar-width: thin; scrollbar-color: rgb(119, 119, 119) rgb(238, 238, 238); }
+::-webkit-scrollbar-thumb { background: rgb(170, 170, 170) none repeat scroll 0% 0%; }
+::-webkit-scrollbar { width: 4px; background: rgb(238, 238, 238) none repeat scroll 0% 0%; }
+* { scrollbar-width: thin; scrollbar-color: rgb(119, 119, 119) rgb(238, 238, 238); }
+::-webkit-scrollbar-thumb { background: rgb(170, 170, 170) none repeat scroll 0% 0%; }
+::-webkit-scrollbar { width: 4px; background: rgb(238, 238, 238) none repeat scroll 0% 0%; }
+* { scrollbar-width: thin; scrollbar-color: rgb(119, 119, 119) rgb(238, 238, 238); }
+::-webkit-scrollbar-thumb { background: rgb(170, 170, 170) none repeat scroll 0% 0%; }
+::-webkit-scrollbar { width: 4px; background: rgb(238, 238, 238) none repeat scroll 0% 0%; }
+* { scrollbar-width: thin; scrollbar-color: rgb(119, 119, 119) rgb(238, 238, 238); }
+::-webkit-scrollbar-thumb { background: rgb(170, 170, 170) none repeat scroll 0% 0%; }
+::-webkit-scrollbar { width: 4px; background: rgb(238, 238, 238) none repeat scroll 0% 0%; }
+* { scrollbar-width: thin; scrollbar-color: rgb(119, 119, 119) rgb(238, 238, 238); }
+::-webkit-scrollbar-thumb { background: rgb(170, 170, 170) none repeat scroll 0% 0%; }
+::-webkit-scrollbar { width: 4px; background: rgb(238, 238, 238) none repeat scroll 0% 0%; }
+* { scrollbar-width: thin; scrollbar-color: rgb(119, 119, 119) rgb(238, 238, 238); }
+::-webkit-scrollbar-thumb { background: rgb(170, 170, 170) none repeat scroll 0% 0%; }
+::-webkit-scrollbar { width: 4px; background: rgb(238, 238, 238) none repeat scroll 0% 0%; }
+* { scrollbar-width: thin; scrollbar-color: rgb(119, 119, 119) rgb(238, 238, 238); }
+::-webkit-scrollbar-thumb { background: rgb(170, 170, 170) none repeat scroll 0% 0%; }
+::-webkit-scrollbar { width: 4px; background: rgb(238, 238, 238) none repeat scroll 0% 0%; }
+* { scrollbar-width: thin; scrollbar-color: rgb(119, 119, 119) rgb(238, 238, 238); }
+::-webkit-scrollbar-thumb { background: rgb(170, 170, 170) none repeat scroll 0% 0%; }
+::-webkit-scrollbar { width: 4px; background: rgb(238, 238, 238) none repeat scroll 0% 0%; }
+* { scrollbar-width: thin; scrollbar-color: rgb(119, 119, 119) rgb(238, 238, 238); }
+::-webkit-scrollbar-thumb { background: rgb(170, 170, 170) none repeat scroll 0% 0%; }
+::-webkit-scrollbar { width: 4px; background: rgb(238, 238, 238) none repeat scroll 0% 0%; }
+* { scrollbar-width: thin; scrollbar-color: rgb(119, 119, 119) rgb(238, 238, 238); }
+::-webkit-scrollbar-thumb { background: rgb(170, 170, 170) none repeat scroll 0% 0%; }
+::-webkit-scrollbar { width: 4px; background: rgb(238, 238, 238) none repeat scroll 0% 0%; }
+* { scrollbar-width: thin; scrollbar-color: rgb(119, 119, 119) rgb(238, 238, 238); }
+::-webkit-scrollbar-thumb { background: rgb(170, 170, 170) none repeat scroll 0% 0%; }
+::-webkit-scrollbar { width: 4px; background: rgb(238, 238, 238) none repeat scroll 0% 0%; }
+* { scrollbar-width: thin; scrollbar-color: rgb(119, 119, 119) rgb(238, 238, 238); }
+::-webkit-scrollbar-thumb { background: rgb(170, 170, 170) none repeat scroll 0% 0%; }
+::-webkit-scrollbar { width: 4px; background: rgb(238, 238, 238) none repeat scroll 0% 0%; }
+* { scrollbar-width: thin; scrollbar-color: rgb(119, 119, 119) rgb(238, 238, 238); }
+::-webkit-scrollbar-thumb { background: rgb(170, 170, 170) none repeat scroll 0% 0%; }
+::-webkit-scrollbar { width: 4px; background: rgb(238, 238, 238) none repeat scroll 0% 0%; }
+* { scrollbar-width: thin; scrollbar-color: rgb(119, 119, 119) rgb(238, 238, 238); }
+::-webkit-scrollbar-thumb { background: rgb(170, 170, 170) none repeat scroll 0% 0%; }
+::-webkit-scrollbar { width: 4px; background: rgb(238, 238, 238) none repeat scroll 0% 0%; }
+* { scrollbar-width: thin; scrollbar-color: rgb(119, 119, 119) rgb(238, 238, 238); }
+::-webkit-scrollbar-thumb { background: rgb(170, 170, 170) none repeat scroll 0% 0%; }
+::-webkit-scrollbar { width: 4px; background: rgb(238, 238, 238) none repeat scroll 0% 0%; }
+* { scrollbar-width: thin; scrollbar-color: rgb(119, 119, 119) rgb(238, 238, 238); }
+::-webkit-scrollbar-thumb { background: rgb(170, 170, 170) none repeat scroll 0% 0%; }
+::-webkit-scrollbar { width: 4px; background: rgb(238, 238, 238) none repeat scroll 0% 0%; }
+* { scrollbar-width: thin; scrollbar-color: rgb(119, 119, 119) rgb(238, 238, 238); }
+::-webkit-scrollbar-thumb { background: rgb(170, 170, 170) none repeat scroll 0% 0%; }
+::-webkit-scrollbar { width: 4px; background: rgb(238, 238, 238) none repeat scroll 0% 0%; }
+* { scrollbar-width: thin; scrollbar-color: rgb(119, 119, 119) rgb(238, 238, 238); }
+::-webkit-scrollbar-thumb { background: rgb(170, 170, 170) none repeat scroll 0% 0%; }
+::-webkit-scrollbar { width: 4px; background: rgb(238, 238, 238) none repeat scroll 0% 0%; }
+* { scrollbar-width: thin; scrollbar-color: rgb(119, 119, 119) rgb(238, 238, 238); }
+::-webkit-scrollbar-thumb { background: rgb(170, 170, 170) none repeat scroll 0% 0%; }
+::-webkit-scrollbar { width: 4px; background: rgb(238, 238, 238) none repeat scroll 0% 0%; }
+* { scrollbar-width: thin; scrollbar-color: rgb(119, 119, 119) rgb(238, 238, 238); }
+::-webkit-scrollbar-thumb { background: rgb(170, 170, 170) none repeat scroll 0% 0%; }
+::-webkit-scrollbar { width: 4px; background: rgb(238, 238, 238) none repeat scroll 0% 0%; }
+* { scrollbar-width: thin; scrollbar-color: rgb(119, 119, 119) rgb(238, 238, 238); }
+::-webkit-scrollbar-thumb { background: rgb(170, 170, 170) none repeat scroll 0% 0%; }
+::-webkit-scrollbar { width: 4px; background: rgb(238, 238, 238) none repeat scroll 0% 0%; }
+* { scrollbar-width: thin; scrollbar-color: rgb(119, 119, 119) rgb(238, 238, 238); }
+::-webkit-scrollbar-thumb { background: rgb(170, 170, 170) none repeat scroll 0% 0%; }
+::-webkit-scrollbar { width: 4px; background: rgb(238, 238, 238) none repeat scroll 0% 0%; }
+* { scrollbar-width: thin; scrollbar-color: rgb(119, 119, 119) rgb(238, 238, 238); }
+::-webkit-scrollbar-thumb { background: rgb(170, 170, 170) none repeat scroll 0% 0%; }
+::-webkit-scrollbar { width: 4px; background: rgb(238, 238, 238) none repeat scroll 0% 0%; }
+* { scrollbar-width: thin; scrollbar-color: rgb(119, 119, 119) rgb(238, 238, 238); }
+::-webkit-scrollbar-thumb { background: rgb(170, 170, 170) none repeat scroll 0% 0%; }
+::-webkit-scrollbar { width: 4px; background: rgb(238, 238, 238) none repeat scroll 0% 0%; }
+* { scrollbar-width: thin; scrollbar-color: rgb(119, 119, 119) rgb(238, 238, 238); }
+::-webkit-scrollbar-thumb { background: rgb(170, 170, 170) none repeat scroll 0% 0%; }
+::-webkit-scrollbar { width: 4px; background: rgb(238, 238, 238) none repeat scroll 0% 0%; }
+* { scrollbar-width: thin; scrollbar-color: rgb(119, 119, 119) rgb(238, 238, 238); }
+::-webkit-scrollbar-thumb { background: rgb(170, 170, 170) none repeat scroll 0% 0%; }
+::-webkit-scrollbar { width: 4px; background: rgb(238, 238, 238) none repeat scroll 0% 0%; }
+* { scrollbar-width: thin; scrollbar-color: rgb(119, 119, 119) rgb(238, 238, 238); }
+::-webkit-scrollbar-thumb { background: rgb(170, 170, 170) none repeat scroll 0% 0%; }
+::-webkit-scrollbar { width: 4px; background: rgb(238, 238, 238) none repeat scroll 0% 0%; }
+* { scrollbar-width: thin; scrollbar-color: rgb(119, 119, 119) rgb(238, 238, 238); }
+::-webkit-scrollbar-thumb { background: rgb(170, 170, 170) none repeat scroll 0% 0%; }
+::-webkit-scrollbar { width: 4px; background: rgb(238, 238, 238) none repeat scroll 0% 0%; }
+* { scrollbar-width: thin; scrollbar-color: rgb(119, 119, 119) rgb(238, 238, 238); }
+::-webkit-scrollbar-thumb { background: rgb(170, 170, 170) none repeat scroll 0% 0%; }
+::-webkit-scrollbar { width: 4px; background: rgb(238, 238, 238) none repeat scroll 0% 0%; }
+* { scrollbar-width: thin; scrollbar-color: rgb(119, 119, 119) rgb(238, 238, 238); }
+::-webkit-scrollbar-thumb { background: rgb(170, 170, 170) none repeat scroll 0% 0%; }
+::-webkit-scrollbar { width: 4px; background: rgb(238, 238, 238) none repeat scroll 0% 0%; }
+* { scrollbar-width: thin; scrollbar-color: rgb(119, 119, 119) rgb(238, 238, 238); }
+::-webkit-scrollbar-thumb { background: rgb(170, 170, 170) none repeat scroll 0% 0%; }
+::-webkit-scrollbar { width: 4px; background: rgb(238, 238, 238) none repeat scroll 0% 0%; }
+* { scrollbar-width: thin; scrollbar-color: rgb(119, 119, 119) rgb(238, 238, 238); }
+::-webkit-scrollbar-thumb { background: rgb(170, 170, 170) none repeat scroll 0% 0%; }
+::-webkit-scrollbar { width: 4px; background: rgb(238, 238, 238) none repeat scroll 0% 0%; }
+* { scrollbar-width: thin; scrollbar-color: rgb(119, 119, 119) rgb(238, 238, 238); }
+::-webkit-scrollbar-thumb { background: rgb(170, 170, 170) none repeat scroll 0% 0%; }
+::-webkit-scrollbar { width: 4px; background: rgb(238, 238, 238) none repeat scroll 0% 0%; }
+* { scrollbar-width: thin; scrollbar-color: rgb(119, 119, 119) rgb(238, 238, 238); }
+::-webkit-scrollbar-thumb { background: rgb(170, 170, 170) none repeat scroll 0% 0%; }
+::-webkit-scrollbar { width: 4px; background: rgb(238, 238, 238) none repeat scroll 0% 0%; }
+* { scrollbar-width: thin; scrollbar-color: rgb(119, 119, 119) rgb(238, 238, 238); }
+::-webkit-scrollbar-thumb { background: rgb(170, 170, 170) none repeat scroll 0% 0%; }
+::-webkit-scrollbar { width: 4px; background: rgb(238, 238, 238) none repeat scroll 0% 0%; }
+* { scrollbar-width: thin; scrollbar-color: rgb(119, 119, 119) rgb(238, 238, 238); }
+::-webkit-scrollbar-thumb { background: rgb(170, 170, 170) none repeat scroll 0% 0%; }
+::-webkit-scrollbar { width: 4px; background: rgb(238, 238, 238) none repeat scroll 0% 0%; }
+* { scrollbar-width: thin; scrollbar-color: rgb(119, 119, 119) rgb(238, 238, 238); }
+::-webkit-scrollbar-thumb { background: rgb(170, 170, 170) none repeat scroll 0% 0%; }
+::-webkit-scrollbar { width: 4px; background: rgb(238, 238, 238) none repeat scroll 0% 0%; }
+* { scrollbar-width: thin; scrollbar-color: rgb(119, 119, 119) rgb(238, 238, 238); }
+::-webkit-scrollbar-thumb { background: rgb(170, 170, 170) none repeat scroll 0% 0%; }
+::-webkit-scrollbar { width: 4px; background: rgb(238, 238, 238) none repeat scroll 0% 0%; }
+* { scrollbar-width: thin; scrollbar-color: rgb(119, 119, 119) rgb(238, 238, 238); }
+::-webkit-scrollbar-thumb { background: rgb(170, 170, 170) none repeat scroll 0% 0%; }
+::-webkit-scrollbar { width: 4px; background: rgb(238, 238, 238) none repeat scroll 0% 0%; }
+* { scrollbar-width: thin; scrollbar-color: rgb(119, 119, 119) rgb(238, 238, 238); }
+::-webkit-scrollbar-thumb { background: rgb(170, 170, 170) none repeat scroll 0% 0%; }
+::-webkit-scrollbar { width: 4px; background: rgb(238, 238, 238) none repeat scroll 0% 0%; }
+* { scrollbar-width: thin; scrollbar-color: rgb(119, 119, 119) rgb(238, 238, 238); }
+::-webkit-scrollbar-thumb { background: rgb(170, 170, 170) none repeat scroll 0% 0%; }
+::-webkit-scrollbar { width: 4px; background: rgb(238, 238, 238) none repeat scroll 0% 0%; }
+* { scrollbar-width: thin; scrollbar-color: rgb(119, 119, 119) rgb(238, 238, 238); }
+::-webkit-scrollbar-thumb { background: rgb(170, 170, 170) none repeat scroll 0% 0%; }
+::-webkit-scrollbar { width: 4px; background: rgb(238, 238, 238) none repeat scroll 0% 0%; }
+* { scrollbar-width: thin; scrollbar-color: rgb(119, 119, 119) rgb(238, 238, 238); }
+::-webkit-scrollbar-thumb { background: rgb(170, 170, 170) none repeat scroll 0% 0%; }
+::-webkit-scrollbar { width: 4px; background: rgb(238, 238, 238) none repeat scroll 0% 0%; }
+* { scrollbar-width: thin; scrollbar-color: rgb(119, 119, 119) rgb(238, 238, 238); }
+::-webkit-scrollbar-thumb { background: rgb(170, 170, 170) none repeat scroll 0% 0%; }
+::-webkit-scrollbar { width: 4px; background: rgb(238, 238, 238) none repeat scroll 0% 0%; }
+[name="objetButton"] td { padding: 3px; text-align: center; }
+[name="objetSocial"] td { padding: 3px; text-align: center; }
+[name="objetDivider"] td { padding: 3px; }
+[name="objetSpacer"] td { padding: 3px; }
+[name="objetVideo"] td { max-width: 0px; padding: 3px; text-align: center; }
+[name="objetShare"] td { max-width: 0px; padding: 3px; text-align: center; }
+[name="objetImage"] img { border-width: 0px; max-width: 100%; border-radius: 0px; }
+[name="objetButton"] a div { font-size: 16px; border: 0px solid rgb(0, 0, 0); height: 50px; font-family: Arial, Helvetica, sans-serif; width: 150px; font-weight: bold; color: rgb(255, 255, 255); margin-left: auto; background-color: rgb(55, 71, 79); margin-right: auto; border-radius: 5px; }
+[name="objetSocial"] a img { padding-left: 2px; padding-right: 2px; }
+[name="objetDivider"] div { margin-bottom: 2px; border-top: 1px solid rgb(0, 0, 0); margin-top: 2px; }
+[name="objetSpacer"] div { border-width: 0px; height: 20px; }
+[name="objetVideo"] img { border-width: 0px; max-width: 100%; }
+[name="objetShare"] img { border-width: 0px; max-width: 100%; }
+.dragableObjet { cursor: move; position: relative; }
+unknown { }
+@media only screen and  (min-width: 481px) and (max-width: 600px){
+body{width:100% !important; min-width:100% !important;}
+table[class='flexibleContainer'] {width:100% !important;}
+td[class='flexibleContainerCell'] {width:100% !important;}
+td[class='flexibleContainerBox']{}
+td[class='flexibleContainerBoxNext']{}
+[name='objetText'] TD {PADDING-LEFT: 5px !important; PADDING-RIGHT: 5px !important;}
+[name='objetImage'] TD {PADDING-LEFT: 5px !important; PADDING-RIGHT: 5px !important;}
+[name='objetDivider'] TD {PADDING-LEFT: 5px !important; PADDING-RIGHT: 5px !important;}
+[name='objetSpacer'] TD {PADDING-LEFT: 5px !important; PADDING-RIGHT: 5px !important;}
+[name='objetVideo'] TD {PADDING-LEFT: 5px !important; PADDING-RIGHT: 5px !important;}
+[name='objetButton'] DIV {max-width:0px;}
+[name='bloc'] TD {PADDING-LEFT:0px; PADDING-RIGHT:0px}
+img {width: auto !important; height: auto !important;}
+body{width:100% !important; min-width:100% !important;}
+table.flexibleContainer {width:100% !important;}
+td.flexibleContainerCell {width:100% !important;}
+td.flexibleContainerBox{}
+td.flexibleContainerBoxNext{}
+.CLS_objetText TD {PADDING-LEFT: 5px !important; PADDING-RIGHT: 5px !important;}
+.CLS_objetImage TD {PADDING-LEFT: 5px !important; PADDING-RIGHT: 5px !important;}
+.CLS_objetDivider TD {PADDING-LEFT: 5px !important; PADDING-RIGHT: 5px !important;}
+.CLS_objetSpacer TD {PADDING-LEFT: 5px !important; PADDING-RIGHT: 5px !important;}
+.CLS_objetVideo TD {PADDING-LEFT: 5px !important; PADDING-RIGHT: 5px !important;}
+.CLS_objetButton DIV {max-width:0px;}
+.CLS_bloc TD {PADDING-LEFT:0px; PADDING-RIGHT:0px}
+img {width: auto !important; height: auto !important;}
+}
+@media only screen and (max-width: 480px){
+[id='messageEval']{display:none;}
+body{width:100% !important; min-width:100% !important;}
+table[class='flexibleContainer'] {width:100% !important;}
+td[class='flexibleContainerCell'] {width:100% !important;}
+td[class='flexibleContainerBox']{display:block; width:100% !important;}
+td[class='flexibleContainerBoxNext']{padding-top:10px !important; padding-left:0px !important; display: block; width:100% !important;}
+[name='bloc'] TD {PADDING-LEFT:0px; PADDING-RIGHT:0px}
+img {width: auto !important; height: auto !important;}
+#messageEval {display: none;}
+body {width: 100% !important; min-width: 100% !important;}
+table.flexibleContainer {width: 100% !important;}
+td.flexibleContainerCell {width: 100% !important;}
+td.flexibleContainerBox {display: block; width: 100% !important;}
+td.flexibleContainerBoxNext {padding-top: 10px !important; padding-left: 0px !important; display: block; width: 100% !important;}
+.CLS_bloc TD {PADDING-LEFT:0px; PADDING-RIGHT:0px}
+img {width: auto !important; height: auto !important;}
+}
+@media only screen and (max-width: 1024px){
+body{width:100% !important; min-width:100% !important; -ms-overflow-style: none;}
+}
+:root {color-scheme: light;}
+</style>
+<div style="text-align: center; margin: 0px; background-color: rgb(185, 246, 202); min-height: 100%; padding: 0px; width: 100%; scrollbar-width: thin; scrollbar-color: rgb(119, 119, 119) rgb(238, 238, 238); height: 100%;" bgcolor="rgb(185, 246, 202)"><table class="flexibleContainer" id="bodyTable" style="margin-right:auto; margin-left:auto; width: 100%; height:100%; text-align:center;" height="100%" cellspacing="0" cellpadding="0" bgcolor="rgb(185, 246, 202)"><tbody><tr><td id="bodyTd" style="background-color:rgb(185, 246, 202);  padding: 0px 0px 0px 0px; width: 100%; height:100%; text-align: center;" valign="top" height="100%" bgcolor="rgb(185, 246, 202)">
+
+  <table id="main" class="flexibleContainer" style="border-image: none 100% / 1 / 0 stretch; width: 600px; margin-left: auto; margin-right: auto; min-height: 100%; background-color: rgb(185, 246, 202); text-align: left; scrollbar-width: thin; scrollbar-color: rgb(119, 119, 119) rgb(238, 238, 238);" cellspacing="0" cellpadding="0"><tbody style="scrollbar-width: thin; scrollbar-color: rgb(119, 119, 119) rgb(238, 238, 238);"><tr style="scrollbar-width: thin; scrollbar-color: rgb(119, 119, 119) rgb(238, 238, 238);"><td style="width: 100%; text-align: center; font-size: 11px; font-family: Arial, Helvetica, sans-serif; padding-top: 10px; scrollbar-width: thin; scrollbar-color: rgb(119, 119, 119) rgb(238, 238, 238);"><a id="linkTopMiror" href="https://lnk.smart-way-c3.tech/u5Ae3KzFaDdGWUkpnW594HfLA110105118101108101116106101097110045109105099104101108064111114097110103101046102114m01uW1800267/versionWeb.html" target="_new" style="scrollbar-width: thin; scrollbar-color: rgb(119, 119, 119) rgb(238, 238, 238);">Si vous ne visualisez pas correctement le contenu, cliquez-ici</a></td></tr>
+
+    </tbody><tbody style="scrollbar-width: thin; scrollbar-color: rgb(119, 119, 119) rgb(238, 238, 238);">
+
+
+
+    <tr id="CELL-BLOC-49302" style="scrollbar-width: thin; scrollbar-color: rgb(119, 119, 119) rgb(238, 238, 238);"><td class="flexibleContainerCell" style="scrollbar-width: thin; scrollbar-color: rgb(119, 119, 119) rgb(238, 238, 238); padding: 0px;"><table id="BLOC-14482" name="bloc" class="CLS_bloc" style="width: 100%; border-spacing: 0px; border-collapse: collapse; text-align: left; margin-bottom: 0px; border-image: none 100% / 1 / 0 stretch; margin-top: 1px; scrollbar-width: thin; scrollbar-color: rgb(119, 119, 119) rgb(238, 238, 238);" cellpadding="0"><tbody style="scrollbar-width: thin; scrollbar-color: rgb(119, 119, 119) rgb(238, 238, 238);"><tr style="scrollbar-width: thin; scrollbar-color: rgb(119, 119, 119) rgb(238, 238, 238);"><td style="width: 25%; vertical-align: middle; padding: 2px; border-image: none 100% / 1 / 0 stretch; scrollbar-width: thin; scrollbar-color: rgb(119, 119, 119) rgb(238, 238, 238);" name="column" class="flexibleContainerBox" id="COLUMN-66820"><table name="TA_inCol" style="width: 100%; border-spacing: 0px; border-collapse: collapse; text-align: left; scrollbar-width: thin; scrollbar-color: rgb(119, 119, 119) rgb(238, 238, 238);" cellpadding="0"><tbody style="scrollbar-width: thin; scrollbar-color: rgb(119, 119, 119) rgb(238, 238, 238);"><tr name="TR_inCol" style="scrollbar-width: thin; scrollbar-color: rgb(119, 119, 119) rgb(238, 238, 238);"><td style="width: 100%; padding: 2px; scrollbar-width: thin; scrollbar-color: rgb(119, 119, 119) rgb(238, 238, 238);"><table id="IMG-85908" name="objetImage" class="CLS_objetImage" style="width: 100%; text-align: left; scrollbar-width: thin; scrollbar-color: rgb(119, 119, 119) rgb(238, 238, 238);"><tbody style="scrollbar-width: thin; scrollbar-color: rgb(119, 119, 119) rgb(238, 238, 238);"><tr style="scrollbar-width: thin; scrollbar-color: rgb(119, 119, 119) rgb(238, 238, 238);"><td style="width: 100%; text-align: right; padding: 2px; max-width: 0px; scrollbar-width: thin; scrollbar-color: rgb(119, 119, 119) rgb(238, 238, 238);"><img src="https://subDomainImage.etarget-emailing.com/data_user/zPMxXuSU/img/e02e963f13e13ad1d1ee2841fda5b3a6.png" style="max-width: 100%; scrollbar-width: thin; scrollbar-color: rgb(119, 119, 119) rgb(238, 238, 238); border-width: 0px; border-radius: 0px;" alt="" width="132" height="57" border="0"></td></tr></tbody></table></td></tr></tbody></table></td><td style="width: 50%; padding: 2px; border-image: none 100% / 1 / 0 stretch; vertical-align: top; scrollbar-width: thin; scrollbar-color: rgb(119, 119, 119) rgb(238, 238, 238);" name="column" class="flexibleContainerBoxNext" id="COLUMN-93190"><table name="TA_inCol" style="width: 100%; border-spacing: 0px; border-collapse: collapse; text-align: left; scrollbar-width: thin; scrollbar-color: rgb(119, 119, 119) rgb(238, 238, 238);" cellpadding="0"><tbody style="scrollbar-width: thin; scrollbar-color: rgb(119, 119, 119) rgb(238, 238, 238);"><tr name="TR_inCol" style="scrollbar-width: thin; scrollbar-color: rgb(119, 119, 119) rgb(238, 238, 238);"><td style="width: 100%; padding: 2px; scrollbar-width: thin; scrollbar-color: rgb(119, 119, 119) rgb(238, 238, 238);"><table name="objetText" class="CLS_objetText" id="TEXT-64671" style="width: 100%; text-align: left; scrollbar-width: thin; scrollbar-color: rgb(119, 119, 119) rgb(238, 238, 238);"><tbody style="scrollbar-width: thin; scrollbar-color: rgb(119, 119, 119) rgb(238, 238, 238);"><tr style="scrollbar-width: thin; scrollbar-color: rgb(119, 119, 119) rgb(238, 238, 238);"><!--[if mso]><td style="width: 100%; line-height: 1.2; padding: 2px; font-size: 12px; font-family: Verdana, Geneva, sans-serif; color: rgb(0, 0, 0); text-align: center; scrollbar-width: thin; scrollbar-color: rgb(119, 119, 119) rgb(238, 238, 238); mso-line-height:exactly; line-height:92%;"><![endif]--><!--[if !mso]--><td style="width: 100%; line-height: 1.2; padding: 2px; font-size: 12px; font-family: Verdana, Geneva, sans-serif; color: rgb(0, 0, 0); text-align: center; scrollbar-width: thin; scrollbar-color: rgb(119, 119, 119) rgb(238, 238, 238);"><!--[endif]----><!--[if mso]><div style="scrollbar-width: thin; scrollbar-color: rgb(119, 119, 119) rgb(238, 238, 238); mso-line-height:exactly; line-height:92%;"><![endif]--><!--[if !mso]--><div style="scrollbar-width: thin; scrollbar-color: rgb(119, 119, 119) rgb(238, 238, 238); height: auto;"><!--[endif]----><font style="color: rgb(46, 125, 50); scrollbar-width: thin; scrollbar-color: rgb(119, 119, 119) rgb(238, 238, 238);"><font style="font-size: 28px; scrollbar-width: thin; scrollbar-color: rgb(119, 119, 119) rgb(238, 238, 238);"><b style="scrollbar-width: thin; scrollbar-color: rgb(119, 119, 119) rgb(238, 238, 238);"><font style="font-size: 20px; scrollbar-width: thin; scrollbar-color: rgb(119, 119, 119) rgb(238, 238, 238);"><font style="font-family: &quot;Comic Sans MS&quot;, cursive, sans-serif; font-size: 20px; scrollbar-width: thin; scrollbar-color: rgb(119, 119, 119) rgb(238, 238, 238);"><font style="font-size: 28px; scrollbar-width: thin; scrollbar-color: rgb(119, 119, 119) rgb(238, 238, 238);">Le pacte p<font style="font-size: 26px; scrollbar-width: thin; scrollbar-color: rgb(119, 119, 119) rgb(238, 238, 238);">our la</font> </font><font style="font-size: 28px; scrollbar-width: thin; scrollbar-color: rgb(119, 119, 119) rgb(238, 238, 238);">transition</font></font></font></b></font><br style="scrollbar-width: thin; scrollbar-color: rgb(119, 119, 119) rgb(238, 238, 238);"></font></div><!--[if mso]><div style="scrollbar-width: thin; scrollbar-color: rgb(119, 119, 119) rgb(238, 238, 238); mso-line-height:exactly; line-height:92%;"><![endif]--><!--[if !mso]--><div style="scrollbar-width: thin; scrollbar-color: rgb(119, 119, 119) rgb(238, 238, 238); height: auto;"><!--[endif]----><font style="color: rgb(46, 125, 50); scrollbar-width: thin; scrollbar-color: rgb(119, 119, 119) rgb(238, 238, 238);"><br style="scrollbar-width: thin; scrollbar-color: rgb(119, 119, 119) rgb(238, 238, 238);"><font style="font-size: 14px; scrollbar-width: thin; scrollbar-color: rgb(119, 119, 119) rgb(238, 238, 238);">Janvier 2021</font></font><br style="scrollbar-width: thin; scrollbar-color: rgb(119, 119, 119) rgb(238, 238, 238);"></div></td></tr></tbody></table></td></tr></tbody></table></td><td style="width: 25%; padding: 2px; border-image: none 100% / 1 / 0 stretch; vertical-align: top; scrollbar-width: thin; scrollbar-color: rgb(119, 119, 119) rgb(238, 238, 238);" name="column" class="flexibleContainerBoxNext" id="COLUMN-90051"><table name="TA_inCol" style="width: 100%; border-spacing: 0px; border-collapse: collapse; text-align: left; scrollbar-width: thin; scrollbar-color: rgb(119, 119, 119) rgb(238, 238, 238);" cellpadding="0"><tbody style="scrollbar-width: thin; scrollbar-color: rgb(119, 119, 119) rgb(238, 238, 238);"><tr name="TR_inCol" style="scrollbar-width: thin; scrollbar-color: rgb(119, 119, 119) rgb(238, 238, 238);"><td style="width: 100%; padding: 2px; scrollbar-width: thin; scrollbar-color: rgb(119, 119, 119) rgb(238, 238, 238);"><table id="IMG-22180" name="objetImage" class="CLS_objetImage" style="width: 100%; text-align: left; scrollbar-width: thin; scrollbar-color: rgb(119, 119, 119) rgb(238, 238, 238);"><tbody style="scrollbar-width: thin; scrollbar-color: rgb(119, 119, 119) rgb(238, 238, 238);"><tr style="scrollbar-width: thin; scrollbar-color: rgb(119, 119, 119) rgb(238, 238, 238);"><td style="width: 100%; padding: 2px; max-width: 0px; text-align: center; scrollbar-width: thin; scrollbar-color: rgb(119, 119, 119) rgb(238, 238, 238);"><img src="https://subDomainImage.etarget-emailing.com/data_user/zPMxXuSU/img/avia/ncXRPuc35wmfcPUf.png" style="max-width: 100%; scrollbar-width: thin; scrollbar-color: rgb(119, 119, 119) rgb(238, 238, 238); border-width: 0px; border-radius: 0px;" alt="" width="89" height="89" border="0"></td></tr></tbody></table></td></tr></tbody></table></td></tr></tbody></table></td></tr><tr id="CELL-BLOC-24153" style="scrollbar-width: thin; scrollbar-color: rgb(119, 119, 119) rgb(238, 238, 238);"><td class="flexibleContainerCell" style="scrollbar-width: thin; scrollbar-color: rgb(119, 119, 119) rgb(238, 238, 238); padding: 0px;"><table id="BLOC-83342" name="bloc" class="CLS_bloc" style="width: 100%; border-spacing: 0px; border-collapse: collapse; text-align: left; margin-bottom: 0px; border-image: none 100% / 1 / 0 stretch; margin-top: 1px; scrollbar-width: thin; scrollbar-color: rgb(119, 119, 119) rgb(238, 238, 238);" cellpadding="0"><tbody style="scrollbar-width: thin; scrollbar-color: rgb(119, 119, 119) rgb(238, 238, 238);"><tr style="scrollbar-width: thin; scrollbar-color: rgb(119, 119, 119) rgb(238, 238, 238);"><td style="width: 100%; padding: 2px; border-image: none 100% / 1 / 0 stretch; vertical-align: top; scrollbar-width: thin; scrollbar-color: rgb(119, 119, 119) rgb(238, 238, 238);" name="column" class="flexibleContainerBox" id="COLUMN-17043"><table name="TA_inCol" style="width: 100%; border-spacing: 0px; border-collapse: collapse; text-align: left; scrollbar-width: thin; scrollbar-color: rgb(119, 119, 119) rgb(238, 238, 238);" cellpadding="0"><tbody style="scrollbar-width: thin; scrollbar-color: rgb(119, 119, 119) rgb(238, 238, 238);"><tr name="TR_inCol" style="scrollbar-width: thin; scrollbar-color: rgb(119, 119, 119) rgb(238, 238, 238);"><td style="width: 100%; padding: 2px; scrollbar-width: thin; scrollbar-color: rgb(119, 119, 119) rgb(238, 238, 238);"><table name="objetText" class="CLS_objetText" id="TEXT-74049" style="width: 100%; text-align: left; scrollbar-width: thin; scrollbar-color: rgb(119, 119, 119) rgb(238, 238, 238);"><tbody style="scrollbar-width: thin; scrollbar-color: rgb(119, 119, 119) rgb(238, 238, 238);"><tr style="scrollbar-width: thin; scrollbar-color: rgb(119, 119, 119) rgb(238, 238, 238);"><!--[if mso]><td style="width: 100%; padding: 2px; font-size: 12px; font-family: Verdana, Geneva, sans-serif; color: rgb(0, 0, 0); text-align: center; line-height: 1.5; scrollbar-width: thin; scrollbar-color: rgb(119, 119, 119) rgb(238, 238, 238); mso-line-height:exactly; line-height:115%;"><![endif]--><!--[if !mso]--><td style="width: 100%; padding: 2px; font-size: 12px; font-family: Verdana, Geneva, sans-serif; color: rgb(0, 0, 0); text-align: center; line-height: 1.5; scrollbar-width: thin; scrollbar-color: rgb(119, 119, 119) rgb(238, 238, 238);"><!--[endif]----><font style="font-family: &quot;Comic Sans MS&quot;, cursive, sans-serif; color: rgb(255, 152, 0); font-size: 36px; scrollbar-width: thin; scrollbar-color: rgb(119, 119, 119) rgb(238, 238, 238);"><b style="scrollbar-width: thin; scrollbar-color: rgb(119, 119, 119) rgb(238, 238, 238);"><font style="font-size: 20px; scrollbar-width: thin; scrollbar-color: rgb(119, 119, 119) rgb(238, 238, 238);"><font style="font-size: 36px; scrollbar-width: thin; scrollbar-color: rgb(119, 119, 119) rgb(238, 238, 238);">Infolettre</font> <font style="font-size: 36px; scrollbar-width: thin; scrollbar-color: rgb(119, 119, 119) rgb(238, 238, 238);">#1 du</font><font style="font-size: 36px; scrollbar-width: thin; scrollbar-color: rgb(119, 119, 119) rgb(238, 238, 238);"> collectif </font><font style="font-size: 36px; scrollbar-width: thin; scrollbar-color: rgb(119, 119, 119) rgb(238, 238, 238);">ACVI</font></font></b></font></td></tr></tbody></table></td></tr></tbody></table></td></tr></tbody></table></td></tr><tr id="CELL-BLOC-34849" style="scrollbar-width: thin; scrollbar-color: rgb(119, 119, 119) rgb(238, 238, 238);"><td class="flexibleContainerCell" style="scrollbar-width: thin; scrollbar-color: rgb(119, 119, 119) rgb(238, 238, 238); padding: 0px;"><table id="BLOC-46613" name="bloc" class="CLS_bloc" style="width: 100%; border-spacing: 0px; border-collapse: collapse; text-align: left; margin-bottom: 0px; border-image: none 100% / 1 / 0 stretch; margin-top: 1px; scrollbar-width: thin; scrollbar-color: rgb(119, 119, 119) rgb(238, 238, 238);" cellpadding="0"><tbody style="scrollbar-width: thin; scrollbar-color: rgb(119, 119, 119) rgb(238, 238, 238);"><tr style="scrollbar-width: thin; scrollbar-color: rgb(119, 119, 119) rgb(238, 238, 238);"><td style="width: 25%; padding: 2px; border-image: none 100% / 1 / 0 stretch; vertical-align: top; scrollbar-width: thin; scrollbar-color: rgb(119, 119, 119) rgb(238, 238, 238);" name="column" class="flexibleContainerBox" id="COLUMN-56970"><table name="TA_inCol" style="width: 100%; border-spacing: 0px; border-collapse: collapse; text-align: left; scrollbar-width: thin; scrollbar-color: rgb(119, 119, 119) rgb(238, 238, 238);" cellpadding="0"><tbody style="scrollbar-width: thin; scrollbar-color: rgb(119, 119, 119) rgb(238, 238, 238);"><tr name="TR_inCol" style="scrollbar-width: thin; scrollbar-color: rgb(119, 119, 119) rgb(238, 238, 238);"><td style="width: 100%; padding: 2px; scrollbar-width: thin; scrollbar-color: rgb(119, 119, 119) rgb(238, 238, 238);"><table name="objetText" class="CLS_objetText" id="TEXT-7954" style="width: 100%; text-align: left; scrollbar-width: thin; scrollbar-color: rgb(119, 119, 119) rgb(238, 238, 238);"><tbody style="scrollbar-width: thin; scrollbar-color: rgb(119, 119, 119) rgb(238, 238, 238);"><tr style="scrollbar-width: thin; scrollbar-color: rgb(119, 119, 119) rgb(238, 238, 238);"><!--[if mso]><td style="width: 100%; padding: 2px; font-size: 12px; font-family: Verdana, Geneva, sans-serif; color: rgb(0, 0, 0); text-align: center; line-height: 1.5; scrollbar-width: thin; scrollbar-color: rgb(119, 119, 119) rgb(238, 238, 238); mso-line-height:exactly; line-height:115%;"><![endif]--><!--[if !mso]--><td style="width: 100%; padding: 2px; font-size: 12px; font-family: Verdana, Geneva, sans-serif; color: rgb(0, 0, 0); text-align: center; line-height: 1.5; scrollbar-width: thin; scrollbar-color: rgb(119, 119, 119) rgb(238, 238, 238);"><!--[endif]----><br style="scrollbar-width: thin; scrollbar-color: rgb(119, 119, 119) rgb(238, 238, 238);"></td></tr></tbody></table></td></tr></tbody></table></td><td style="width: 50%; padding: 2px; border-image: none 100% / 1 / 0 stretch; vertical-align: top; scrollbar-width: thin; scrollbar-color: rgb(119, 119, 119) rgb(238, 238, 238);" name="column" class="flexibleContainerBoxNext" id="COLUMN-58007"><table name="TA_inCol" style="width: 100%; border-spacing: 0px; border-collapse: collapse; text-align: left; scrollbar-width: thin; scrollbar-color: rgb(119, 119, 119) rgb(238, 238, 238);" cellpadding="0"><tbody style="scrollbar-width: thin; scrollbar-color: rgb(119, 119, 119) rgb(238, 238, 238);"><tr name="TR_inCol" style="scrollbar-width: thin; scrollbar-color: rgb(119, 119, 119) rgb(238, 238, 238);"><td style="width: 100%; padding: 2px; scrollbar-width: thin; scrollbar-color: rgb(119, 119, 119) rgb(238, 238, 238);"><table name="objetText" class="CLS_objetText" id="TEXT-18020" style="width: 100%; text-align: left; scrollbar-width: thin; scrollbar-color: rgb(119, 119, 119) rgb(238, 238, 238);"><tbody style="scrollbar-width: thin; scrollbar-color: rgb(119, 119, 119) rgb(238, 238, 238);"><tr style="scrollbar-width: thin; scrollbar-color: rgb(119, 119, 119) rgb(238, 238, 238);"><!--[if mso]><td style="width: 100%; padding: 2px; font-size: 12px; font-family: Verdana, Geneva, sans-serif; color: rgb(0, 0, 0); text-align: center; line-height: 1.5; scrollbar-width: thin; scrollbar-color: rgb(119, 119, 119) rgb(238, 238, 238); mso-line-height:exactly; line-height:115%;"><![endif]--><!--[if !mso]--><td style="width: 100%; padding: 2px; font-size: 12px; font-family: Verdana, Geneva, sans-serif; color: rgb(0, 0, 0); text-align: center; line-height: 1.5; scrollbar-width: thin; scrollbar-color: rgb(119, 119, 119) rgb(238, 238, 238);"><!--[endif]----><font style="font-size: 11px; color: rgb(46, 125, 50); scrollbar-width: thin; scrollbar-color: rgb(119, 119, 119) rgb(238, 238, 238);"><u style="scrollbar-width: thin; scrollbar-color: rgb(119, 119, 119) rgb(238, 238, 238);"><i style="scrollbar-width: thin; scrollbar-color: rgb(119, 119, 119) rgb(238, 238, 238);"><b style="scrollbar-width: thin; scrollbar-color: rgb(119, 119, 119) rgb(238, 238, 238);">Si vous ne souhaitez plus recevoir cette infolettre, vous pouvez vous désinscrire en bas de cette page.</b></i></u></font></td></tr></tbody></table></td></tr></tbody></table></td><td style="width: 25%; padding: 2px; border-image: none 100% / 1 / 0 stretch; vertical-align: top; scrollbar-width: thin; scrollbar-color: rgb(119, 119, 119) rgb(238, 238, 238);" name="column" class="flexibleContainerBoxNext" id="COLUMN-456"><table name="TA_inCol" style="width: 100%; border-spacing: 0px; border-collapse: collapse; text-align: left; scrollbar-width: thin; scrollbar-color: rgb(119, 119, 119) rgb(238, 238, 238);" cellpadding="0"><tbody style="scrollbar-width: thin; scrollbar-color: rgb(119, 119, 119) rgb(238, 238, 238);"><tr name="TR_inCol" style="scrollbar-width: thin; scrollbar-color: rgb(119, 119, 119) rgb(238, 238, 238);"><td style="width: 100%; padding: 2px; scrollbar-width: thin; scrollbar-color: rgb(119, 119, 119) rgb(238, 238, 238);"><table name="objetText" class="CLS_objetText" id="TEXT-19019" style="width: 100%; text-align: left; scrollbar-width: thin; scrollbar-color: rgb(119, 119, 119) rgb(238, 238, 238);"><tbody style="scrollbar-width: thin; scrollbar-color: rgb(119, 119, 119) rgb(238, 238, 238);"><tr style="scrollbar-width: thin; scrollbar-color: rgb(119, 119, 119) rgb(238, 238, 238);"><!--[if mso]><td style="width: 100%; padding: 2px; font-size: 12px; font-family: Verdana, Geneva, sans-serif; color: rgb(0, 0, 0); text-align: center; line-height: 1.5; scrollbar-width: thin; scrollbar-color: rgb(119, 119, 119) rgb(238, 238, 238); mso-line-height:exactly; line-height:115%;"><![endif]--><!--[if !mso]--><td style="width: 100%; padding: 2px; font-size: 12px; font-family: Verdana, Geneva, sans-serif; color: rgb(0, 0, 0); text-align: center; line-height: 1.5; scrollbar-width: thin; scrollbar-color: rgb(119, 119, 119) rgb(238, 238, 238);"><!--[endif]----><br style="scrollbar-width: thin; scrollbar-color: rgb(119, 119, 119) rgb(238, 238, 238);"></td></tr></tbody></table></td></tr></tbody></table></td></tr></tbody></table></td></tr><tr id="CELL-BLOC-40131" style="scrollbar-width: thin; scrollbar-color: rgb(119, 119, 119) rgb(238, 238, 238);"><td class="flexibleContainerCell" style="scrollbar-width: thin; scrollbar-color: rgb(119, 119, 119) rgb(238, 238, 238); padding: 0px;"><table id="BLOC-14356" name="bloc" class="CLS_bloc" style="width: 100%; border-spacing: 0px; border-collapse: collapse; margin-top: 1px; text-align: left; margin-bottom: 0px; border-image: none 100% / 1 / 0 stretch; scrollbar-width: thin; scrollbar-color: rgb(119, 119, 119) rgb(238, 238, 238);" cellpadding="0"><tbody style="scrollbar-width: thin; scrollbar-color: rgb(119, 119, 119) rgb(238, 238, 238);"><tr style="scrollbar-width: thin; scrollbar-color: rgb(119, 119, 119) rgb(238, 238, 238);"><td style="width: 100%; padding: 2px; border-image: none 100% / 1 / 0 stretch; vertical-align: top; scrollbar-width: thin; scrollbar-color: rgb(119, 119, 119) rgb(238, 238, 238);" name="column" class="flexibleContainerBox" id="COLUMN-9384"><table name="TA_inCol" style="width: 100%; border-spacing: 0px; border-collapse: collapse; text-align: left; scrollbar-width: thin; scrollbar-color: rgb(119, 119, 119) rgb(238, 238, 238);" cellpadding="0"><tbody style="scrollbar-width: thin; scrollbar-color: rgb(119, 119, 119) rgb(238, 238, 238);"><tr name="TR_inCol" style="scrollbar-width: thin; scrollbar-color: rgb(119, 119, 119) rgb(238, 238, 238);"><td style="width: 100%; padding: 2px; scrollbar-width: thin; scrollbar-color: rgb(119, 119, 119) rgb(238, 238, 238);"><table name="objetText" class="CLS_objetText" id="TEXT-43242" style="width: 100%; text-align: left; scrollbar-width: thin; scrollbar-color: rgb(119, 119, 119) rgb(238, 238, 238);"><tbody style="scrollbar-width: thin; scrollbar-color: rgb(119, 119, 119) rgb(238, 238, 238);"><tr style="scrollbar-width: thin; scrollbar-color: rgb(119, 119, 119) rgb(238, 238, 238);"><!--[if mso]><td style="width: 100%; text-align: justify; background-color: rgb(185, 246, 202); padding: 2px; font-size: 12px; font-family: Verdana, Geneva, sans-serif; color: rgb(0, 0, 0); line-height: 1.5; scrollbar-width: thin; scrollbar-color: rgb(119, 119, 119) rgb(238, 238, 238); mso-line-height:exactly; line-height:115%;"><![endif]--><!--[if !mso]--><td style="width: 100%; text-align: justify; background-color: rgb(185, 246, 202); padding: 2px; font-size: 12px; font-family: Verdana, Geneva, sans-serif; color: rgb(0, 0, 0); line-height: 1.5; scrollbar-width: thin; scrollbar-color: rgb(119, 119, 119) rgb(238, 238, 238);"><!--[endif]----><!--[if mso]><div style="scrollbar-width: thin; scrollbar-color: rgb(119, 119, 119) rgb(238, 238, 238); mso-line-height:exactly; line-height:115%;"><![endif]--><!--[if !mso]--><div style="scrollbar-width: thin; scrollbar-color: rgb(119, 119, 119) rgb(238, 238, 238); height: auto;"><!--[endif]----><font style="font-size: 18px; color: rgb(46, 125, 50); scrollbar-width: thin; scrollbar-color: rgb(119, 119, 119) rgb(238, 238, 238);"><b style="scrollbar-width: thin; scrollbar-color: rgb(119, 119, 119) rgb(238, 238, 238);">Pourquoi cette infolettre ?</b></font></div><!--[if mso]><div style="scrollbar-width: thin; scrollbar-color: rgb(119, 119, 119) rgb(238, 238, 238); mso-line-height:exactly; line-height:115%;"><![endif]--><!--[if !mso]--><div style="scrollbar-width: thin; scrollbar-color: rgb(119, 119, 119) rgb(238, 238, 238); height: auto;"><!--[endif]----><font style="color: rgb(46, 125, 50); font-size: 14px; scrollbar-width: thin; scrollbar-color: rgb(119, 119, 119) rgb(238, 238, 238);">Il y a un peu plus d’un an, nous étions quelques habitants et habitantes à nous retrouver pour la première fois, venu·es de Sorède, d’Argelès-sur-Mer, de Collioure, de Saint-André, de Palau del Vidre ou encore d’Elne. Pour la plupart, nous ne nous connaissions pas, mais une envie nous réunissait : agir à plusieurs dans nos communes face aux enjeux de la transition. Les élections municipales approchaient, mais nous n’étions pas candidats ou candidates. Nous avions entendu parler du Pacte pour la Transition et de la création de collectifs locaux pour en faire la promotion auprès des listes candidates. <br style="scrollbar-width: thin; scrollbar-color: rgb(119, 119, 119) rgb(238, 238, 238);"></font></div><!--[if mso]><div style="scrollbar-width: thin; scrollbar-color: rgb(119, 119, 119) rgb(238, 238, 238); mso-line-height:exactly; line-height:115%;"><![endif]--><!--[if !mso]--><div style="scrollbar-width: thin; scrollbar-color: rgb(119, 119, 119) rgb(238, 238, 238); height: auto;"><!--[endif]----><font style="color: rgb(46, 125, 50); font-size: 14px; scrollbar-width: thin; scrollbar-color: rgb(119, 119, 119) rgb(238, 238, 238);"><br style="scrollbar-width: thin; scrollbar-color: rgb(119, 119, 119) rgb(238, 238, 238);">Aujourd’hui, nous sommes toujours ensemble, un peu plus nombreux même, et nous l’espérons encore plus demain !
+Cette première infolettre a pour ambition de faire connaître notre démarche et pourquoi pas, vous donner envie de rejoindre notre groupe. Nous vous présentons ci-après le Pacte et les communes de la communauté de communes Albères - Côte Vermeille - Illibéris <a href="http://www.cc-acvi.com/votre-collectivite/notre-territoire/presentation-cc-et-15-communes/" track="1" style="color: rgb(255, 152, 0); scrollbar-width: thin; scrollbar-color: rgb(119, 119, 119) rgb(238, 238, 238);" target="_new"><font style="color: rgb(255, 152, 0); scrollbar-width: thin; scrollbar-color: rgb(119, 119, 119) rgb(238, 238, 238);">(ACVI)</font></a> qui se sont engagées.<br style="scrollbar-width: thin; scrollbar-color: rgb(119, 119, 119) rgb(238, 238, 238);"></font></div><!--[if mso]><div style="scrollbar-width: thin; scrollbar-color: rgb(119, 119, 119) rgb(238, 238, 238); mso-line-height:exactly; line-height:115%;"><![endif]--><!--[if !mso]--><div style="scrollbar-width: thin; scrollbar-color: rgb(119, 119, 119) rgb(238, 238, 238); height: auto;"><!--[endif]----><font style="color: rgb(46, 125, 50); font-size: 14px; scrollbar-width: thin; scrollbar-color: rgb(119, 119, 119) rgb(238, 238, 238);"><br style="scrollbar-width: thin; scrollbar-color: rgb(119, 119, 119) rgb(238, 238, 238);">Dans les prochains numéros, nous reviendrons sur les actions et projets mis en œuvre dans nos communes, qui vont dans le sens de la transition écologique, sociale et démocratique.</font></div></td></tr></tbody></table></td></tr><tr name="TR_inCol" style="scrollbar-width: thin; scrollbar-color: rgb(119, 119, 119) rgb(238, 238, 238);"><td style="width: 100%; padding: 2px; scrollbar-width: thin; scrollbar-color: rgb(119, 119, 119) rgb(238, 238, 238);"><table id="IMG-25015" name="objetImage" class="CLS_objetImage" style="width: 100%; text-align: left; scrollbar-width: thin; scrollbar-color: rgb(119, 119, 119) rgb(238, 238, 238);"><tbody style="scrollbar-width: thin; scrollbar-color: rgb(119, 119, 119) rgb(238, 238, 238);"><tr style="scrollbar-width: thin; scrollbar-color: rgb(119, 119, 119) rgb(238, 238, 238);"><td style="width: 100%; background-color: rgb(185, 246, 202); padding: 2px; max-width: 0px; text-align: center; scrollbar-width: thin; scrollbar-color: rgb(119, 119, 119) rgb(238, 238, 238);"><img src="https://subDomainImage.etarget-emailing.com/data_user/zPMxXuSU/img/phpsaB2Qm.jpg" style="max-width: 100%; scrollbar-width: thin; scrollbar-color: rgb(119, 119, 119) rgb(238, 238, 238); border-width: 0px; border-radius: 0px;" alt="" width="582" height="328" border="0"></td></tr></tbody></table></td></tr><tr name="TR_inCol" style="scrollbar-width: thin; scrollbar-color: rgb(119, 119, 119) rgb(238, 238, 238);"><td style="width: 100%; padding: 2px; scrollbar-width: thin; scrollbar-color: rgb(119, 119, 119) rgb(238, 238, 238);"><table name="objetText" class="CLS_objetText" id="TEXT-16399" style="width: 100%; text-align: left; scrollbar-width: thin; scrollbar-color: rgb(119, 119, 119) rgb(238, 238, 238);"><tbody style="scrollbar-width: thin; scrollbar-color: rgb(119, 119, 119) rgb(238, 238, 238);"><tr style="scrollbar-width: thin; scrollbar-color: rgb(119, 119, 119) rgb(238, 238, 238);"><!--[if mso]><td style="width: 100%; text-align: right; line-height: 0.9; background-color: rgb(185, 246, 202); padding: 2px; font-size: 12px; font-family: Verdana, Geneva, sans-serif; color: rgb(0, 0, 0); scrollbar-width: thin; scrollbar-color: rgb(119, 119, 119) rgb(238, 238, 238); mso-line-height:exactly; line-height:69%;"><![endif]--><!--[if !mso]--><td style="width: 100%; text-align: right; line-height: 0.9; background-color: rgb(185, 246, 202); padding: 2px; font-size: 12px; font-family: Verdana, Geneva, sans-serif; color: rgb(0, 0, 0); scrollbar-width: thin; scrollbar-color: rgb(119, 119, 119) rgb(238, 238, 238);"><!--[endif]----><font style="color: rgb(46, 125, 50); scrollbar-width: thin; scrollbar-color: rgb(119, 119, 119) rgb(238, 238, 238);"><i style="scrollbar-width: thin; scrollbar-color: rgb(119, 119, 119) rgb(238, 238, 238);"><font style="font-size: 10px; scrollbar-width: thin; scrollbar-color: rgb(119, 119, 119) rgb(238, 238, 238);">Réunion publique à St André le 28 janvier 2020</font></i></font><br style="scrollbar-width: thin; scrollbar-color: rgb(119, 119, 119) rgb(238, 238, 238);"></td></tr></tbody></table></td></tr><tr name="TR_inCol" style="scrollbar-width: thin; scrollbar-color: rgb(119, 119, 119) rgb(238, 238, 238);"><td style="width: 100%; padding: 2px; scrollbar-width: thin; scrollbar-color: rgb(119, 119, 119) rgb(238, 238, 238);"><table name="objetText" class="CLS_objetText" id="TEXT-12431" style="width: 100%; text-align: left; scrollbar-width: thin; scrollbar-color: rgb(119, 119, 119) rgb(238, 238, 238);"><tbody style="scrollbar-width: thin; scrollbar-color: rgb(119, 119, 119) rgb(238, 238, 238);"><tr style="scrollbar-width: thin; scrollbar-color: rgb(119, 119, 119) rgb(238, 238, 238);"><!--[if mso]><td style="width: 100%; text-align: justify; background-color: rgb(185, 246, 202); padding: 2px; font-size: 12px; font-family: Verdana, Geneva, sans-serif; color: rgb(0, 0, 0); line-height: 1.5; scrollbar-width: thin; scrollbar-color: rgb(119, 119, 119) rgb(238, 238, 238); mso-line-height:exactly; line-height:115%;"><![endif]--><!--[if !mso]--><td style="width: 100%; text-align: justify; background-color: rgb(185, 246, 202); padding: 2px; font-size: 12px; font-family: Verdana, Geneva, sans-serif; color: rgb(0, 0, 0); line-height: 1.5; scrollbar-width: thin; scrollbar-color: rgb(119, 119, 119) rgb(238, 238, 238);"><!--[endif]----><!--[if mso]><div style="scrollbar-width: thin; scrollbar-color: rgb(119, 119, 119) rgb(238, 238, 238); mso-line-height:exactly; line-height:115%;"><![endif]--><!--[if !mso]--><div style="scrollbar-width: thin; scrollbar-color: rgb(119, 119, 119) rgb(238, 238, 238); height: auto;"><!--[endif]----><font style="font-size: 16px; color: rgb(46, 125, 50); scrollbar-width: thin; scrollbar-color: rgb(119, 119, 119) rgb(238, 238, 238);"><b style="scrollbar-width: thin; scrollbar-color: rgb(119, 119, 119) rgb(238, 238, 238);"><font style="font-size: 18px; scrollbar-width: thin; scrollbar-color: rgb(119, 119, 119) rgb(238, 238, 238);"><br style="scrollbar-width: thin; scrollbar-color: rgb(119, 119, 119) rgb(238, 238, 238);"></font></b></font></div><!--[if mso]><div style="scrollbar-width: thin; scrollbar-color: rgb(119, 119, 119) rgb(238, 238, 238); mso-line-height:exactly; line-height:115%;"><![endif]--><!--[if !mso]--><div style="scrollbar-width: thin; scrollbar-color: rgb(119, 119, 119) rgb(238, 238, 238); height: auto;"><!--[endif]----><font style="font-size: 16px; color: rgb(46, 125, 50); scrollbar-width: thin; scrollbar-color: rgb(119, 119, 119) rgb(238, 238, 238);"><b style="scrollbar-width: thin; scrollbar-color: rgb(119, 119, 119) rgb(238, 238, 238);"><font style="font-size: 18px; scrollbar-width: thin; scrollbar-color: rgb(119, 119, 119) rgb(238, 238, 238);">Qu’est-ce que le Pacte pour la Transition ?</font></b></font></div><!--[if mso]><div style="scrollbar-width: thin; scrollbar-color: rgb(119, 119, 119) rgb(238, 238, 238); mso-line-height:exactly; line-height:115%;"><![endif]--><!--[if !mso]--><div style="scrollbar-width: thin; scrollbar-color: rgb(119, 119, 119) rgb(238, 238, 238); height: auto;"><!--[endif]----><font style="color: rgb(46, 125, 50); font-size: 14px; scrollbar-width: thin; scrollbar-color: rgb(119, 119, 119) rgb(238, 238, 238);">Un collectif national (né de l’union de 60 organisations) et des collectifs locaux&nbsp; d’habitants qui souhaitent participer au développement de leur territoire et y promouvoir une transition écologique, sociale et démocratique.
+Pour ce faire, ils ont élaboré un “pacte” énonçant <a href="https://www.pacte-transition.org/#mesures" track="0" style="color: rgb(255, 152, 0); scrollbar-width: thin; scrollbar-color: rgb(119, 119, 119) rgb(238, 238, 238);" target="_new">3 principes et 32 mesures</a>, pacte qu’ils ont proposé aux candidats aux élections municipales de 2020. <br style="scrollbar-width: thin; scrollbar-color: rgb(119, 119, 119) rgb(238, 238, 238);"></font></div><!--[if mso]><div style="scrollbar-width: thin; scrollbar-color: rgb(119, 119, 119) rgb(238, 238, 238); mso-line-height:exactly; line-height:115%;"><![endif]--><!--[if !mso]--><div style="scrollbar-width: thin; scrollbar-color: rgb(119, 119, 119) rgb(238, 238, 238); height: auto;"><!--[endif]----><font style="color: rgb(46, 125, 50); font-size: 14px; scrollbar-width: thin; scrollbar-color: rgb(119, 119, 119) rgb(238, 238, 238);"><br style="scrollbar-width: thin; scrollbar-color: rgb(119, 119, 119) rgb(238, 238, 238);">En signant ce pacte, l’équipe municipale s’engage à respecter les 3 principes et les mesures qu’elle a choisies parmi les 32, et le collectif s’engage, lui, à soutenir et accompagner l’équipe en place, par sa présence, sa participation, et ses propositions.
+Pour plus d’information, visitez le <font style="scrollbar-width: thin; scrollbar-color: rgb(119, 119, 119) rgb(238, 238, 238);"><a href="http://www.pacte-transition.org/" track="0" style="color: rgb(255, 152, 0); scrollbar-width: thin; scrollbar-color: rgb(119, 119, 119) rgb(238, 238, 238);" target="_new">site national du Pacte</a>.</font></font></div></td></tr></tbody></table></td></tr><tr name="TR_inCol" style="scrollbar-width: thin; scrollbar-color: rgb(119, 119, 119) rgb(238, 238, 238);"><td style="width: 100%; padding: 2px; scrollbar-width: thin; scrollbar-color: rgb(119, 119, 119) rgb(238, 238, 238);"><table id="IMG-8300" name="objetImage" class="CLS_objetImage" style="width: 100%; text-align: left; scrollbar-width: thin; scrollbar-color: rgb(119, 119, 119) rgb(238, 238, 238);"><tbody style="scrollbar-width: thin; scrollbar-color: rgb(119, 119, 119) rgb(238, 238, 238);"><tr style="scrollbar-width: thin; scrollbar-color: rgb(119, 119, 119) rgb(238, 238, 238);"><td style="width: 100%; padding: 2px; max-width: 0px; text-align: center; scrollbar-width: thin; scrollbar-color: rgb(119, 119, 119) rgb(238, 238, 238);"><img src="https://subDomainImage.etarget-emailing.com/data_user/zPMxXuSU/img/phpEP5hqv.png" style="max-width: 100%; scrollbar-width: thin; scrollbar-color: rgb(119, 119, 119) rgb(238, 238, 238); border-width: 0px; border-radius: 0px;" alt="" width="582" height="173" border="0"></td></tr></tbody></table></td></tr><tr name="TR_inCol" style="scrollbar-width: thin; scrollbar-color: rgb(119, 119, 119) rgb(238, 238, 238);"><td style="width: 100%; padding: 2px; scrollbar-width: thin; scrollbar-color: rgb(119, 119, 119) rgb(238, 238, 238);"><table name="objetText" class="CLS_objetText" id="TEXT-26869" style="width: 100%; text-align: left; scrollbar-width: thin; scrollbar-color: rgb(119, 119, 119) rgb(238, 238, 238);"><tbody style="scrollbar-width: thin; scrollbar-color: rgb(119, 119, 119) rgb(238, 238, 238);"><tr style="scrollbar-width: thin; scrollbar-color: rgb(119, 119, 119) rgb(238, 238, 238);"><!--[if mso]><td style="width: 100%; text-align: justify; background-color: rgb(185, 246, 202); padding: 2px; font-size: 12px; font-family: Verdana, Geneva, sans-serif; color: rgb(0, 0, 0); line-height: 1.5; scrollbar-width: thin; scrollbar-color: rgb(119, 119, 119) rgb(238, 238, 238); mso-line-height:exactly; line-height:115%;"><![endif]--><!--[if !mso]--><td style="width: 100%; text-align: justify; background-color: rgb(185, 246, 202); padding: 2px; font-size: 12px; font-family: Verdana, Geneva, sans-serif; color: rgb(0, 0, 0); line-height: 1.5; scrollbar-width: thin; scrollbar-color: rgb(119, 119, 119) rgb(238, 238, 238);"><!--[endif]----><!--[if mso]><div style="scrollbar-width: thin; scrollbar-color: rgb(119, 119, 119) rgb(238, 238, 238); mso-line-height:exactly; line-height:115%;"><![endif]--><!--[if !mso]--><div style="scrollbar-width: thin; scrollbar-color: rgb(119, 119, 119) rgb(238, 238, 238); height: auto;"><!--[endif]----><font style="color: rgb(46, 125, 50); scrollbar-width: thin; scrollbar-color: rgb(119, 119, 119) rgb(238, 238, 238);"><b style="scrollbar-width: thin; scrollbar-color: rgb(119, 119, 119) rgb(238, 238, 238);"><font style="font-size: 16px; scrollbar-width: thin; scrollbar-color: rgb(119, 119, 119) rgb(238, 238, 238);"><br style="scrollbar-width: thin; scrollbar-color: rgb(119, 119, 119) rgb(238, 238, 238);"></font></b></font></div><!--[if mso]><div style="scrollbar-width: thin; scrollbar-color: rgb(119, 119, 119) rgb(238, 238, 238); mso-line-height:exactly; line-height:115%;"><![endif]--><!--[if !mso]--><div style="scrollbar-width: thin; scrollbar-color: rgb(119, 119, 119) rgb(238, 238, 238); height: auto;"><!--[endif]----><font style="color: rgb(46, 125, 50); font-size: 18px; scrollbar-width: thin; scrollbar-color: rgb(119, 119, 119) rgb(238, 238, 238);"><b style="scrollbar-width: thin; scrollbar-color: rgb(119, 119, 119) rgb(238, 238, 238);"><font style="font-size: 16px; scrollbar-width: thin; scrollbar-color: rgb(119, 119, 119) rgb(238, 238, 238);"><font style="font-size: 18px; scrollbar-width: thin; scrollbar-color: rgb(119, 119, 119) rgb(238, 238, 238);">Quelles communes ont</font> <font style="font-size: 18px; scrollbar-width: thin; scrollbar-color: rgb(119, 119, 119) rgb(238, 238, 238);">signé le Pacte pour la transition ?</font></font></b></font></div><!--[if mso]><div style="scrollbar-width: thin; scrollbar-color: rgb(119, 119, 119) rgb(238, 238, 238); mso-line-height:exactly; line-height:115%;"><![endif]--><!--[if !mso]--><div style="scrollbar-width: thin; scrollbar-color: rgb(119, 119, 119) rgb(238, 238, 238); height: auto;"><!--[endif]----><font style="color: rgb(46, 125, 50); font-size: 14px; scrollbar-width: thin; scrollbar-color: rgb(119, 119, 119) rgb(238, 238, 238);">À ce jour, dans la communauté de communes ACVI, 7 équipes municipales se sont engagées sur le Pacte pour la Transition : <font style="scrollbar-width: thin; scrollbar-color: rgb(119, 119, 119) rgb(238, 238, 238);"><a href="http://pacteacvi.herokuapp.com/forum/article/argeles-sur-mer-en-avant-argels-tete-de-liste-antoine-parra" track="0" style="color: rgb(255, 152, 0); scrollbar-width: thin; scrollbar-color: rgb(119, 119, 119) rgb(238, 238, 238);" target="_new">Argelès-sur-Mer</a>, <a href="http://pacteacvi.herokuapp.com/forum/article/collioure-colliourons-lavenir-tete-de-liste-guy-llobet" track="0" style="color: rgb(255, 152, 0); scrollbar-width: thin; scrollbar-color: rgb(119, 119, 119) rgb(238, 238, 238);" target="_new">Collioure</a>, <a href="http://pacteacvi.herokuapp.com/forum/article/elne-communidee-neuve" track="0" style="color: rgb(255, 152, 0); scrollbar-width: thin; scrollbar-color: rgb(119, 119, 119) rgb(238, 238, 238);" target="_new">Elne</a>, <a href="http://pacteacvi.herokuapp.com/forum/article/saint-andre-samuel-moli-tete-de-liste-samuel-moli" track="0" style="color: rgb(255, 152, 0); scrollbar-width: thin; scrollbar-color: rgb(119, 119, 119) rgb(238, 238, 238);" target="_new">Saint-André</a>, <a href="http://pacteacvi.herokuapp.com/forum/article/saint-genis-des-fontaines-saint-genis-au-coeur-tete-de-liste-nathalie-regond-planas" track="0" style="color: rgb(255, 152, 0); scrollbar-width: thin; scrollbar-color: rgb(119, 119, 119) rgb(238, 238, 238);" target="_new">Saint-Génis-des-Fontaines</a>, <a href="http://pacteacvi.herokuapp.com/forum/article/sorede-bien-vivre-ensemble-a-sorede-tete-de-liste-yves-porteix" track="1" style="color: rgb(255, 152, 0); scrollbar-width: thin; scrollbar-color: rgb(119, 119, 119) rgb(238, 238, 238);" target="_new">Sorède</a>, <a href="http://pacteacvi.herokuapp.com/forum/article/villelongue-del-monts-christian-nifosi-tete-de-liste-christian-nifosi" track="0" style="color: rgb(255, 152, 0); scrollbar-width: thin; scrollbar-color: rgb(119, 119, 119) rgb(238, 238, 238);" target="_new">Villelongue-dels-Monts</a>. </font><br style="scrollbar-width: thin; scrollbar-color: rgb(119, 119, 119) rgb(238, 238, 238);"></font></div><!--[if mso]><div style="scrollbar-width: thin; scrollbar-color: rgb(119, 119, 119) rgb(238, 238, 238); mso-line-height:exactly; line-height:115%;"><![endif]--><!--[if !mso]--><div style="scrollbar-width: thin; scrollbar-color: rgb(119, 119, 119) rgb(238, 238, 238); height: auto;"><!--[endif]----><font style="color: rgb(46, 125, 50); font-size: 14px; scrollbar-width: thin; scrollbar-color: rgb(119, 119, 119) rgb(238, 238, 238);"><br style="scrollbar-width: thin; scrollbar-color: rgb(119, 119, 119) rgb(238, 238, 238);">À cette liste nous pouvons ajouter <a href="http://pacteacvi.herokuapp.com/forum/article/laroque-des-alberes-demain-laroque-tete-de-liste-didier-rodriguez" track="0" style="color: rgb(255, 152, 0); scrollbar-width: thin; scrollbar-color: rgb(119, 119, 119) rgb(238, 238, 238);" target="_new">Laroque-des-Albères</a> et <a href="http://pacteacvi.herokuapp.com/forum/article/montesquieu-des-alberes-reussir-ensemble-tete-de-liste-cyrille-de-foucher" track="1" style="color: rgb(255, 152, 0); scrollbar-width: thin; scrollbar-color: rgb(119, 119, 119) rgb(238, 238, 238);" target="_new">Montesquieu-des-Albères</a>, communes où les listes qui avaient signé le Pacte n’ont pas été élues.
+L'ensemble <a href="http://pacteacvi.herokuapp.com/forum/articles/?categorie=6" track="1" style="color: rgb(255, 152, 0); scrollbar-width: thin; scrollbar-color: rgb(119, 119, 119) rgb(238, 238, 238);" target="_new">des pactes signés</a> est accessible sur notre site internet. </font></div><!--[if mso]><div style="scrollbar-width: thin; scrollbar-color: rgb(119, 119, 119) rgb(238, 238, 238); mso-line-height:exactly; line-height:115%;"><![endif]--><!--[if !mso]--><div style="scrollbar-width: thin; scrollbar-color: rgb(119, 119, 119) rgb(238, 238, 238); height: auto;"><!--[endif]----><font style="color: rgb(46, 125, 50); font-size: 14px; scrollbar-width: thin; scrollbar-color: rgb(119, 119, 119) rgb(238, 238, 238);"><br style="scrollbar-width: thin; scrollbar-color: rgb(119, 119, 119) rgb(238, 238, 238);">Et depuis ?
+Nous avons commencé à rencontrer les élus pour suivre et accompagner la mise en œuvre des mesures sur lesquelles ils se sont engagés<font style="scrollbar-width: thin; scrollbar-color: rgb(119, 119, 119) rgb(238, 238, 238);"><span style="background-color: rgb(255, 235, 59); scrollbar-width: thin; scrollbar-color: rgb(119, 119, 119) rgb(238, 238, 238);"></span></font>.
+Nous continuons également de solliciter les autres communes pour les convaincre de s’engager sur le Pacte, il n’est jamais trop tard !</font></div></td></tr></tbody></table></td></tr><tr name="TR_inCol" style="scrollbar-width: thin; scrollbar-color: rgb(119, 119, 119) rgb(238, 238, 238);"><td style="width: 100%; padding: 2px; scrollbar-width: thin; scrollbar-color: rgb(119, 119, 119) rgb(238, 238, 238);"><table name="objetText" class="CLS_objetText" id="TEXT-58350" style="width: 100%; text-align: left; scrollbar-width: thin; scrollbar-color: rgb(119, 119, 119) rgb(238, 238, 238);"><tbody style="scrollbar-width: thin; scrollbar-color: rgb(119, 119, 119) rgb(238, 238, 238);"><tr style="scrollbar-width: thin; scrollbar-color: rgb(119, 119, 119) rgb(238, 238, 238);"><!--[if mso]><td style="width: 100%; text-align: justify; background-color: rgb(185, 246, 202); padding: 2px; font-size: 12px; font-family: Verdana, Geneva, sans-serif; color: rgb(0, 0, 0); line-height: 1.5; scrollbar-width: thin; scrollbar-color: rgb(119, 119, 119) rgb(238, 238, 238); mso-line-height:exactly; line-height:115%;"><![endif]--><!--[if !mso]--><td style="width: 100%; text-align: justify; background-color: rgb(185, 246, 202); padding: 2px; font-size: 12px; font-family: Verdana, Geneva, sans-serif; color: rgb(0, 0, 0); line-height: 1.5; scrollbar-width: thin; scrollbar-color: rgb(119, 119, 119) rgb(238, 238, 238);"><!--[endif]----><!--[if mso]><div style="scrollbar-width: thin; scrollbar-color: rgb(119, 119, 119) rgb(238, 238, 238); mso-line-height:exactly; line-height:115%;"><![endif]--><!--[if !mso]--><div style="scrollbar-width: thin; scrollbar-color: rgb(119, 119, 119) rgb(238, 238, 238); height: auto;"><!--[endif]----><font style="font-size: 16px; scrollbar-width: thin; scrollbar-color: rgb(119, 119, 119) rgb(238, 238, 238);"><b style="scrollbar-width: thin; scrollbar-color: rgb(119, 119, 119) rgb(238, 238, 238);"><font style="color: rgb(74, 20, 140); scrollbar-width: thin; scrollbar-color: rgb(119, 119, 119) rgb(238, 238, 238);"><br style="scrollbar-width: thin; scrollbar-color: rgb(119, 119, 119) rgb(238, 238, 238);"></font></b></font></div><!--[if mso]><div style="scrollbar-width: thin; scrollbar-color: rgb(119, 119, 119) rgb(238, 238, 238); mso-line-height:exactly; line-height:115%;"><![endif]--><!--[if !mso]--><div style="scrollbar-width: thin; scrollbar-color: rgb(119, 119, 119) rgb(238, 238, 238); height: auto;"><!--[endif]----><font style="font-size: 16px; color: rgb(46, 125, 50); scrollbar-width: thin; scrollbar-color: rgb(119, 119, 119) rgb(238, 238, 238);"><b style="scrollbar-width: thin; scrollbar-color: rgb(119, 119, 119) rgb(238, 238, 238);"><font style="font-size: 18px; scrollbar-width: thin; scrollbar-color: rgb(119, 119, 119) rgb(238, 238, 238);">Visitez notre site internet !</font><br style="scrollbar-width: thin; scrollbar-color: rgb(119, 119, 119) rgb(238, 238, 238);"></b></font></div><!--[if mso]><div style="scrollbar-width: thin; scrollbar-color: rgb(119, 119, 119) rgb(238, 238, 238); mso-line-height:exactly; line-height:115%;"><![endif]--><!--[if !mso]--><div style="scrollbar-width: thin; scrollbar-color: rgb(119, 119, 119) rgb(238, 238, 238); height: auto;"><!--[endif]----><font style="color: rgb(74, 20, 140); scrollbar-width: thin; scrollbar-color: rgb(119, 119, 119) rgb(238, 238, 238);"><font style="color: rgb(46, 125, 50); font-size: 14px; scrollbar-width: thin; scrollbar-color: rgb(119, 119, 119) rgb(238, 238, 238);">Notre collectif s'est doté d'un site web qui nous permet de nous organiser, de communiquer entre nous et avec l'extérieur du groupe. Il s'agit principalement d'un forum collaboratif, où chacun peut publier des articles et intervenir sur les différents sujets de discussions. Il comporte aussi un agenda pour ne rater aucune de nos activités ! Le site a été développé par nos soins. Il est gratuit, sans publicité, ni traçage et est ouvert à tous, alors soyez les bienvenus sur <a href="http://pacteacvi.herokuapp.com/" track="1" style="color: rgb(255, 152, 0); scrollbar-width: thin; scrollbar-color: rgb(119, 119, 119) rgb(238, 238, 238);" target="_new">notre site internet</a> !</font><br style="scrollbar-width: thin; scrollbar-color: rgb(119, 119, 119) rgb(238, 238, 238);"></font></div></td></tr></tbody></table></td></tr></tbody></table></td></tr></tbody></table></td></tr><tr id="CELL-BLOC-95911" style="scrollbar-width: thin; scrollbar-color: rgb(119, 119, 119) rgb(238, 238, 238);"><td class="flexibleContainerCell" style="scrollbar-width: thin; scrollbar-color: rgb(119, 119, 119) rgb(238, 238, 238); padding: 0px;"><table id="BLOC-16046" name="bloc" class="CLS_bloc" style="width: 100%; border-spacing: 0px; border-collapse: collapse; margin-top: 2px; background-color: rgb(185, 246, 202); text-align: left; margin-bottom: 0px; border-image: none 100% / 1 / 0 stretch; scrollbar-width: thin; scrollbar-color: rgb(119, 119, 119) rgb(238, 238, 238);" cellpadding="0"><tbody style="scrollbar-width: thin; scrollbar-color: rgb(119, 119, 119) rgb(238, 238, 238);"><tr style="scrollbar-width: thin; scrollbar-color: rgb(119, 119, 119) rgb(238, 238, 238);"><td style="width: 100%; padding: 2px; border-image: none 100% / 1 / 0 stretch; vertical-align: top; scrollbar-width: thin; scrollbar-color: rgb(119, 119, 119) rgb(238, 238, 238);" name="column" class="flexibleContainerBox" id="COLUMN-12060"><table name="TA_inCol" style="width: 100%; border-spacing: 0px; border-collapse: collapse; text-align: left; scrollbar-width: thin; scrollbar-color: rgb(119, 119, 119) rgb(238, 238, 238);" cellpadding="0"><tbody style="scrollbar-width: thin; scrollbar-color: rgb(119, 119, 119) rgb(238, 238, 238);"><tr name="TR_inCol" style="scrollbar-width: thin; scrollbar-color: rgb(119, 119, 119) rgb(238, 238, 238);"><td style="width: 100%; padding: 2px; scrollbar-width: thin; scrollbar-color: rgb(119, 119, 119) rgb(238, 238, 238);"><table id="DIVIDER-41909" name="objetDivider" class="CLS_objetDivider" style="width: 100%; text-align: left; scrollbar-width: thin; scrollbar-color: rgb(119, 119, 119) rgb(238, 238, 238);"><tbody style="scrollbar-width: thin; scrollbar-color: rgb(119, 119, 119) rgb(238, 238, 238);"><tr style="scrollbar-width: thin; scrollbar-color: rgb(119, 119, 119) rgb(238, 238, 238);"><td style="width: 100%; text-align: center; padding: 2px; scrollbar-width: thin; scrollbar-color: rgb(119, 119, 119) rgb(238, 238, 238);"><div style="width: 100%; height: 1px; border-top: 1px solid rgb(46, 125, 50); scrollbar-width: thin; scrollbar-color: rgb(119, 119, 119) rgb(238, 238, 238); margin-bottom: 2px; margin-top: 2px;"><!--[if gte mso]><span style='font-size:1px;'>&nbsp;</span><![endif]--></div></td></tr></tbody></table></td></tr><tr name="TR_inCol" style="scrollbar-width: thin; scrollbar-color: rgb(119, 119, 119) rgb(238, 238, 238);"><td style="width: 100%; padding: 2px; scrollbar-width: thin; scrollbar-color: rgb(119, 119, 119) rgb(238, 238, 238);"><table name="objetText" class="CLS_objetText" id="TEXT-55616" style="width: 100%; text-align: left; scrollbar-width: thin; scrollbar-color: rgb(119, 119, 119) rgb(238, 238, 238);"><tbody style="scrollbar-width: thin; scrollbar-color: rgb(119, 119, 119) rgb(238, 238, 238);"><tr style="scrollbar-width: thin; scrollbar-color: rgb(119, 119, 119) rgb(238, 238, 238);"><!--[if mso]><td style="width: 100%; text-align: justify; line-height: 1.2; background-color: rgb(185, 246, 202); padding: 2px; font-size: 12px; font-family: Verdana, Geneva, sans-serif; color: rgb(0, 0, 0); scrollbar-width: thin; scrollbar-color: rgb(119, 119, 119) rgb(238, 238, 238); mso-line-height:exactly; line-height:92%;"><![endif]--><!--[if !mso]--><td style="width: 100%; text-align: justify; line-height: 1.2; background-color: rgb(185, 246, 202); padding: 2px; font-size: 12px; font-family: Verdana, Geneva, sans-serif; color: rgb(0, 0, 0); scrollbar-width: thin; scrollbar-color: rgb(119, 119, 119) rgb(238, 238, 238);"><!--[endif]----><!--[if mso]><div style="scrollbar-width: thin; scrollbar-color: rgb(119, 119, 119) rgb(238, 238, 238); mso-line-height:exactly; line-height:92%;"><![endif]--><!--[if !mso]--><div style="scrollbar-width: thin; scrollbar-color: rgb(119, 119, 119) rgb(238, 238, 238); height: auto;"><!--[endif]----><font style="font-size: 11px; color: rgb(46, 125, 50); scrollbar-width: thin; scrollbar-color: rgb(119, 119, 119) rgb(238, 238, 238);">Conformément au Règlement Général sur la Protection des Données, nous vous informons que la seule utilisation faite de votre adresse mail&nbsp; est de vous adresser notre infolettre<br style="scrollbar-width: thin; scrollbar-color: rgb(119, 119, 119) rgb(238, 238, 238);"><br style="scrollbar-width: thin; scrollbar-color: rgb(119, 119, 119) rgb(238, 238, 238);"></font></div><!--[if mso]><div style="scrollbar-width: thin; scrollbar-color: rgb(119, 119, 119) rgb(238, 238, 238); mso-line-height:exactly; line-height:92%;"><![endif]--><!--[if !mso]--><div style="scrollbar-width: thin; scrollbar-color: rgb(119, 119, 119) rgb(238, 238, 238); height: auto;"><!--[endif]----><font style="font-size: 10px; color: rgb(46, 125, 50); scrollbar-width: thin; scrollbar-color: rgb(119, 119, 119) rgb(238, 238, 238);"><font style="font-size: 11px; scrollbar-width: thin; scrollbar-color: rgb(119, 119, 119) rgb(238, 238, 238);"><font style="font-size: 10px; scrollbar-width: thin; scrollbar-color: rgb(119, 119, 119) rgb(238, 238, 238);">Nous contacter par mail <font style="font-size: 10px; scrollbar-width: thin; scrollbar-color: rgb(119, 119, 119) rgb(238, 238, 238);">:<font style="font-size: 10px; scrollbar-width: thin; scrollbar-color: rgb(119, 119, 119) rgb(238, 238, 238);"> </font></font></font><font style="color: rgb(46, 125, 50); scrollbar-width: thin; scrollbar-color: rgb(119, 119, 119) rgb(238, 238, 238);"><a href="mailto:contact@pacte-transition-acvi.fr" track="0" style="color: rgb(46, 125, 50); scrollbar-width: thin; scrollbar-color: rgb(119, 119, 119) rgb(238, 238, 238);" target="_new"><font style="font-size: 10px; scrollbar-width: thin; scrollbar-color: rgb(119, 119, 119) rgb(238, 238, 238);">contact@pacte-transition-acvi.fr</font></a></font><b style="scrollbar-width: thin; scrollbar-color: rgb(119, 119, 119) rgb(238, 238, 238);"><br style="scrollbar-width: thin; scrollbar-color: rgb(119, 119, 119) rgb(238, 238, 238);"></b></font><font style="font-size: 11px; scrollbar-width: thin; scrollbar-color: rgb(119, 119, 119) rgb(238, 238, 238);"><font style="scrollbar-width: thin; scrollbar-color: rgb(119, 119, 119) rgb(238, 238, 238);"><a style="color: rgb(46, 125, 50); scrollbar-width: thin; scrollbar-color: rgb(119, 119, 119) rgb(238, 238, 238);" href="http:// www.pacte-transition-acvi.fr " track="1" target="_new"></a></font></font>
+</font></div></td></tr></tbody></table></td></tr>
+    <tr name="TR_inCol" style="scrollbar-width: thin; scrollbar-color: rgb(119, 119, 119) rgb(238, 238, 238);"><td style="width: 100%; padding: 2px; scrollbar-width: thin; scrollbar-color: rgb(119, 119, 119) rgb(238, 238, 238);">
+        <table id="DIVIDER-68892" name="objetDivider" class="CLS_objetDivider" style="width: 100%; text-align: left; scrollbar-width: thin; scrollbar-color: rgb(119, 119, 119) rgb(238, 238, 238);"><tbody style="scrollbar-width: thin; scrollbar-color: rgb(119, 119, 119) rgb(238, 238, 238);"><tr style="scrollbar-width: thin; scrollbar-color: rgb(119, 119, 119) rgb(238, 238, 238);"><td style="width: 100%; text-align: center; padding: 2px; scrollbar-width: thin; scrollbar-color: rgb(119, 119, 119) rgb(238, 238, 238);"><div style="width: 100%; height: 1px; border-top: 1px solid rgb(46, 125, 50); scrollbar-width: thin; scrollbar-color: rgb(119, 119, 119) rgb(238, 238, 238); margin-bottom: 2px; margin-top: 2px;"><!--[if gte mso]><span style='font-size:1px;'>&nbsp;</span><![endif]--></div></td></tr></tbody>
+        </table></td></tr>
+    <tr name="TR_inCol" style="scrollbar-width: thin; scrollbar-color: rgb(119, 119, 119) rgb(238, 238, 238);"><td style="width: 100%; padding: 2px; scrollbar-width: thin; scrollbar-color: rgb(119, 119, 119) rgb(238, 238, 238);"><table id="BUTTON-10675" name="objetButton" class="CLS_objetButton" style="width: 100%; text-align: left; scrollbar-width: thin; scrollbar-color: rgb(119, 119, 119) rgb(238, 238, 238);"><tbody style="scrollbar-width: thin; scrollbar-color: rgb(119, 119, 119) rgb(238, 238, 238);"><tr style="scrollbar-width: thin; scrollbar-color: rgb(119, 119, 119) rgb(238, 238, 238);"><td style="width: 100%; text-align: center; padding: 2px; scrollbar-width: thin; scrollbar-color: rgb(119, 119, 119) rgb(238, 238, 238);"><!--[if mso]><v:roundrect xmlns:v='urn:schemas-microsoft-com:vml' xmlns:w='urn:schemas-microsoft-com:office:word' href='https://lnk.smart-way-c3.tech/u5Ae3KzFaDdGWUkpnW594HfLfrA110105118101108101116106101097110045109105099104101108064111114097110103101046102114u01uW1800267/unsubscribe.html' width="375px" height="25px" style='height:25px; v-text-anchor:middle; width:375px;' arcsize='0%' stroke='f' fillcolor='rgb(185, 246, 202)' fill='true'>  <w:anchorlock/><center style='color:rgb(255, 152, 0); font-family:Verdana, Geneva, sans-serif; font-size:11px; font-weight:bold;'>Se désinscrire de cette infolettre</center></v:roundrect><![endif]-->
+<!--[if !mso]-->
+        <a href="https://lnk.smart-way-c3.tech/u5Ae3KzFaDdGWUkpnW594HfLfrA110105118101108101116106101097110045109105099104101108064111114097110103101046102114u01uW1800267/unsubscribe.html" target="_new" style="text-decoration: none; display: inline-block; scrollbar-width: thin; scrollbar-color: rgb(119, 119, 119) rgb(238, 238, 238);" track="0"><div style="position: relative; cursor: pointer; text-decoration: none; border-radius: 0px; color: rgb(255, 152, 0); background-color: rgb(185, 246, 202); border: 0px solid rgb(0, 0, 0); width: 300px; font-size: 12px; font-weight: bold; height: 20px; margin-left: auto; margin-right: auto; font-family: Verdana, Geneva, sans-serif; scrollbar-width: thin; scrollbar-color: rgb(119, 119, 119) rgb(238, 238, 238);" buttontype="unsub_button">
+
+        </div></a><!--[endif]----></td></tr></tbody>
+    </table></td></tr></tbody>
+    </table></td></tr></tbody>
+
+<img src="https://lnk.smart-way-c3.tech/u5Ae3KzFaDdGWUkpnW594HfLA110105118101108101116106101097110045109105099104101108064111114097110103101046102114r01uW1800267/footer.gif" style="scrollbar-width: thin; scrollbar-color: rgb(119, 119, 119) rgb(238, 238, 238);" alt="" width="100" height="5">
+</td></tr></tbody></table>
+</div>
 </div>
 </div>
 {% endblock %}

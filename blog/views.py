@@ -97,7 +97,7 @@ def lireArticle(request, slug):
             article.dernierMessage = ("(" + str(comment.auteur_comm) + ") " + str(strip_tags(comment.commentaire).replace('&nspb',' ')))[:96] + "..."
             article.save()
             comment.save()
-            url = article.get_absolute_url()
+            url = article.get_absolute_url() + "#idConversation"
             suffix = "_permacat" if article.estPublic else ""
             action.send(request.user, verb='article_message'+suffix, action_object=article, url=url,
                         description="a réagi à l'article: '%s'" % article.titre)

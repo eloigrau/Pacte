@@ -26,8 +26,8 @@
 					<ul class="navbar-nav">
 <li class="nav-item dropdown">
                             <a class="nav-link" href="#" id="navbarDropdownCategorie" data-toggle="dropdown">
-                                 <button type="button" class="btn  btn-primary dropdown-toggle" >
-                            Choisir une catégorie...
+                                 <button type="button" class="btn  btn-success dropdown-toggle" >
+                            Choisir un dossier...
                                  </button>
                                 </a>
 							<div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
@@ -44,7 +44,7 @@
 
 <li class="nav-item dropdown">
                             <a class="nav-link " href="#" id="navbarDropdownTerritoire" data-toggle="dropdown">
-                                 <button type="button" class="btn  btn-primary dropdown-toggle" >
+                                 <button type="button" class="btn  btn-info dropdown-toggle" >
             Choisir un territoire...
                                  </button>
                                 </a>
@@ -162,13 +162,13 @@
             </h5>
         </div></div>
 <div class="infinite-container">
+    <div class="grid-container justify-content-center">
     {% for article in article_list %}
-    <div class="infinite-item">
+    <div class="infinite-item my-auto">
             {% include "blog/article_template.html" with article=article %}
-    <hr>
     </div>
-
     {% endfor %}
+    </div>
 </div>
 {%include 'pagination.html' %}
 

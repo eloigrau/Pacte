@@ -1343,3 +1343,73 @@ caption {
 {
     padding-right: 5px;  /* width of the image plus a little extra padding */
 }
+
+.card-body{
+padding:1em 1em 0em 1em;
+}
+.article_carte:hover {
+	box-shadow: 2px 3px 8px 0px;
+	min-height: 130px;
+}
+
+.article_carte {
+	min-height: 130px;
+	margin:9px;
+	overflow: hidden;
+}
+
+.grid-container {
+  display: grid;
+   grid-template-columns: auto ;
+}
+
+@media (min-width: 576px) {
+    .grid-container {
+        grid-template-columns: 100% ;
+    }
+}
+@media (max-width: 400px) {
+    .grid-container {
+        grid-template-columns: 100% ;
+    }
+    .article_carte {
+        max-width: 100%;
+    }
+    .row{
+        margin-right: 1px;
+        margin-left: 1px;
+        padding: 1px;
+    }
+.contenu{
+    /*margin-top: 2em;*/
+    margin-bottom: 1em;
+    border-radius: 0.2em;
+    padding: 1px;
+}
+.paddingbase{
+    padding: 1px;
+}
+.container-fluid {
+    width: 100%;
+    padding-right: 0px;
+    padding-left: 0px;
+}
+}
+
+
+@media (min-width: 768px) {
+    .grid-container {
+        grid-template-columns: 100% ;
+    }
+}
+
+@media (min-width: 900px) {
+    .grid-container {
+        grid-template-columns: 50% 50%;
+    }
+}
+@media (min-width: 1200px) {
+    .grid-container {
+        grid-template-columns: 32% 32% 32%;
+    }
+}
