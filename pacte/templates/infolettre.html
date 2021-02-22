@@ -1,6 +1,7 @@
 {% extends 'base.html' %}
 {% load fontawesome %}
 {% load blog_filters %}
+{% load hitcount_tags %}
 {%block title%}Pacte ACVI - Infolettre{%endblock%}
 {% block subtitle %}
 <div class="row">
@@ -25,8 +26,8 @@
 <p><a href="#info1">Infolettre #1 </a></p>
 </div></div>
 <hr>
-           {% include 'infolettres/infolettre2.html' %}
-           {% include 'infolettres/infolettre1.html' %}
+{% include 'infolettres/infolettre2.html' %}
+{% include 'infolettres/infolettre1.html' %}
 
 
 {% endblock %}
