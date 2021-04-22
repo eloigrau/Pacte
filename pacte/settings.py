@@ -149,6 +149,7 @@ TEMPLATES = [
                 'django.template.context_processors.static',
                 'django.template.context_processors.tz',
                 "sekizai.context_processors.sekizai",
+                "pacte.context_processor.navbar",
             ],
             'string_if_invalid': 'Invalid: "%s"',
             'libraries': {'is_numeric': 'pacte.templatetags.app_filters', }

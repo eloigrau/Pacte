@@ -33,7 +33,7 @@ from django.utils.html import strip_tags
 from actstream import actions, action
 from actstream.models import Action, any_stream, following,followers
 
-
+from blog.models import Article
 from django.utils.timezone import now
 
 CharField.register_lookup(Lower, "lower")
@@ -298,20 +298,18 @@ def liens(request):
 def fairedon(request):
     return render(request, 'fairedon.html', )
 
-@login_required
-def chercher(request):
+def chercher_forum(request):
     recherche = str(request.GET.get('id_recherche')).lower()
-    # if recherche:
+    if recherche:
     #     produits_list = Produit.objects.filter(Q(description__icontains=recherche) | Q(nom_produit__lower__contains=recherche), ).select_subclasses()
-    #     articles_list = Article.objects.filter(Q(titre__lower__contains=recherche) | Q(contenu__icontains=recherche), )
+        articles_list = Article.objects.filter(Q(titre__lower__contains=recherche) | Q(contenu__icontains=recherche), )
     #     projets_list = Projet.objects.filter(Q(titre__lower__contains=recherche) | Q(contenu__icontains=recherche), )
     #     profils_list = Profil.objects.filter(Q(username__lower__contains=recherche)  | Q(description__icontains=recherche)| Q(competences__icontains=recherche), )
-    # else:
-    produits_list = []
-    articles_list = []
-    projets_list = []
-    profils_list = []
-    return render(request, 'chercher.html', {'recherche':recherche, 'articles_list':articles_list, 'produits_list':produits_list, "projets_list": projets_list, 'profils_list':profils_list})
+    else:
+        articles_list = []
+    if request.user.is_anonymous:
+        articles_list = articles_list.exclude(estPublic=False)
+    return render(request, 'chercher.html', {'recherche':recherche, 'articles_list':articles_list, })
 
 
 @login_required

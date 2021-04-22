@@ -13,16 +13,41 @@
 {% if user.is_authenticated %}
     <ul class="nav navbar-nav  d-flex justify-content-between  w-100">
       <li class="nav-item dropdown nav2">
-           <a data-toggle="dropdown" class="nav-link dropdown-toggle navbar-menu  " href="{% url 'blog:index' %}" aria-haspopup="true" aria-expanded="false" >
-               {% fontawesome_icon 'book-reader' %} Forum </a>
+          <li class="nav-item dropdown nav5 3to5">
+            <a class="nav-link dropdown-toggle navbar-menu "  data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <i class="fa fa-wrench iconleft" ></i> Forum
+            </a>
 
-            <ul class="dropdown-menu dropdown-menu1 textcenter nav2-dropdown" id="dropdownForum">
-                <li> <a class="dropdown-item" href="{% url 'blog:index' %}?"> {% fontawesome_icon 'book' %} Articles</a></li>
+            <ul class="dropdown-menu dropdown-menu1 nav5-dropdown" aria-labelledby="navbarDropdownMenuLink">
+                <li class="dropdown-submenu">
+                    <a class="dropdown-item dropdown-toggle" > {% fontawesome_icon 'book' %} Articles</a>
+                    <ul class="dropdown-menu nav5-dropdown-submenu">
+
+
+
+
+
+                        <li> <a class="dropdown-item" href="{% url 'blog:index' %}">  Tous les Articles </a></li>
+
+                        {% for nom_groupe, categories in sousgroupesArticles.items %}
+                        <li class="dropdown-submenu">
+                          <a class="dropdown-item dropdown-toggle"> {{nom_groupe}} </a>
+                          <ul class="dropdown-menu nav5-dropdown-subsubmenu">
+                                {% for cat in categories %}
+                                     <li> <a class="dropdown-item" href="{% url 'blog:index' %}?categorie={{cat.0}}"><i class='fa fa-comments' ></i> {{cat.1}} </a></li>
+                                {% endfor %}
+                          </ul>
+
+                        </li>
+                        {% endfor %}
+                    </ul>
+                </li>
                 <li class="divider" role="separator"></li>
                 <li><a class="dropdown-item" href="{% url 'agora_general' %}"> {% fontawesome_icon 'comments' %} Salon de discussion</a></li>
                 <li class="divider" role="separator"></li>
-                 <li><a class="dropdown-item" href="{% url 'conversations' %}">{% fontawesome_icon 'comment' %}  Conversations privées</a></li>
+                <li><a class="dropdown-item" href="{% url 'conversations' %}">{% fontawesome_icon 'comment' %}  Conversations privées</a></li>
             </ul>
+        </li>
       </li>
         <li class="nav-item nav2 "><a class="nav-link" href="{% url 'infolettre' %}"> {% fontawesome_icon 'book' %} Infolettre</a></li>
 
@@ -42,6 +67,7 @@
             <ul class="dropdown-menu dropdown-menu1 textcenter nav2-dropdown" aria-labelledby="navbarAbout2" id="dropdoownSite">
 
                <li> <a class="dropdown-item" href="https://www.pacte-transition.org/" target="_blank"> Site du Pacte Pour la Transition </a></li>
+               <li> <a class="dropdown-item" href="https://www.facebook.com/pactepourlatransitionACVI66/" target="_blank" > Page Facebook du collectif</a></li>
                    <li class="divider" role="separator"></li>
                <li> <a class="dropdown-item" href="{% url 'annuaire' %}"> Annuaire </a></li>
                <li> <a class="dropdown-item" href="{% url 'faq' %}"> FAQ </a></li>
@@ -71,6 +97,7 @@
             </a>
             <ul class="dropdown-menu dropdown-menu1 textcenter nav2-dropdown" aria-labelledby="navbarAbout">
                <li> <a class="dropdown-item" href="https://www.pacte-transition.org/" target="_blank" > Site officiel du Pacte</a></li>
+               <li> <a class="dropdown-item" href="https://www.facebook.com/pactepourlatransitionACVI66/" target="_blank" > Page Facebook du collectif</a></li>
                     <li class="divider" role="separator"></li>
                <li> <a class="dropdown-item" href="{% url 'contact_admins' %}"> Nous contacter</a></li>
                     <li class="divider" role="separator"></li>
