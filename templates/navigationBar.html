@@ -13,28 +13,23 @@
 {% if user.is_authenticated %}
     <ul class="nav navbar-nav  d-flex justify-content-between  w-100">
       <li class="nav-item dropdown nav2">
-          <li class="nav-item dropdown nav5 3to5">
+          <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle navbar-menu "  data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 <i class="fa fa-wrench iconleft" ></i> Forum
             </a>
 
-            <ul class="dropdown-menu dropdown-menu1 nav5-dropdown" aria-labelledby="navbarDropdownMenuLink">
+            <ul class="dropdown-menu dropdown-menu1 nav2-dropdown" aria-labelledby="navbarDropdownMenuLink">
                 <li class="dropdown-submenu">
                     <a class="dropdown-item dropdown-toggle" > {% fontawesome_icon 'book' %} Articles</a>
-                    <ul class="dropdown-menu nav5-dropdown-submenu">
-
-
-
-
-
+                    <ul class="dropdown-menu nav2-dropdown-submenu">
                         <li> <a class="dropdown-item" href="{% url 'blog:index' %}">  Tous les Articles </a></li>
 
                         {% for nom_groupe, categories in sousgroupesArticles.items %}
                         <li class="dropdown-submenu">
                           <a class="dropdown-item dropdown-toggle"> {{nom_groupe}} </a>
-                          <ul class="dropdown-menu nav5-dropdown-subsubmenu">
+                          <ul class="dropdown-menu nav2-dropdown-subsubmenu">
                                 {% for cat in categories %}
-                                     <li> <a class="dropdown-item" href="{% url 'blog:index' %}?categorie={{cat.0}}"><i class='fa fa-comments' ></i> {{cat.1}} </a></li>
+                                     <li> <a class="dropdown-item" href="{% url 'blog:index' %}?categorie={{cat.0}}">{{cat.1}} </a></li>
                                 {% endfor %}
                           </ul>
 
