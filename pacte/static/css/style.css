@@ -656,14 +656,23 @@ box-shadow: 0 10px 10px 0px grey;
     padding: 25px;
 
 }
-article-carte{
+.article-carte{
     border-color: #333;
     box-shadow: 0 10px 10px 0px grey;
     border-radius: 0.3em;
     border:1.5px grey solid;
     padding: 5px 80px;
 	text-decoration:none;
+	color:black;
 }
+.article-titre{
+    color: black;
+    font-size: 1.25rem;
+	font-weight:bold;
+    line-height: 1.2;
+    color: #333333;
+}
+
 .article-card-header {
     padding: 0;
     margin-bottom: 0;
