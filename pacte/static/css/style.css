@@ -454,6 +454,7 @@ border: 1px inset rgba(28,110,164,0.65);
     margin-bottom: 30px;
     margin-left: 10px;
     margin-right: 10px;
+    background: white;
 }
 
 .bodycontenu{
@@ -971,7 +972,6 @@ ul.errorlist{
     padding: 1px;
     border-radius: 0.2em;
     margin: 5px;
-    background: white;
 }
 .btn-group{
     white-space: normal;
