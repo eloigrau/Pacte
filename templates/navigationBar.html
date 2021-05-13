@@ -13,8 +13,7 @@
 {% if user.is_authenticated %}
     <ul class="nav navbar-nav  d-flex justify-content-between  w-100">
       <li class="nav-item dropdown nav2">
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle navbar-menu "  data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <a class="nav-link dropdown-toggle navbar-menu " href="dropdoownSite"  data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 <i class="fa fa-wrench iconleft" ></i> Forum
             </a>
 
@@ -42,7 +41,6 @@
                 <li class="divider" role="separator"></li>
                 <li><a class="dropdown-item" href="{% url 'conversations' %}">{% fontawesome_icon 'comment' %}  Conversations privées</a></li>
             </ul>
-        </li>
       </li>
         <li class="nav-item nav2 "><a class="nav-link" href="{% url 'infolettre' %}"> {% fontawesome_icon 'book' %} Infolettre</a></li>
 
