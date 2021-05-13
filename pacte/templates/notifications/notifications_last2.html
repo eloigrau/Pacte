@@ -6,14 +6,15 @@
     <button class="btn btn-outline-success" type="button"><a href="{% url 'notifications_news'  %}">Dernières Notifications</a></button>
       <button class="btn btn-sm btn-outline-secondary" type="button"><a href="{% url 'notifications'  %}"> Notifications par type</a></button>
 </nav>
-{% endblock %}
-{% block content %}
 
 <p class = "textcenter justify-content-center">
         <a href="{% url 'changerDateNotif' %}">
                 <button class="btn btn-outline-secondary" type="submit" data-toggle="tooltip" data-placement="bottom" title="Changer la date"> depuis le {{request.user.date_notifications|date:"d/m/Y"}} à {{request.user.date_notifications|date:"G:i"}}</button>
         </a>
 </p>
+
+{% endblock %}
+{% block content %}
 
 {%if htmlArticles or dico.listautres %}
 <p class = "textcenter ">
