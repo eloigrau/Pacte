@@ -19,13 +19,13 @@
 
             <ul class="dropdown-menu dropdown-menu1 nav2-dropdown" aria-labelledby="navbarDropdownMenuLink">
                 <li class="dropdown-submenu">
-                    <a class="dropdown-item dropdown-toggle" > {% fontawesome_icon 'book' %} Articles</a>
+                    <a class="dropdown-item dropdown-toggle" href="dropdoownSite" > {% fontawesome_icon 'book' %} Articles</a>
                     <ul class="dropdown-menu nav2-dropdown-submenu">
                         <li> <a class="dropdown-item" href="{% url 'blog:index' %}">  Tous les Articles </a></li>
 
                         {% for nom_groupe, categories in sousgroupesArticles.items %}
                         <li class="dropdown-submenu">
-                          <a class="dropdown-item dropdown-toggle"> {{nom_groupe}} </a>
+                          <a class="dropdown-item dropdown-toggle" href="dropdoownSite" > {{nom_groupe}} </a>
                           <ul class="dropdown-menu nav2-dropdown-subsubmenu">
                                 {% for cat in categories %}
                                      <li> <a class="dropdown-item" href="{% url 'blog:index' %}?categorie={{cat.0}}">{{cat.1}} </a></li>

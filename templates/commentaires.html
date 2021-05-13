@@ -1,5 +1,6 @@
 
 {% load blog_filters %}
+{% if commentaires %}
 <div class="contenu commentaires" id="idConversation">
 {% for comment in commentaires %}
     <div class="row {% if comment.auteur.id == request.user.id %} msg-auteur  {%else%} msg-destinataire{%endif%}">
@@ -18,13 +19,14 @@
     </div>
 {% endfor %}
 </div>
-    <script>
+
+<hr>
+{% endif %}
+
+<script>
     var messageBody = document.querySelector('#idConversation');
     messageBody.scrollTop = idConversation.scrollHeight - idConversation.clientHeight;
 </script>
-
-<hr>
-
 {%if not request.user.is_anonymous %}
 {% if commentaires %}
 <h5>Répondre :</h5>
