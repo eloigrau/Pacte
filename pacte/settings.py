@@ -78,7 +78,7 @@ INSTALLED_APPS = (
     'django.contrib.staticfiles',
     'django.contrib.admindocs',
     'django.contrib.sites',
-    'bootstrap','fontawesome','cookielaw',
+    'bootstrap','fontawesome','cookielaw_local',
     'model_utils',
     'pacte',
     'blog',

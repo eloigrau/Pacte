@@ -29,7 +29,7 @@ def getNotifications(request, nbNotif=10, orderBy="-timestamp"):
 @login_required
 def getNotificationsParDate(request, limiter=True, orderBy="-timestamp"):
     if request.user.is_membre_collectif:
-        actions      = Action.objects.filter( \
+        actions      = any_stream(request.user).filter(Q(verb='envoi_salon_prive'))|Action.objects.filter( \
             Q(verb='envoi_salon')| Q(verb='envoi_salon_pacteacvi')|
             Q(verb__startswith='article')|
             Q(verb='envoi_salon_prive', description="a envoyé un message privé à " + request.user.username)|
