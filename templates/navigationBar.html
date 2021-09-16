@@ -19,7 +19,7 @@
 
             <ul class="dropdown-menu dropdown-menu1 nav2-dropdown" aria-labelledby="navbarDropdownMenuLink">
                 <li class="dropdown-submenu">
-                    <a class="dropdown-item dropdown-toggle" href="dropdoownSite" > {% fontawesome_icon 'book' %} Articles</a>
+                    <a class="dropdown-item dropdown-toggle" href="dropdoownSite" > {% fontawesome_icon 'book' %} Forum</a>
                     <ul class="dropdown-menu nav2-dropdown-submenu">
                         <li> <a class="dropdown-item" href="{% url 'blog:index' %}">  Tous les Articles </a></li>
 
@@ -97,7 +97,35 @@
                <li> <a class="dropdown-item" href="{% url 'cgu' %}"> CGU </a></li>
             </ul>
         </li>
-        <li class="nav-item nav2 "><a class="nav-link" href="{% url 'blog:index' %}"> {% fontawesome_icon 'book' %} Forum</a></li>
+        <li class="nav-item nav2 ">
+
+      <li class="nav-item dropdown nav2">
+            <a class="nav-link dropdown-toggle navbar-menu " href="dropdoownSite"  data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <i class="fa fa-book iconleft" ></i> Forum
+            </a>
+
+            <ul class="dropdown-menu dropdown-menu1 nav2-dropdown" aria-labelledby="navbarDropdownMenuLink">
+                <li class="dropdown-submenu">
+                    <a class="dropdown-item dropdown-toggle" href="dropdoownSite" > {% fontawesome_icon 'book' %} Forum</a>
+                    <ul class="dropdown-menu nav2-dropdown-submenu">
+                        <li> <a class="dropdown-item" href="{% url 'blog:index' %}">  Tous les Articles </a></li>
+
+                        {% for nom_groupe, categories in sousgroupesArticles.items %}
+                        <li class="dropdown-submenu">
+                          <a class="dropdown-item dropdown-toggle" href="dropdoownSite" > {{nom_groupe}} </a>
+                          <ul class="dropdown-menu nav2-dropdown-subsubmenu">
+                                {% for cat in categories %}
+                                     <li> <a class="dropdown-item" href="{% url 'blog:index' %}?categorie={{cat.0}}">{{cat.1}} </a></li>
+                                {% endfor %}
+                          </ul>
+
+                        </li>
+                        {% endfor %}
+                    </ul>
+                </li>
+               </ul>
+      </li>
+        </li>
         <li class="nav-item nav2 "><a class="nav-link" href="{% url 'infolettre' %}"> {% fontawesome_icon 'book' %} Infolettre</a></li>
     </ul>
     <ul class="nav navbar-nav ">
